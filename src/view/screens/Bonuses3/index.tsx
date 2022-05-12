@@ -140,16 +140,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   button: {
-    height: 52,
+    // height: 52,
     width: '100%',
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#EAEFF3',
     backgroundColor: '#FFFFFF',
     marginTop: 11,
+    justifyContent:'center'
   },
   input: {
-    padding: 15,
+    padding: 12,
     color: '#12154C',
   },
   nomer1: {
@@ -161,16 +162,19 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   button1: {
-    height: 52,
+    // height: 50,
     width: '100%',
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#EAEFF3',
     backgroundColor: '#FFFFFF',
     marginTop: 11,
+    justifyContent:'center'
   },
   input1: {
-    padding: 15,
+    padding: 12,
+    alignItems:'center',
+    justifyContent:'center'
   },
   skipbutton: {
     width: '100%',
@@ -178,7 +182,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#427CF8',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 15,
+    paddingVertical: 12,
     marginTop: 100,
   },
   skipbuttontext: {

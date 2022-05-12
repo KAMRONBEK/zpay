@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   input: {
-    // padding: 10,
+    padding: 12,
     color: '#12154C',
     fontSize: 14,
   },

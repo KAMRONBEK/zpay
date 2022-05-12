@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "podm1":"cd ios && arch -x86_64 pod install"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^4.1.5",

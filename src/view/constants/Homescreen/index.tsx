@@ -624,7 +624,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   pokazat: {
-    marginTop: 20,
+    marginTop: 10,
     flexDirection: 'row',
     marginHorizontal: 20,
     justifyContent: 'space-between',

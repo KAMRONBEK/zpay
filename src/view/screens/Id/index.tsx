@@ -217,8 +217,9 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   input: {
-    padding: 8,
+    padding: 12,
     color: '#12154C',
+    alignItems:'center'
   },
   checkIcon: {},
   checkIcon1: {

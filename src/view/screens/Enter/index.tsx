@@ -48,8 +48,9 @@ const Enter = () => {
           style={{
             marginTop: 20,
             color: '#FFF',
-            fontSize: 16,
-            fontWeight: '600',
+            fontSize: 14,
+            fontWeight: '600',  
+            textAlign:'center' 
           }}>
           Технология вдохновленная прозрачностью
         </Text>
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#3554D1',
-    paddingHorizontal: 50,
+    paddingHorizontal: 44,
   },
   img: {
     alignItems: 'center',
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#FFFFFF',
     textAlign: 'center',
   },

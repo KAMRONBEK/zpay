@@ -267,7 +267,7 @@ const styles = StyleSheet.create({
   karta: {
     flexDirection: 'row',
     // justifyContent: 'space-between',
-    marginHorizontal: 13,
+    marginHorizontal: 10,
   },
   zpay: {
     position: 'absolute',

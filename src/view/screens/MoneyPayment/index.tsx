@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   input: {
-    padding: 10,
+    padding: 12,
     color: '#12154C',
   },
   modalView: {
@@ -305,6 +305,7 @@ const styles = StyleSheet.create({
   },
   bila: {
     alignItems: 'center',
+    margin:10
   },
   oplatatext: {
     fontSize: 16,

@@ -34,34 +34,45 @@ const Scaner = () => {
       </View>
       <View>
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Image
+            source={require('../../assets/images/UserImg1.png')}
+            style={{
+              position: 'absolute',
+              height: windowHeight / 4.6,
+              width: windowWidth / 1.9,
+              // alignItems:'center',
+              // justifyContent:'center'
+            }}
+          />
           <View>
             <Image
               source={require('../../assets/images/ScanerIconImg.png')}
               style={{
                 position: 'absolute',
                 zIndex: 99,
-                height: windowHeight / 6.8,
+                height: windowHeight / 6.9,
                 width: windowWidth / 3.2,
-                // backgroundColor: 'red',
+                left:30,
+                top:30,
               }}
             />
           </View>
           <Image
             source={require('../../assets/images/MyId1.png')}
             style={{
-              height: windowHeight / 3.5,
+              height: windowHeight / 3.4,
               width: windowWidth / 1.51,
               // backgroundColor: 'red',
             }}
           />
-          <Image
+          {/* <Image
             source={require('../../assets/images/UserImg1.png')}
             style={{
               position: 'absolute',
-              height: windowHeight / 4.8,
+              height: windowHeight / 4.6,
               width: windowWidth / 1.9,
             }}
-          />
+          /> */}
         </View>
         {/* <View style={styles.scanerIcon}>
           <ScanerIcon />

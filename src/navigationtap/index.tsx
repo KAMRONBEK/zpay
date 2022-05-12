@@ -27,7 +27,7 @@ const TabNavigation = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           bottom: 0,
-          height: 70,
+          height: 90,
         },
         tabBarActiveTintColor: 'black',
         tabBarInactiveTintColor: 'red',
@@ -43,7 +43,7 @@ const TabNavigation = () => {
                   source={require('../view/assets/images/HomeNavigation.png')}
                   style={{
                     height: 24,
-                    width: 25,
+                    width: 24,
                     tintColor: focused ? '#3554D1' : '#717394',
                   }}
                 />

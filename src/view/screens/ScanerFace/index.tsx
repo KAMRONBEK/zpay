@@ -46,11 +46,12 @@ const ScanerFace = () => {
                 height: windowHeight / 6.8,
                 width: windowWidth / 3.2,
                 // backgroundColor: 'red',
-                marginLeft: 30,
+                marginLeft: 10,
+                bottom:3
               }}
             />
           </View>
-          <Image source={require('../../assets/images/Person1.png')} />
+          {/* <Image source={require('../../assets/images/Person1.png')} /> */}
         </View>
 
         <View style={styles.img}>

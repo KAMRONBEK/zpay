@@ -98,13 +98,12 @@ const styles = StyleSheet.create({
   },
   sectionInput: {
     backgroundColor: '#ffff',
-    height: 52,
+    // height: 52,
     width: '100%',
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 18,
-    padding: 5,
     marginTop: 11,
     borderWidth: 1,
     borderColor: '#EAEFF3',
@@ -118,13 +117,14 @@ const styles = StyleSheet.create({
   },
   input: {
     color: '#12154C',
+    padding:12
   },
 
   nextButton: {
     backgroundColor: '#427CF8',
     borderRadius: 10,
     alignItems: 'center',
-    padding: 18,
+    padding: 12,
     marginTop: 130,
     borderWidth: 0.9,
     borderColor: '#EAEFF3',

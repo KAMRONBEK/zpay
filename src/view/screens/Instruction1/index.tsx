@@ -22,7 +22,7 @@ const buttonBorderColor = '#BAD0FF';
 
 const instructionBarWidth = SCREEN_HEIGHT * 0.41;
 
-const imgHeight = SCREEN_HEIGHT * 0.67;
+const imgHeight = SCREEN_HEIGHT * 0.69;
 const imgWidth = SCREEN_WIDTH * 0.75;
 
 const Instruction1 = () => {

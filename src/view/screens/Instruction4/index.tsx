@@ -22,7 +22,7 @@ const instructionBarWidth = SCREEN_HEIGHT * 0.41;
 
 // const instructionBarHeight = SCREEN_WIDTH * 0.0085;
 // const instructionBarColor = '#FFFFFF';
-const imgHeight = SCREEN_HEIGHT * 0.71;
+const imgHeight = SCREEN_HEIGHT * 0.73;
 const imgWidth = SCREEN_WIDTH * 0.78;
 
 const Instruction4 = () => {
