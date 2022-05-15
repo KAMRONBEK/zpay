@@ -21,93 +21,88 @@ const Id = () => {
 
   return (
     <View style={styles.container}>
-      {/* <ScrollView
-        style={{
-          backgroundColor: 'blue',
-          flexDirection: 'column',
-        }}
-        showsVerticalScrollIndicator={false}> */}
       <View style={styles.headbar}>
-        <TouchableOpacity onPress={navigation.goBack}>
-          <View style={styles.headback}>
-            <Back />
+        <View style={styles.headbar1}>
+          <TouchableOpacity onPress={navigation.goBack}>
+            <View style={styles.headback}>
+              <Back />
+            </View>
+          </TouchableOpacity>
+          <View style={styles.head}>
+            <Text style={styles.textIdentifikatsiya}>Идентификация</Text>
           </View>
-        </TouchableOpacity>
-        <View style={styles.head}>
-          <Text style={styles.textIdentifikatsiya}>Идентификация</Text>
-        </View>
-        <View style={styles.headback}>
-          <RU />
+          <View style={styles.headback}>
+            <RU />
+          </View>
         </View>
       </View>
-      {/* <View style={styles.flex}> */}
-      <View style={{position: 'absolute', marginTop: 154, marginLeft: 24}}>
-        <View style={styles.text}>
-          <Text style={styles.text1}>Паспортные данные</Text>
-        </View>
-        <View style={styles.text2}>
-          <Text style={styles.text3}>Создание нового аккунта</Text>
-        </View>
-        <View style={styles.nomer1}>
-          <Text style={styles.nomer}>Номер паспорта</Text>
-        </View>
-        <View style={styles.headinput}>
-          <View style={styles.littleinput}>
-            <TextInput
-              style={styles.input}
-              placeholder="AA"
-              placeholderTextColor={'grey'}
-            />
+      <View style={styles.flex}>
+        <View style={{}}>
+          <View style={styles.text}>
+            <Text style={styles.text1}>Паспортные данные</Text>
           </View>
-          {/* <View style={styles.section}> */}
+          <View style={styles.text2}>
+            <Text style={styles.text3}>Создание нового аккунта</Text>
+          </View>
+          <View style={styles.nomer1}>
+            <Text style={styles.nomer}>Номер паспорта</Text>
+          </View>
+          <View style={styles.headinput}>
+            <View style={styles.littleinput}>
+              <TextInput
+                style={styles.input}
+                placeholder="AA"
+                placeholderTextColor={'grey'}
+              />
+            </View>
+            {/* <View style={styles.section}> */}
 
-          <View style={styles.sectionInput}>
-            <TextInput
-              style={styles.input}
-              placeholder="Номер паспорта"
-              placeholderTextColor={'grey'}
-            />
-            {/* <View style={styles.checkIcon}>
+            <View style={styles.sectionInput}>
+              <TextInput
+                style={styles.input}
+                placeholder="Номер паспорта"
+                placeholderTextColor={'grey'}
+              />
+              {/* <View style={styles.checkIcon}>
               <CheckIcon />
             </View> */}
+            </View>
+            {/* </View> */}
           </View>
-          {/* </View> */}
-        </View>
-        <View style={styles.nomer1}>
-          <Text style={styles.nomer}>Год рождения</Text>
-        </View>
-        <View style={styles.sectionInput1}>
-          <TextInput
-            style={styles.input}
-            placeholder="16.09.2002"
-            placeholderTextColor={'grey'}
-          />
-          {/* <View style={styles.checkIcon1}>
+          <View style={styles.nomer1}>
+            <Text style={styles.nomer}>Год рождения</Text>
+          </View>
+          <View style={styles.sectionInput1}>
+            <TextInput
+              style={styles.input}
+              placeholder="16.09.2002"
+              placeholderTextColor={'grey'}
+            />
+            {/* <View style={styles.checkIcon1}>
             <CheckIcon />
           </View> */}
+          </View>
+        </View>
+
+        <View style={{}}>
+          <TouchableOpacity onPress={Scaner}>
+            <View style={styles.nextButton}>
+              <Text style={{color: 'white', fontSize: 16}}>Потвердить</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.skipButton}>
+              <Text style={{color: '#427CF8', fontSize: 16}}>Пропустить</Text>
+            </View>
+          </TouchableOpacity>
+          <View style={styles.img}>
+            <Image
+              source={require('../../assets/images/IndicatorIcon2.png')}
+              style={{height: 9, width: 30}}
+            />
+          </View>
         </View>
       </View>
-
-      <View style={{marginTop: 500}}>
-        <TouchableOpacity onPress={Scaner}>
-          <View style={styles.nextButton}>
-            <Text style={{color: 'white', fontSize: 14}}>Потвердить</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={styles.skipButton}>
-            <Text style={{color: '#427CF8', fontSize: 14}}>Пропустить</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.img}>
-        <Image
-          source={require('../../assets/images/IndicatorIcon2.png')}
-          style={{height: 9, width: 32}}
-        />
-      </View>
-      {/* </View> */}
-      {/* </ScrollView> */}
     </View>
   );
 };
@@ -118,8 +113,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    paddingHorizontal: 24,
-    paddingVertical: 51,
+    // paddingHorizontal: 24,
+    // paddingVertical: 51,
     flexDirection: 'column',
     justifyContent: 'space-between',
   },
@@ -133,38 +128,52 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   nomer: {
-    color: 'black',
-    fontSize: 12,
-    fontWeight: 'bold',
+    color: '#12154C',
+    fontSize: 14,
+    fontWeight: '800',
   },
   nomer1: {
     marginTop: 20,
   },
   head: {
-    marginTop: 15,
+    // marginTop: 15,
   },
   textIdentifikatsiya: {
-    color: '#427CF8',
-    fontSize: 16,
+    color: '#3554D1',
+    fontSize: 18,
+    fontWeight: '700',
   },
   headbar: {
-    // marginVertical: 52,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    height: 109,
+    width: '100%',
+    backgroundColor: '#FFF',
+    // alignItems: 'center',
+    paddingHorizontal: 24,
+  },
+  headbar1: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    height: 40,
+    width: '100%',
+    alignItems: 'center',
+    marginTop: 52,
   },
   text: {
     // marginTop: 52,
   },
   text1: {
     color: '#427CF8',
-    fontSize: 22,
+    fontSize: 24,
+    fontWeight: '700',
   },
   text2: {
     marginTop: 10,
   },
   text3: {
     color: 'grey',
-    fontSize: 14,
+    fontSize: 16,
   },
   headinput: {
     flexDirection: 'row',
@@ -219,7 +228,7 @@ const styles = StyleSheet.create({
   input: {
     padding: 12,
     color: '#12154C',
-    alignItems:'center'
+    alignItems: 'center',
   },
   checkIcon: {},
   checkIcon1: {
@@ -248,12 +257,14 @@ const styles = StyleSheet.create({
   img: {
     alignItems: 'center',
     justifyContent: 'center',
-    // marginTop: 5,
+    marginTop: 30,
   },
   flex: {
-    // flex: 1,
-    // flexDirection: 'column',
-    // justifyContent: 'space-between',
-    // backgroundColor: 'white',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    backgroundColor: 'white',
+    paddingHorizontal: 24,
+    paddingVertical: 45,
   },
 });

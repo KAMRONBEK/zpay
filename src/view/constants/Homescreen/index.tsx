@@ -29,6 +29,7 @@ import AddMyCard from '../../screens/AddMyCard';
 import ProductItem from '../../screens/ProductItem';
 import QrCodeCamera from '../../screens/ScanCamera';
 import {openDrawer} from 'react-navigation-drawer/lib/typescript/src/routers/DrawerActions';
+import TorchLight from '../../screens/BottomSheet';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -220,7 +221,7 @@ const HomeScreen = () => {
           </View>
         </View>
       </View>
-
+      {/* <TorchLight /> */}
       <View style={styles.pokazat}>
         <View style={styles.istoriya}>
           <Text style={styles.istoriyatext}>История списаний</Text>
@@ -624,7 +625,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   pokazat: {
-    marginTop: 10,
+    marginTop: 15,
     flexDirection: 'row',
     marginHorizontal: 20,
     justifyContent: 'space-between',

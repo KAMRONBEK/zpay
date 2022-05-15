@@ -1,62 +1,64 @@
-// import BottomSheet from '@gorhom/bottom-sheet';
-// import React, { useCallback } from 'react';
-// import { StyleSheet } from 'react-native';
+import React, {useState} from 'react';
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import Torch from 'react-native-torch';
 
+const TorchLight = () => {
+  const [isTorchON, setisTorchON] = useState(false);
 
-// interface TransactionSheetProps {
-//   onSnap: (index: number) => void;
-//   isVisible: boolean;
-//   hideModal: () => void;
-//   children: React.ReactElement;
-// }
+  const handlerTurnOnOFFTorch = () => {
+    Torch.switchState(!isTorchON);
+    setisTorchON(!isTorchON);
+  };
 
-// export function TransactionSheet({
-//   onSnap,
-//   children,
-//   isVisible,
-//   hideModal,
-// }: TransactionSheetProps) {
-//   const handleSheetChanges = useCallback(
-//     (index: number) => {
-//       if (onSnap) {
-//         onSnap(index);
-//       }
-//     },
-//     [onSnap],
-//   );
+  return (
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity
+        style={styles.buttonStyle}
+        onPress={handlerTurnOnOFFTorch}>
+        <Image source={require('../../assets/images/flash.png')} />
+        <Text
+          style={{
+            fontSize: 14,
+            color: handlerTurnOnOFFTorch ? '#32B179' : '#878B9A',
+          }}>
+          {isTorchON ? 'Выкл ' : 'Вкл'}
+        </Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+};
+export default TorchLight;
 
-//   return (
-//     <BottomSheet
-//       handleStyle={styles.handleStyle}
-//       handleIndicatorStyle={styles.handleIndicatorStyle}
-//       snapPoints={[' 25%', '60%', '80%', '98%']}
-//       onChange={handleSheetChanges}
-//       backgroundStyle={styles.backgroundStyle}
-//       style={styles.borderRadius}
-//     >
-//       {children}
-//     </BottomSheet>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   borderRadius: {
-//     zIndex: 99,
-//     borderTopRightRadius: 30,
-//     borderTopLeftRadius: 30,
-//   },
-//   backgroundStyle: {
-//     flex: 1,
-//     backgroundColor:'white',
-//     borderTopRightRadius: 30,
-//     borderTopLeftRadius: 30,
-//   },
-//   handleStyle: {
-//     height: 25,
-//     marginTop: 20,
-//     backgroundColor:'white',
-//     borderTopRightRadius: 30,
-//     borderTopLeftRadius: 30,
-//   },
-//   handleIndicatorStyle: { backgroundColor: '#D7D8DD', width: 50 },
-// });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  titleText: {
+    textAlign: 'center',
+    fontSize: 22,
+    color: 'red',
+  },
+  buttonStyle: {
+    height: 65,
+    width: 54,
+    borderRadius: 10,
+    backgroundColor: '#fff',
+    marginVertical: 120,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonTextStyle: {
+    textAlign: 'center',
+    color: 'red',
+  },
+});

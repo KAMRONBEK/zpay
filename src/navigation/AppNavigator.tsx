@@ -59,6 +59,8 @@ import Appp from '../view/screens/Appp';
 import VerifiyInput from '../view/screens/TextInput';
 import ActiveButton from '../view/screens/ActivColor';
 import Search from '../view/screens/Search';
+import TorchLight from '../view/screens/BottomSheet';
+import {InstructionCarousel} from '../view/screens/InstructionCarousel';
 // import Indicator from '../view/screens/indicator';
 
 const Stack = createNativeStackNavigator();
@@ -70,13 +72,18 @@ const AppNavigator = () => {
         <Stack.Screen component={Enter} name={'enter'} />
         <Stack.Screen component={DrawerNavigator} name={'DrawerNavigator'} />
         <Stack.Screen component={TabNavigation} name="TabNavigation" />
+        <Stack.Screen
+          component={InstructionCarousel}
+          name="instructioncarousel"
+        />
+        <Stack.Screen component={TorchLight} name="torch" />
         {/* <Stack.Screen component={Search} name="search" /> */}
         <Stack.Screen component={VerifiyInput} name="verifiyinput" />
-        <Stack.Screen component={Instruction1} name="instruction1" />
+        {/* <Stack.Screen component={Instruction1} name="instruction1" />
         <Stack.Screen component={Instruction2} name="instruction2" />
-        <Stack.Screen component={Instruction3} name="instruction3" />
+        <Stack.Screen component={Instruction3} name="instruction3" /> */}
         {/* <Stack.Screen component={ActiveButton} name="instruction3" /> */}
-        <Stack.Screen component={Instruction4} name="instruction4" />
+        {/* <Stack.Screen component={Instruction4} name="instruction4" /> */}
         <Stack.Screen component={Appp} name="appp" />
         <Stack.Screen component={SetPin} name="setpin" />
         <Stack.Screen component={SetPin2} name="setpin2" />

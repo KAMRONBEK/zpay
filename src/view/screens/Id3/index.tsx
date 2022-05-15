@@ -24,94 +24,103 @@ const Id3 = () => {
 
   return (
     <View style={styles.container}>
-      {/* <KeyboardAwareScrollView showsVerticalScrollIndicator={false}> */}
-      <View>
-        <View style={styles.headbar}>
-          <TouchableOpacity onPress={navigation.goBack}>
-            <View style={styles.headback}>
-              <Back />
+      {/* <View style={styles.head}>
+        <Text style={styles.headText}>Идентификация</Text>
+      </View> */}
+      <View style={styles.headbar}>
+        <TouchableOpacity onPress={navigation.goBack}>
+          <View style={styles.headback}>
+            <Back />
+          </View>
+        </TouchableOpacity>
+        <Text style={styles.headtext}>Идентификация</Text>
+
+        <View style={styles.headback}>
+          <RU />
+        </View>
+      </View>
+      <View style={styles.flex}>
+        <View>
+          {/* <View style={styles.headbar}>
+          <View style={styles.headbar1}>
+            <View style={styles.head}>
+              <Text style={styles.textIdentifikatsiya}>Идентификация</Text>
+            </View>
+          </View>
+        </View> */}
+          <View style={styles.text}>
+            <Text style={styles.text1}>Персональные данные</Text>
+          </View>
+          <View style={styles.nomer1}>
+            <Text style={styles.nomer}>ФИО</Text>
+          </View>
+          <View style={styles.sectionInput1}>
+            <TextInput
+              style={styles.input}
+              placeholder="Марина Волкова Александрова"
+              placeholderTextColor={'grey'}
+            />
+          </View>
+          <View style={styles.nomer1}>
+            <Text style={styles.nomer}>Номер паспорта</Text>
+          </View>
+          <View style={styles.headinput}>
+            <View style={styles.littleinput}>
+              <TextInput
+                style={styles.input}
+                placeholder="AA"
+                placeholderTextColor={'grey'}
+              />
+            </View>
+
+            <View style={styles.sectionInput}>
+              <TextInput
+                style={styles.input}
+                placeholder="Номер паспорта"
+                placeholderTextColor={'grey'}
+              />
+            </View>
+          </View>
+          <View style={styles.nomer1}>
+            <Text style={styles.nomer}>Год рождения</Text>
+          </View>
+          <View style={styles.sectionInput1}>
+            <TextInput
+              style={styles.input}
+              placeholder="16.09.2002"
+              placeholderTextColor={'grey'}
+            />
+          </View>
+          <View style={styles.nomer1}>
+            <Text style={styles.nomer}>Адрес проживания</Text>
+          </View>
+          <View style={styles.sectionInput1}>
+            <TextInput
+              style={styles.input}
+              placeholder="г. Ташкент, Мирабадский р-н, 5кв, д30-21"
+              placeholderTextColor={'grey'}
+            />
+          </View>
+        </View>
+        <View>
+          <TouchableOpacity onPress={Setpin}>
+            <View style={styles.nextButton}>
+              <Text style={{color: 'white', fontSize: 16}}>Продолжить</Text>
             </View>
           </TouchableOpacity>
-          <View style={styles.head}>
-            <Text style={styles.textIdentifikatsiya}>Идентификация</Text>
-          </View>
-          <View style={styles.headback}>
-            <RU />
-          </View>
-        </View>
-        <View style={styles.text}>
-          <Text style={styles.text1}>Персональные данные</Text>
-        </View>
-        <View style={styles.nomer1}>
-          <Text style={styles.nomer}>ФИО</Text>
-        </View>
-        <View style={styles.sectionInput1}>
-          <TextInput
-            style={styles.input}
-            placeholder="Марина Волкова Александрова"
-            placeholderTextColor={'grey'}
-          />
-        </View>
-        <View style={styles.nomer1}>
-          <Text style={styles.nomer}>Номер паспорта</Text>
-        </View>
-        <View style={styles.headinput}>
-          <View style={styles.littleinput}>
-            <TextInput
-              style={styles.input}
-              placeholder="AA"
-              placeholderTextColor={'grey'}
+          {/* <TouchableOpacity onPress={DrawerNavigator}>
+            <View style={styles.skipButton}>
+              <Text style={{color: '#427CF8', fontSize: 16}}>Пропустить</Text>
+            </View>
+          </TouchableOpacity>
+          <View style={styles.img}>
+            <Image
+              source={require('../../assets/images/IndicatorIcon2.png')}
+              style={{height: 9, width: 31}}
             />
-          </View>
-
-          <View style={styles.sectionInput}>
-            <TextInput
-              style={styles.input}
-              placeholder="Номер паспорта"
-              placeholderTextColor={'grey'}
-            />
-          </View>
-        </View>
-        <View style={styles.nomer1}>
-          <Text style={styles.nomer}>Год рождения</Text>
-        </View>
-        <View style={styles.sectionInput1}>
-          <TextInput
-            style={styles.input}
-            placeholder="16.09.2002"
-            placeholderTextColor={'grey'}
-          />
-        </View>
-        <View style={styles.nomer1}>
-          <Text style={styles.nomer}>Адрес проживания</Text>
-        </View>
-        <View style={styles.sectionInput1}>
-          <TextInput
-            style={styles.input}
-            placeholder="г. Ташкент, Мирабадский р-н, 5кв, д30-21"
-            placeholderTextColor={'grey'}
-          />
+          </View> */}
         </View>
       </View>
-      <View style={{}}>
-        <TouchableOpacity onPress={Setpin}>
-          <View style={styles.nextButton}>
-            <Text style={{color: 'white', fontSize: 14}}>Продолжить</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={DrawerNavigator}>
-          <View style={styles.skipButton}>
-            <Text style={{color: '#427CF8', fontSize: 14}}>Пропустить</Text>
-          </View>
-        </TouchableOpacity>
-        <View style={styles.img}>
-          <Image
-            source={require('../../assets/images/IndicatorIcon2.png')}
-            style={{height: 9, width: 32}}
-          />
-        </View>
-      </View>
-      {/* </KeyboardAwareScrollView> */}
     </View>
   );
 };
@@ -122,50 +131,71 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffff',
-    paddingHorizontal: 24,
-    paddingVertical: 51,
+  },
+  flex: {
+    flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
+    backgroundColor: '#FFF',
+    paddingHorizontal: 24,
+    paddingVertical: 45,
   },
   headback: {
     backgroundColor: '#ffff',
-    borderWidth: 0.5,
+    borderWidth: 1,
     borderColor: '#EAEFF3',
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
     padding: 15,
+    marginTop: 52,
   },
+  headbar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 24,
+    alignItems: 'center',
+  },
+
+  headtext: {
+    color: '#3554D1',
+    fontSize: 18,
+    textAlign: 'center',
+    fontWeight: '600',
+    marginTop: 52,
+  },
+
   nomer: {
-    color: 'black',
-    fontSize: 12,
+    color: '#12154C',
+    fontSize: 14,
     fontWeight: '700',
   },
   nomer1: {
     marginTop: 20,
   },
   head: {
-    marginTop: 15,
+    height: 109,
+    width: '100%',
+    paddingHorizontal: 24,
+    backgroundColor: '#FFF',
+    borderWidth: 1,
+    borderColor: '#EAE9EE',
   },
-  textIdentifikatsiya: {
-    color: '#427CF8',
-    fontSize: 16,
+  headText: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#3554D1',
+    marginTop: 52,
+    textAlign: 'center',
   },
-  headbar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  text: {
-    marginTop: 32,
-  },
+  text: {},
   text1: {
-    color: '#427CF8',
-    fontSize: 22,
-    paddingLeft: 20,
+    color: '#3554D1',
+    fontSize: 24,
+    fontWeight: '700',
   },
   text2: {
     marginTop: 10,
-    marginLeft: 15,
   },
   text3: {
     color: 'grey',

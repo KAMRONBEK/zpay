@@ -56,19 +56,19 @@ const Intro = () => {
         <View style={style.carter}>
           <TouchableOpacity onPress={Register}>
             <View style={style.nextButton}>
-              <Text style={{color: 'white', fontSize: 14}}>
+              <Text style={{color: 'white', fontSize: 16}}>
                 Зарегистрироваться
               </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={Entrance}>
             <View style={style.skipButton}>
-              <Text style={{color: 'white', fontSize: 14}}>Войти</Text>
+              <Text style={{color: 'white', fontSize: 16}}>Войти</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={DrawerNavigator}>
             <View style={style.skipButton2}>
-              <Text style={{color: '#3554D1', fontSize: 14}}>Пропустить</Text>
+              <Text style={{color: '#3554D1', fontSize: 16}}>Пропустить</Text>
             </View>
           </TouchableOpacity>
         </View>

@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#000000',
-    fontSize: 16,
+    fontSize: 18,
   },
   kub: {
     height: 76,

@@ -84,16 +84,18 @@ const styles = StyleSheet.create({
     marginTop: 30.7,
   },
   text1: {
-    color: 'black',
-    fontSize: 22,
+    color: '#12154C',
+    fontSize: 24,
+    fontWeight: '700',
   },
   text2: {
     alignItems: 'center',
     marginTop: 5,
   },
   text3: {
-    color: 'grey',
-    fontSize: 12,
+    color: '#878B9A',
+    fontSize: 14,
+    fontWeight: '700',
   },
   time: {
     color: 'black',

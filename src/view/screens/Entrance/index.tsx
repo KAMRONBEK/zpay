@@ -45,13 +45,13 @@ const Entrance = () => {
       </View>
       <TouchableOpacity onPress={VerificationNumber}>
         <View style={styles.nextButton}>
-          <Text style={{color: 'white', fontSize: 14}}>Продолжить</Text>
+          <Text style={{color: 'white', fontSize: 16}}>Продолжить</Text>
         </View>
       </TouchableOpacity>
       <View style={styles.img}>
         <Image
           source={require('../../assets/images/IndicatorIcon.png')}
-          style={{height: 10, width: 33}}
+          style={{height: 10, width: 35}}
         />
       </View>
     </View>
@@ -84,9 +84,10 @@ const styles = StyleSheet.create({
   },
   enter: {},
   entertext: {
-    color: '#427CF8',
+    color: '#3554D1',
     fontSize: 24,
     marginTop: 62,
+    fontWeight: '700',
   },
   number: {
     marginTop: 30,
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
   },
   input: {
     color: '#12154C',
-    padding:12
+    padding: 12,
   },
 
   nextButton: {

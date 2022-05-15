@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
   },
   buttontext: {
     color: '#FFFFFF',
-    fontSize: 14,
+    fontSize: 16,
   },
 });

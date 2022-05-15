@@ -7,8 +7,8 @@ import Instruction1 from '../Instruction1';
 
 const Enter = () => {
   let navigation = useNavigation();
-  const Instruction1 = () => {
-    navigation.navigate('instruction1');
+  const InstructionCarousel = () => {
+    navigation.navigate('instructioncarousel');
   };
 
   // const arr = ['first', 'second', 'third'];
@@ -48,9 +48,9 @@ const Enter = () => {
           style={{
             marginTop: 20,
             color: '#FFF',
-            fontSize: 14,
-            fontWeight: '600',  
-            textAlign:'center' 
+            fontSize: 16,
+            fontWeight: '600',
+            textAlign: 'center',
           }}>
           Технология вдохновленная прозрачностью
         </Text>
@@ -58,7 +58,7 @@ const Enter = () => {
       <View style={[styles.container1, styles.horizontal]}>
         <ActivityIndicator size="large" color="#94A1F0" />
       </View>
-      <TouchableOpacity onPress={Instruction1}>
+      <TouchableOpacity onPress={InstructionCarousel}>
         <View style={styles.headtext}>
           <Text style={styles.text}>{newName}</Text>
         </View>
@@ -72,7 +72,7 @@ export default Enter;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3554D1',
+    backgroundColor: '#3554d1',
     paddingHorizontal: 44,
   },
   img: {
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#FFFFFF',
     textAlign: 'center',
   },

@@ -22,7 +22,7 @@ const ScanerFace = () => {
   return (
     <View style={styles.container1}>
       <View style={styles.headflex}>
-        <Text>hjvhbm</Text>
+        <View style={styles.headback1}></View>
         <View style={styles.headback}>
           <RU />
         </View>
@@ -47,7 +47,7 @@ const ScanerFace = () => {
                 width: windowWidth / 3.2,
                 // backgroundColor: 'red',
                 marginLeft: 10,
-                bottom:3
+                bottom: 3,
               }}
             />
           </View>
@@ -71,7 +71,7 @@ const ScanerFace = () => {
       </View>
       <TouchableOpacity onPress={Scanerojidaniya}>
         <View style={styles.nextButton}>
-          <Text style={{color: '#427CF8', fontSize: 14}}>
+          <Text style={{color: '#33409E', fontSize: 16, fontWeight: '700'}}>
             Вам нужна помощь?
           </Text>
         </View>
@@ -99,20 +99,27 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   headback: {
-    // position: 'absolute',
     backgroundColor: '#FFF',
     borderWidth: 1,
     borderColor: '#EAEFF3',
     borderRadius: 10,
-    // alignItems: 'center',
-    // padding: 17,
+
     height: 57,
     width: 41,
     justifyContent: 'center',
-    // marginLeft: 320,
-    // marginTop: -405,
+
     alignItems: 'center',
     right: 0,
+  },
+  headback1: {
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+
+    height: 57,
+    width: 41,
+    justifyContent: 'center',
+
+    alignItems: 'center',
   },
   headflex: {
     flexDirection: 'row',
@@ -139,16 +146,17 @@ const styles = StyleSheet.create({
     marginTop: 30.7,
   },
   text1: {
-    color: 'black',
-    fontSize: 22,
+    color: '#12154C',
+    fontSize: 24,
+    fontWeight: '700',
   },
   text2: {
     alignItems: 'center',
     marginTop: 5,
   },
   text3: {
-    color: 'grey',
-    fontSize: 12,
+    color: '878B9A',
+    fontSize: 14,
   },
   nextButton: {
     // backgroundColor: '#427CF8',

@@ -125,13 +125,13 @@ const VerificationNumber = () => {
           </View>
           <TouchableOpacity onPress={DrawerNavigator}>
             <View style={styles.nextButton}>
-              <Text style={{color: 'white', fontSize: 14}}>Потвердить</Text>
+              <Text style={{color: 'white', fontSize: 16}}>Потвердить</Text>
             </View>
           </TouchableOpacity>
           <View style={styles.img}>
             <Image
               source={require('../../assets/images/IndicatorIcon2.png')}
-              style={{height: 10, width: 33}}
+              style={{height: 10, width: 35}}
             />
           </View>
         </View>
@@ -172,8 +172,9 @@ const styles = StyleSheet.create({
     paddingLeft: 27,
   },
   text1: {
-    color: 'blue',
-    fontSize: 22,
+    color: '#3554D1',
+    fontSize: 24,
+    fontWeight: '700',
   },
   text2: {
     marginTop: 20,
@@ -182,6 +183,7 @@ const styles = StyleSheet.create({
   text3: {
     color: 'grey',
     fontSize: 16,
+    fontWeight: '600',
   },
   number: {
     color: 'blue',
@@ -191,12 +193,12 @@ const styles = StyleSheet.create({
 
   code: {
     color: 'grey',
-    fontSize: 12,
+    fontSize: 14,
     alignItems: 'center',
   },
   code1: {
     color: '#427CF8',
-    fontSize: 12,
+    fontSize: 14,
     alignItems: 'center',
   },
   codetext: {

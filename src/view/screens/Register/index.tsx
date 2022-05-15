@@ -35,6 +35,9 @@ const Register = () => {
         <View style={styles.text}>
           <Text style={styles.text1}>Регистрация</Text>
         </View>
+        <Text style={{fontSize: 16, color: '#878B9A', marginTop: 10}}>
+          Создание нового аккунта
+        </Text>
         <View style={styles.text2}>
           <Text style={styles.text3}>Номер телефона</Text>
         </View>
@@ -92,16 +95,17 @@ const styles = StyleSheet.create({
     marginTop: 62,
   },
   text1: {
-    color: 'blue',
-    fontSize: 22,
+    color: '#3554D1',
+    fontSize: 24,
     // paddingLeft: 20,
+    fontWeight: '700',
   },
   text2: {
-    marginTop: 30,
+    marginTop: 20,
   },
   text3: {
     color: '#12154C',
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: 'bold',
     // paddingLeft: 20,
   },
@@ -110,15 +114,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    // paddingHorizontal: 24,
-    padding: 12,
-    // marginTop: 25,
-    // marginVertical: 25,
     borderWidth: 0.5,
     borderColor: '#EAEFF3',
     marginTop: 11,
   },
-
   border: {
     height: 23,
     width: 1,
@@ -127,9 +126,8 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   input: {
-    // paddingHorizontal: 20,
-    // backgroundColor: 'red',
     color: '#12154C',
+    padding: 12,
   },
   checkIcon: {
     // alignItems: 'flex-end',

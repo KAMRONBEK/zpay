@@ -32,7 +32,7 @@ const Contractss = () => {
   return (
     <View style={styles.container}>
       <View style={styles.head}>
-        <View style={styles.headtext}>
+        <View style={styles.head1}>
           <TouchableOpacity onPress={navigation.goBack}>
             <View style={styles.back}>
               <Back />
@@ -41,6 +41,7 @@ const Contractss = () => {
           <View style={styles.no}>
             <Text style={styles.text}>№202013 от 22.01.2022</Text>
           </View>
+          <View style={styles.back1}></View>
         </View>
       </View>
       <SafeAreaView style={styles.safeariaview}>
@@ -204,9 +205,14 @@ const styles = StyleSheet.create({
   head: {
     height: 109,
     width: '100%',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF',
     paddingHorizontal: 24,
-    paddingVertical: 52,
+  },
+  head1: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 52,
   },
   back: {
     height: 40,
@@ -218,26 +224,30 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#EAEFF3',
   },
-  headtext: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  back1: {
+    height: 40,
+    width: 40,
+    borderRadius: 10,
+    backgroundColor: '#FFF',
   },
+
   no: {
     marginHorizontal: 37,
     // alignItems: 'center',
     // justifyContent: 'center',
   },
   text: {
-    color: '#12154C',
+    color: '#3554D1',
     fontSize: 18,
+    fontWeight: '600',
   },
   number: {
     marginTop: 30,
   },
   numbertext: {
-    fontSize: 16,
+    fontSize: 24,
     color: '#12154C',
-    fontWeight: '600',
+    fontWeight: '800',
   },
   text2: {
     marginTop: 8,
@@ -246,8 +256,9 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   text3: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#878B9A',
+    fontWeight: '600',
   },
   grafik: {
     marginTop: 28,
@@ -307,7 +318,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
   },
   buttontext: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#FFFFFF',
   },
   contract: {

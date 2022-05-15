@@ -14,6 +14,7 @@ import {XIcon} from '../../assets/icons/icon';
 import {useNavigation} from '@react-navigation/native';
 import {Image} from 'react-native';
 import {transparent} from 'react-native-paper/lib/typescript/styles/colors';
+import TorchLight from '../BottomSheet';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -105,7 +106,7 @@ const Appp = () => {
 
               <View style={styles.leftAndRightOverlay} />
             </View>
-            <TouchableOpacity onPress={onPressHandler}>
+            {/* <TouchableOpacity onPress={onPressHandler}>
               <View style={styles.icon}>
                 <Image source={require('../../assets/images/flash.png')} />
                 <Text
@@ -116,7 +117,8 @@ const Appp = () => {
                   {text}
                 </Text>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
+            <TorchLight />
 
             <View style={styles.bottomOverlay} />
           </View>

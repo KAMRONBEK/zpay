@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   img: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 35,
+    marginTop: 40,
   },
   instruction: {
     // flex: 1,
@@ -135,12 +135,12 @@ const styles = StyleSheet.create({
   },
   instructionText: {
     color: '#000000',
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: 'bold',
   },
   instructionText2: {
     color: '#878B9A',
-    fontSize: 12,
+    fontSize: 14,
     // marginTop: 10,
     paddingVertical: 10,
     // backgroundColor: 'red',

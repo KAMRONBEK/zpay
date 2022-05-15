@@ -121,7 +121,7 @@ const CustomDrawer = (props, index) => {
               <View style={styles.drawer}>
                 <Text style={styles.drawertext1}>Уведомления</Text>
               </View>
-              <View style={styles.switch}>
+              {/* <View style={styles.switch}>
                 <Switch
                   trackColor={{false: '#EAE9EE', true: '#767577'}}
                   thumbColor={isEnabled ? '#3554D1' : '#f4f3f4'}
@@ -129,7 +129,7 @@ const CustomDrawer = (props, index) => {
                   onValueChange={toggleSwitch}
                   value={isEnabled}
                 />
-              </View>
+              </View> */}
             </View>
           </View>
         </TouchableOpacity>
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
   },
   headtext: {
     color: '#12154C',
-    fontSize: 28,
+    fontSize: 32,
   },
   verify: {
     flexDirection: 'row',
@@ -285,8 +285,7 @@ const styles = StyleSheet.create({
   },
   verifytext: {
     color: '#878B9A',
-    fontSize: 14,
-    marginTop: 2,
+    fontSize: 16,
   },
   checkicon: {
     marginLeft: 11,
@@ -317,11 +316,13 @@ const styles = StyleSheet.create({
   },
   incontainertext1: {
     color: '#12154C',
-    fontSize: 15,
+    fontSize: 16,
+    fontWeight: '600',
   },
   incontainertext2: {
     color: '#32B179',
     fontSize: 12,
+    fontWeight: '600',
   },
   standart: {
     height: 33,
@@ -380,8 +381,8 @@ const styles = StyleSheet.create({
 
   drawertext1: {
     color: '#121F3E',
-    fontSize: 14,
-    fontWeight: '600',
+    fontSize: 16,
+    fontWeight: '700',
   },
   bottom1: {
     // marginTop: 20,

@@ -69,9 +69,9 @@ const Verification = () => {
           <Text style={styles.text3}> на номер: </Text>
           <Text style={styles.number}>+998909900110</Text>
         </View>
-        <View style={styles.hour}>
+        {/* <View style={styles.hour}>
           <Text style={styles.hourtext}>0:57</Text>
-        </View>
+        </View> */}
       </View>
       {/* <TextInput
         ref={input => (textInput.current = input)}
@@ -110,7 +110,7 @@ const Verification = () => {
       </View>
       <TouchableOpacity onPress={Id}>
         <View style={styles.nextButton}>
-          <Text style={{color: 'white', fontSize: 14}}>Потвердить</Text>
+          <Text style={{color: 'white', fontSize: 16}}>Потвердить</Text>
         </View>
       </TouchableOpacity>
       <View style={styles.img}>
@@ -137,16 +137,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#EAEFF3',
     borderRadius: 10,
-    // marginHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    // paddingHorizontal: 15,
     padding: 15,
   },
   headbar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    // marginVertical: 52,
   },
   headnumber: {
     flexDirection: 'row',
@@ -157,8 +154,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text1: {
-    color: 'blue',
-    fontSize: 22,
+    color: '#3554D1',
+    fontSize: 24,
+    fontWeight: '600',
     // paddingLeft: 20,
   },
   text2: {
@@ -166,13 +164,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text3: {
-    color: 'grey',
-    fontSize: 14,
+    color: '#878B9A',
+    fontSize: 16,
     justifyContent: 'center',
   },
   number: {
     color: 'blue',
-    fontSize: 14,
+    fontSize: 16,
     marginTop: 3,
   },
   hour: {
@@ -194,7 +192,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   codetext: {
-    marginTop: 15,
+    marginTop: 20,
     flexDirection: 'row',
     alignSelf: 'center',
   },
@@ -203,7 +201,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     // marginHorizontal: 30,
     alignItems: 'center',
-    marginTop: 29,
+    marginTop: 70,
     borderWidth: 1,
     borderColor: '#EAEFF3',
     paddingVertical: 15,

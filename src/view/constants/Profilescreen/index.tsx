@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#878B9A',
-    fontSize: 22,
+    fontSize: 24,
     marginHorizontal: 5,
   },
   id: {
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   },
   idtext: {
     color: '#32B179',
-    fontSize: 14,
+    fontSize: 16,
   },
   limit: {
     alignItems: 'center',
@@ -150,16 +150,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 3,
   },
   limittext: {
-    fontSize: 22,
+    fontSize: 24,
     color: '#12154C',
-    fontWeight: '600',
+    fontWeight: '700',
   },
   textlimit: {
     alignItems: 'center',
     marginVertical: 5,
   },
   textlimitt: {
-    fontSize: 20,
+    fontSize: 24,
     color: '#12154C',
   },
   border: {
@@ -171,10 +171,11 @@ const styles = StyleSheet.create({
   },
 
   bordertext: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#121F3E',
     marginVertical: 19,
     marginHorizontal: 25.8,
+    fontWeight: '700',
   },
   width: {
     flexDirection: 'row',

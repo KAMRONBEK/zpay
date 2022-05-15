@@ -38,8 +38,8 @@ const Scaner = () => {
             source={require('../../assets/images/UserImg1.png')}
             style={{
               position: 'absolute',
-              height: windowHeight / 4.6,
-              width: windowWidth / 1.9,
+              height: windowHeight / 4.5,
+              width: windowWidth / 1.8,
               // alignItems:'center',
               // justifyContent:'center'
             }}
@@ -51,9 +51,9 @@ const Scaner = () => {
                 position: 'absolute',
                 zIndex: 99,
                 height: windowHeight / 6.9,
-                width: windowWidth / 3.2,
-                left:30,
-                top:30,
+                width: windowWidth / 3.1,
+                left: 30,
+                top: 30,
               }}
             />
           </View>
@@ -61,7 +61,7 @@ const Scaner = () => {
             source={require('../../assets/images/MyId1.png')}
             style={{
               height: windowHeight / 3.4,
-              width: windowWidth / 1.51,
+              width: windowWidth / 1.47,
               // backgroundColor: 'red',
             }}
           />
@@ -90,7 +90,7 @@ const Scaner = () => {
       </View>
       <TouchableOpacity onPress={ScanerFace}>
         <View style={styles.nextButton}>
-          <Text style={{color: 'white', fontSize: 14}}>
+          <Text style={{color: 'white', fontSize: 17}}>
             Начать сканирование
           </Text>
         </View>
@@ -158,16 +158,18 @@ const styles = StyleSheet.create({
     marginTop: 52,
   },
   text1: {
-    color: 'black',
-    fontSize: 22,
+    color: '#12154C',
+    fontSize: 24,
+    fontWeight: '700',
   },
   text2: {
     alignItems: 'center',
     marginTop: 5,
   },
   text3: {
-    color: 'grey',
-    fontSize: 12,
+    color: '#878B9A',
+    fontSize: 14,
+    fontWeight: '700',
   },
   nextButton: {
     backgroundColor: '#427CF8',

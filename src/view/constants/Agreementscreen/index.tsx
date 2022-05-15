@@ -25,9 +25,7 @@ const AgreementScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.head}>
-        <View style={styles.texthead}>
-          <Text style={styles.headtext}>Мои договора</Text>
-        </View>
+        <Text style={styles.headtext}>Мои договора</Text>
       </View>
       <View style={styles.ekran}>
         {/* <View style={styles.monitoring}>
@@ -122,21 +120,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
   head: {
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF',
     height: 109,
-    borderWidth: 1,
-    borderColor: '#F2F5F8',
+    width: '100%',
   },
   headtext: {
-    color: '#12154C',
-    fontSize: 16,
+    color: '#3554D1',
+    fontSize: 18,
     fontWeight: '600',
+    marginTop: 52,
+    textAlign: 'center',
   },
-  texthead: {
-    alignSelf: 'center',
-    marginTop: 58,
-  },
+
   search: {
     height: 50,
     width: '100%',

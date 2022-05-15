@@ -100,20 +100,23 @@ const styles = StyleSheet.create({
     marginTop: 75,
   },
   text1: {
-    color: 'black',
-    fontSize: 22,
+    color: '#12154C',
+    fontSize: 24,
+    fontWeight: '700',
   },
   text2: {
     alignItems: 'center',
     marginTop: 5,
   },
   text3: {
-    color: 'grey',
-    fontSize: 12,
+    color: '#878B9A',
+    fontSize: 14,
+    fontWeight: '700',
   },
   text4: {
     color: '#3554D1',
-    fontSize: 14,
+    fontSize: 16,
+    fontWeight: '700',
   },
   textnazad: {
     alignItems: 'center',

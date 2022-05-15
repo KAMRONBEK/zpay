@@ -47,7 +47,7 @@ export default function Carusel() {
             <View
               style={[styles.kartu, {backgroundColor: item.backgroundColor}]}>
               <View style={styles.zback}>
-                <Image source={item.url4} style={{height: 206, width: 278}} />
+                <Image source={item.url4} style={{height: 170, width: 225}} />
               </View>
               <View style={styles.text}>
                 <Text style={styles.headtext}>{item.cartName}</Text>
@@ -76,22 +76,22 @@ export default function Carusel() {
                 </View>
               </View>
               <View style={styles.ugl2}>
-                <Image source={item.url3} style={{height: 109, width: 143}} />
+                <Image source={item.url3} style={{height: 99, width: 131}} />
               </View>
               <View style={styles.humoCircle}>
-                <Image source={item.url5} style={{height: 54, width: 166}} />
+                <Image source={item.url5} style={{height: 42, width: 130}} />
               </View>
               <View style={styles.ugl}>
-                <Image source={item.url2} style={{height: 109, width: 143}} />
+                <Image source={item.url2} style={{height: 99, width: 131}} />
               </View>
               <View style={styles.zpay}>
                 <Image source={item.url} style={{height: 42, width: 48}} />
               </View>
               <View style={styles.humoTocka}>
-                <Image source={item.url6} style={{height: 58, width: 58}} />
+                <Image source={item.url6} style={{height: 88, width: 68}} />
               </View>
               <View style={styles.humoCircle2}>
-                <Image source={item.url7} style={{height: 184, width: 202}} />
+                <Image source={item.url7} style={{height: 104, width: 119}} />
               </View>
             </View>
           </View>
@@ -158,13 +158,13 @@ const styles = StyleSheet.create({
   },
   humoTocka: {
     position: 'absolute',
-    marginTop: 150,
+    marginTop: 120,
     // marginLeft: 20,
   },
   humoCircle2: {
     position: 'absolute',
-    marginLeft: 126,
-    marginTop: 86,
+    marginLeft: 150,
+    marginTop: 66,
   },
   image: {
     height: 206,
@@ -187,8 +187,8 @@ const styles = StyleSheet.create({
     // marginTop: 20,
   },
   kartu: {
-    height: 206.19,
-    width: 327,
+    height: 170,
+    width: 270,
     backgroundColor: '#4A6AB3',
     marginTop: 39,
     borderRadius: 11.71,
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
   },
 
   ugl: {
-    marginLeft: 184,
+    marginLeft: 140,
     bottom: 0,
     position: 'absolute',
   },
@@ -215,11 +215,12 @@ const styles = StyleSheet.create({
   },
   number: {
     zIndex: 99,
-    marginTop: 72,
+    marginTop: 37,
   },
   numbertext: {
-    fontSize: 23.29,
+    fontSize: 19,
     color: '#FFF',
+    fontWeight: '700',
   },
   numbertext3: {
     fontSize: 24,
@@ -234,7 +235,7 @@ const styles = StyleSheet.create({
   },
   card3: {
     marginTop: 27,
-    marginLeft: 67,
+    marginLeft: 53,
   },
   cardtext: {
     fontSize: 6.39,
@@ -255,7 +256,7 @@ const styles = StyleSheet.create({
   },
   data: {
     marginTop: 6.39,
-    marginLeft: 80,
+    marginLeft: 60,
   },
   datatext: {
     fontSize: 10.64,
@@ -267,11 +268,11 @@ const styles = StyleSheet.create({
   karta: {
     flexDirection: 'row',
     // justifyContent: 'space-between',
-    marginHorizontal: 10,
+    marginHorizontal: 30,
   },
   zpay: {
     position: 'absolute',
-    marginLeft: 250,
+    marginLeft: 200,
     marginTop: 20,
   },
   headtext: {
