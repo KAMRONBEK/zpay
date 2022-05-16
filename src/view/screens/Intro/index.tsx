@@ -19,8 +19,8 @@ const imgBackgroundWidth = SCREEN_WIDTH * 0.99;
 
 const Intro = () => {
   let navigation = useNavigation();
-  const Register = () => {
-    navigation.navigate('register');
+  const RegisterCarousel = () => {
+    navigation.navigate('registercarousel');
   };
   const Entrance = () => {
     navigation.navigate('entrance');
@@ -54,7 +54,7 @@ const Intro = () => {
           </View>
         </View>
         <View style={style.carter}>
-          <TouchableOpacity onPress={Register}>
+          <TouchableOpacity onPress={RegisterCarousel}>
             <View style={style.nextButton}>
               <Text style={{color: 'white', fontSize: 16}}>
                 Зарегистрироваться

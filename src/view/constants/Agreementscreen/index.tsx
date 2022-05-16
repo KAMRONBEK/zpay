@@ -123,9 +123,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     height: 109,
     width: '100%',
+    borderWidth: 1,
+    borderColor: '#EAE9EE',
   },
   headtext: {
-    color: '#3554D1',
+    color: '#12154C',
     fontSize: 18,
     fontWeight: '600',
     marginTop: 52,

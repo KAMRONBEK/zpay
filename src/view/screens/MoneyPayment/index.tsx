@@ -42,8 +42,9 @@ const MoneyPayment = () => {
               <View style={styles.container2}>
                 <TextInput
                   style={styles.input}
-                  placeholder=""
-                  placeholderTextColor={'grey'}
+                  // placeholder=""
+                  // placeholderTextColor={'grey'}
+                  keyboardType="number-pad"
                 />
               </View>
               <View style={styles.oplati}>
@@ -262,6 +263,7 @@ const styles = StyleSheet.create({
   input: {
     padding: 12,
     color: '#12154C',
+    width: '100%',
   },
   modalView: {
     borderBottomWidth: 0.5,
@@ -305,7 +307,7 @@ const styles = StyleSheet.create({
   },
   bila: {
     alignItems: 'center',
-    margin:10
+    margin: 10,
   },
   oplatatext: {
     fontSize: 16,

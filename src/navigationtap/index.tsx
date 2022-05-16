@@ -6,16 +6,6 @@ import HomeScreen from '../view/constants/Homescreen';
 import AgreementScreen from '../view/constants/Agreementscreen';
 import MycardScreen from '../view/constants/Mycardscreen';
 import ProfileScreen from '../view/constants/Profilescreen';
-import {
-  Briefcase,
-  BriefcaseIcon,
-  Cartholder,
-  CartholderIcon,
-  Home,
-  HomeIcon,
-  Profil,
-  ProfilIcon,
-} from '../view/assets/icons/icon';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,7 +17,7 @@ const TabNavigation = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           bottom: 0,
-          height: 90,
+          height: 70,
         },
         tabBarActiveTintColor: 'black',
         tabBarInactiveTintColor: 'red',

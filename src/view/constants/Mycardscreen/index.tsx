@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     borderColor: '#EAE9EE',
   },
   headtext: {
-    color: '#3554D1',
+    color: '#12154C',
     fontSize: 18,
     textAlign: 'center',
     fontWeight: '700',

@@ -38,7 +38,9 @@ const AddMyCard = () => {
   // };
 
   return (
-    <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
+    <KeyboardAwareScrollView
+      showsVerticalScrollIndicator={false}
+      style={{backgroundColor: '#FFF'}}>
       <View style={styles.container}>
         <View style={styles.headbar}>
           <TouchableOpacity onPress={navigation.goBack}>
@@ -68,6 +70,7 @@ const AddMyCard = () => {
               style={styles.input}
               placeholder="0000 0000 0000 0000"
               placeholderTextColor={'grey'}
+              keyboardType="number-pad"
             />
             <Scan />
           </View>
@@ -79,6 +82,7 @@ const AddMyCard = () => {
               style={styles.input}
               placeholder="дата/год истечения"
               placeholderTextColor={'grey'}
+              keyboardType="number-pad"
             />
           </View>
           <View style={styles.numberkarta2}>
@@ -89,6 +93,7 @@ const AddMyCard = () => {
               style={styles.input}
               placeholder="Дайте название карты"
               placeholderTextColor={'grey'}
+              keyboardType="number-pad"
             />
           </View>
           <TouchableOpacity onPress={AddCardFinish}>
@@ -108,8 +113,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    // paddingVertical: 47,
-    // paddingHorizontal: 24,
   },
   container1: {
     flex: 1,
@@ -189,6 +192,7 @@ const styles = StyleSheet.create({
   input: {
     padding: 10,
     color: '#12154C',
+    width: '80%',
   },
   nextButton: {
     backgroundColor: '#3554D1',

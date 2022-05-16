@@ -35,13 +35,24 @@ const Entrance = () => {
         <Text style={styles.numbertext}>Номер телефона</Text>
       </View>
       <View style={styles.sectionInput}>
-        <Flag />
+        <Flag style={{marginLeft: 18}} />
         <View style={styles.border} />
+        <Text style={{color: '#12154C'}}>+998</Text>
         <TextInput
           style={styles.input}
-          placeholder="номер телефона"
-          placeholderTextColor={'grey'}
+          keyboardType="number-pad"
+          // placeholder="+998"
+          // placeholderTextColor={'#12154C'}
+          // value="This cannot be edited"
+          // secureTextEntry={true}
         />
+        {/* <TextInputMask
+  onChangeText={(formatted, extracted) => {
+    console.log(formatted) // +1 (123) 456-78-90
+    console.log(extracted) // 1234567890
+  }}
+  mask={"+1 ([000]) [000] [00] [00]"}
+/> */}
       </View>
       <TouchableOpacity onPress={VerificationNumber}>
         <View style={styles.nextButton}>
@@ -98,27 +109,26 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   sectionInput: {
-    backgroundColor: '#ffff',
-    // height: 52,
-    width: '100%',
+    backgroundColor: '#FFF',
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 18,
-    marginTop: 11,
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderColor: '#EAEFF3',
+    marginTop: 11,
   },
-
   border: {
     height: 23,
     width: 1,
     backgroundColor: 'grey',
-    marginLeft: 20,
+    marginRight: 10,
+    marginLeft: 15,
   },
   input: {
     color: '#12154C',
     padding: 12,
+    width: '100%',
+    paddingHorizontal: 2,
   },
 
   nextButton: {

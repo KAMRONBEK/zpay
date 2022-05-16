@@ -13,6 +13,7 @@ import {
 import {Back, EnterIcon} from '../../assets/icons/icon';
 import CaruselStore from '../CaruselStore';
 import FlatlistTitle from '../FlatList';
+import {StoreCarousel} from '../StoreCarousel';
 
 const PartnerStore = () => {
   let navigation = useNavigation();
@@ -49,7 +50,7 @@ const PartnerStore = () => {
         <View style={styles.scroll}>
           <FlatlistTitle />
         </View>
-        <CaruselStore />
+        <StoreCarousel />
         <View style={styles.tovari}>
           <Text style={styles.tovaritext}>Лучшие товары</Text>
           <TouchableOpacity onPress={handle}>
@@ -62,13 +63,22 @@ const PartnerStore = () => {
           showVerticalIndicator={false}>
           <View style={styles.row}>
             <View style={styles.kub}>
-              <Image source={require('../../assets/images/stul.png')} />
+              <Image
+                source={require('../../assets/images/chair.png')}
+                style={{height: 60, width: 60}}
+              />
             </View>
             <View style={styles.kub}>
-              <Image source={require('../../assets/images/officestul.png')} />
+              <Image
+                source={require('../../assets/images/chair2.png')}
+                style={{height: 68, width: 68}}
+              />
             </View>
             <View style={styles.kub}>
-              <Image source={require('../../assets/images/stol.png')} />
+              <Image
+                source={require('../../assets/images/table.png')}
+                style={{height: 54, width: 73}}
+              />
             </View>
           </View>
           <View style={styles.row}>
@@ -104,13 +114,22 @@ const PartnerStore = () => {
           showVerticalIndicator={false}>
           <View style={styles.row}>
             <View style={styles.kub}>
-              <Image source={require('../../assets/images/stul.png')} />
+              <Image
+                source={require('../../assets/images/chair.png')}
+                style={{height: 60, width: 60}}
+              />
             </View>
             <View style={styles.kub}>
-              <Image source={require('../../assets/images/officestul.png')} />
+              <Image
+                source={require('../../assets/images/chair2.png')}
+                style={{height: 68, width: 68}}
+              />
             </View>
             <View style={styles.kub}>
-              <Image source={require('../../assets/images/stol.png')} />
+              <Image
+                source={require('../../assets/images/table.png')}
+                style={{height: 54, width: 73}}
+              />
             </View>
           </View>
           <View style={styles.row}>
@@ -139,8 +158,10 @@ const styles = StyleSheet.create({
   head: {
     height: 109,
     width: '100%',
-    backgroundColor: '#33409E',
+    backgroundColor: '#FFF',
     paddingHorizontal: 24,
+    borderWidth: 1,
+    borderColor: '#F2F5F8',
   },
   bonus: {
     marginLeft: 70,
@@ -164,7 +185,7 @@ const styles = StyleSheet.create({
     marginTop: 52,
   },
   text: {
-    color: '#FFFFFF',
+    color: '#12154C',
     fontSize: 18,
   },
   scroll: {
@@ -202,7 +223,6 @@ const styles = StyleSheet.create({
     marginTop: 13,
   },
   tovari: {
-    marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

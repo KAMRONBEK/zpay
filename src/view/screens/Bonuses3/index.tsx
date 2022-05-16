@@ -53,6 +53,7 @@ const Bonuses3 = () => {
               style={styles.input}
               placeholder="|"
               placeholderTextColor={'grey'}
+              keyboardType="number-pad"
             />
           </View>
           <View style={styles.nomer1}>
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
     borderColor: '#EAEFF3',
     backgroundColor: '#FFFFFF',
     marginTop: 11,
-    justifyContent:'center'
+    justifyContent: 'center',
   },
   input: {
     padding: 12,
@@ -169,12 +170,12 @@ const styles = StyleSheet.create({
     borderColor: '#EAEFF3',
     backgroundColor: '#FFFFFF',
     marginTop: 11,
-    justifyContent:'center'
+    justifyContent: 'center',
   },
   input1: {
     padding: 12,
-    alignItems:'center',
-    justifyContent:'center'
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   skipbutton: {
     width: '100%',

@@ -21,7 +21,7 @@ const Id = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headbar}>
+      {/* <View style={styles.headbar}>
         <View style={styles.headbar1}>
           <TouchableOpacity onPress={navigation.goBack}>
             <View style={styles.headback}>
@@ -35,7 +35,7 @@ const Id = () => {
             <RU />
           </View>
         </View>
-      </View>
+      </View> */}
       <View style={styles.flex}>
         <View style={{}}>
           <View style={styles.text}>
@@ -62,12 +62,12 @@ const Id = () => {
                 style={styles.input}
                 placeholder="Номер паспорта"
                 placeholderTextColor={'grey'}
+                keyboardType="number-pad"
               />
               {/* <View style={styles.checkIcon}>
               <CheckIcon />
             </View> */}
             </View>
-            {/* </View> */}
           </View>
           <View style={styles.nomer1}>
             <Text style={styles.nomer}>Год рождения</Text>
@@ -77,6 +77,7 @@ const Id = () => {
               style={styles.input}
               placeholder="16.09.2002"
               placeholderTextColor={'grey'}
+              keyboardType="number-pad"
             />
             {/* <View style={styles.checkIcon1}>
             <CheckIcon />
@@ -84,7 +85,7 @@ const Id = () => {
           </View>
         </View>
 
-        <View style={{}}>
+        {/* <View style={{}}>
           <TouchableOpacity onPress={Scaner}>
             <View style={styles.nextButton}>
               <Text style={{color: 'white', fontSize: 16}}>Потвердить</Text>
@@ -101,7 +102,7 @@ const Id = () => {
               style={{height: 9, width: 30}}
             />
           </View>
-        </View>
+        </View> */}
       </View>
     </View>
   );
@@ -135,9 +136,7 @@ const styles = StyleSheet.create({
   nomer1: {
     marginTop: 20,
   },
-  head: {
-    // marginTop: 15,
-  },
+  head: {},
   textIdentifikatsiya: {
     color: '#3554D1',
     fontSize: 18,
@@ -188,6 +187,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.9,
     borderColor: '#EAEFF3',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   sectionInput: {
     height: 50,
@@ -229,6 +229,7 @@ const styles = StyleSheet.create({
     padding: 12,
     color: '#12154C',
     alignItems: 'center',
+    width: '100%',
   },
   checkIcon: {},
   checkIcon1: {

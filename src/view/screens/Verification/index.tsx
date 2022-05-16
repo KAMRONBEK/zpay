@@ -50,7 +50,7 @@ const Verification = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headbar}>
+      {/* <View style={styles.headbar}>
         <TouchableOpacity onPress={navigation.goBack}>
           <View style={styles.headback}>
             <Back />
@@ -59,7 +59,7 @@ const Verification = () => {
         <View style={styles.headback}>
           <RU />
         </View>
-      </View>
+      </View> */}
       <View style={styles.text}>
         <Text style={styles.text1}>Верификация номера</Text>
       </View>
@@ -73,14 +73,7 @@ const Verification = () => {
           <Text style={styles.hourtext}>0:57</Text>
         </View> */}
       </View>
-      {/* <TextInput
-        ref={input => (textInput.current = input)}
-        onChangeText={onChangeText}
-        style={{width: 0, height: 0}}
-        value={internalVal}
-        maxLength={lengthInput}
-        returnKeyType="done"
-      /> */}
+
       {/* <View style={styles.containerInput}>
         {Array(lengthInput)
           .fill()
@@ -108,7 +101,7 @@ const Verification = () => {
         <Text style={styles.code}>Не получили код?</Text>
         <Text style={styles.code1}>Переслать</Text>
       </View>
-      <TouchableOpacity onPress={Id}>
+      {/* <TouchableOpacity onPress={Id}>
         <View style={styles.nextButton}>
           <Text style={{color: 'white', fontSize: 16}}>Потвердить</Text>
         </View>
@@ -118,7 +111,7 @@ const Verification = () => {
           source={require('../../assets/images/IndicatorIcon2.png')}
           style={{height: 9.5, width: 32}}
         />
-      </View>
+      </View> */}
     </View>
   );
 };
@@ -130,7 +123,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffff',
     paddingHorizontal: 24,
-    paddingVertical: 51,
+    // paddingVertical: 51,
   },
   headback: {
     backgroundColor: '#ffff',

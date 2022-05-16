@@ -602,7 +602,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   texnotext: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#12154C',
   },
   hour: {
@@ -616,7 +616,7 @@ const styles = StyleSheet.create({
     marginLeft: 100,
   },
   uzstext: {
-    fontSize: 12,
+    fontSize: 14,
     color: '#12154C',
     fontWeight: 'bold',
   },

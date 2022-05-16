@@ -1,7 +1,20 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {Back, EnterIcon} from '../../assets/icons/icon';
+
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
+const SCREEN_WIDTH = Dimensions.get('screen').width;
+
+const imgHeight = SCREEN_HEIGHT * 0.04;
+const imgWidth = SCREEN_WIDTH * 0.21;
 
 const AboutProduct = () => {
   let navigation = useNavigation();
@@ -23,7 +36,10 @@ const AboutProduct = () => {
         <View style={styles.container3}>
           <View>
             <View>
-              <Image source={require('../../assets/images/jewrly.png')} />
+              <Image
+                source={require('../../assets/images/StoreBrand.png')}
+                style={styles.image}
+              />
             </View>
             <View style={styles.dolcevita}>
               <Text style={styles.dolcevitatext}>Серьги Etude из</Text>
@@ -103,7 +119,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderWidth: 1,
-    borderColor: '#E5E5E5',
+    borderColor: '#E5EBF0',
   },
   dolcevita: {
     marginTop: 6,
@@ -138,7 +154,15 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
   },
   buttontext: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#FFFFFF',
+  },
+  image: {
+    height: imgHeight,
+    width: imgWidth,
+    alignItems: 'center',
+    justifyContent: 'center',
+    resizeMode: 'contain',
+    backgroundColor: '#FFF',
   },
 });

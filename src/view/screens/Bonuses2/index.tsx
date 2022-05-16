@@ -47,7 +47,10 @@ const Bonuses2 = () => {
         <View style={styles.zcoin}>
           <View style={styles.zcointext}>
             <Text style={styles.textin}>560 000</Text>
-            <Text style={styles.textin2}>ZCoin</Text>
+            <Image
+              source={require('../../assets/images/ZcoinOrange.png')}
+              style={{height: 40, width: 40, marginLeft: 15}}
+            />
           </View>
           <View style={styles.zcointext2}>
             <Text style={styles.textin3}>накопленые</Text>

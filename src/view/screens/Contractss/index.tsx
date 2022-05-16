@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   text: {
-    color: '#3554D1',
+    color: '#12154C',
     fontSize: 18,
     fontWeight: '600',
   },
@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
   numbertext: {
     fontSize: 24,
     color: '#12154C',
-    fontWeight: '800',
+    fontWeight: '600',
   },
   text2: {
     marginTop: 8,

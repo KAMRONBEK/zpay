@@ -12,6 +12,7 @@ import {
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {Back, CheckIcon, Flag, RU} from '../../assets/icons/icon';
 import VerificationNumber from '../VerificationNumber';
+// import TextInputMask from 'react-native-text-input-mask';
 
 const Register = () => {
   let navigation = useNavigation();
@@ -21,36 +22,47 @@ const Register = () => {
 
   return (
     <View style={styles.container}>
-      <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.headbar}>
-          <TouchableOpacity onPress={navigation.goBack}>
-            <View style={styles.headback}>
-              <Back />
-            </View>
-          </TouchableOpacity>
+      {/* <KeyboardAwareScrollView showsVerticalScrollIndicator={false}> */}
+      {/* <View style={styles.headbar}>
+        <TouchableOpacity onPress={navigation.goBack}>
           <View style={styles.headback}>
-            <RU />
+            <Back />
           </View>
+        </TouchableOpacity>
+        <View style={styles.headback}>
+          <RU />
         </View>
-        <View style={styles.text}>
-          <Text style={styles.text1}>Регистрация</Text>
-        </View>
-        <Text style={{fontSize: 16, color: '#878B9A', marginTop: 10}}>
-          Создание нового аккунта
-        </Text>
-        <View style={styles.text2}>
-          <Text style={styles.text3}>Номер телефона</Text>
-        </View>
-        <View style={styles.sectionInput}>
-          <Flag style={{marginLeft: 18}} />
-          <View style={styles.border} />
-          <TextInput
-            style={styles.input}
-            placeholder="номер телефона"
-            placeholderTextColor={'grey'}
-          />
-        </View>
-        <TouchableOpacity onPress={Verification}>
+      </View> */}
+      <View style={styles.text}>
+        <Text style={styles.text1}>Регистрация</Text>
+      </View>
+      <Text style={{fontSize: 16, color: '#878B9A', marginTop: 10}}>
+        Создание нового аккунта
+      </Text>
+      <View style={styles.text2}>
+        <Text style={styles.text3}>Номер телефона</Text>
+      </View>
+      <View style={styles.sectionInput}>
+        <Flag style={{marginLeft: 18}} />
+        <View style={styles.border} />
+        <Text style={{color: '#12154C'}}>+998</Text>
+        <TextInput
+          style={styles.input}
+          keyboardType="number-pad"
+          // placeholder="+998"
+          // placeholderTextColor={'#12154C'}
+          // value="This cannot be edited"
+          // secureTextEntry={true}
+        />
+        {/* <TextInputMask
+  onChangeText={(formatted, extracted) => {
+    console.log(formatted) // +1 (123) 456-78-90
+    console.log(extracted) // 1234567890
+  }}
+  mask={"+1 ([000]) [000] [00] [00]"}
+/> */}
+      </View>
+      {/* <TouchableOpacity onPress={Verification}>
           <View style={styles.nextButton}>
             <Text style={{color: 'white', fontSize: 14}}>Продолжить</Text>
           </View>
@@ -60,8 +72,8 @@ const Register = () => {
             source={require('../../assets/images/IndicatorIcon.png')}
             style={{height: 9.1, width: 32}}
           />
-        </View>
-      </KeyboardAwareScrollView>
+        </View> */}
+      {/* </KeyboardAwareScrollView> */}
     </View>
   );
 };
@@ -73,17 +85,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF',
     paddingHorizontal: 24,
-    paddingVertical: 51,
+    // paddingVertical: 51,
   },
   headback: {
     backgroundColor: '#ffff',
     borderWidth: 0.5,
     borderColor: '#EAEFF3',
     borderRadius: 10,
-    // marginHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    // paddingHorizontal: 15,
     padding: 15,
   },
   headbar: {
@@ -128,6 +138,8 @@ const styles = StyleSheet.create({
   input: {
     color: '#12154C',
     padding: 12,
+    width: '100%',
+    paddingHorizontal: 2,
   },
   checkIcon: {
     // alignItems: 'flex-end',

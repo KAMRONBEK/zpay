@@ -78,6 +78,7 @@ const Id3 = () => {
                 style={styles.input}
                 placeholder="Номер паспорта"
                 placeholderTextColor={'grey'}
+                keyboardType="number-pad"
               />
             </View>
           </View>
@@ -89,6 +90,7 @@ const Id3 = () => {
               style={styles.input}
               placeholder="16.09.2002"
               placeholderTextColor={'grey'}
+              keyboardType="number-pad"
             />
           </View>
           <View style={styles.nomer1}>
@@ -260,6 +262,7 @@ const styles = StyleSheet.create({
     padding: 12,
     color: '#12154C',
     fontSize: 14,
+    width: '100%',
   },
   checkIcon: {
     paddingLeft: 90,

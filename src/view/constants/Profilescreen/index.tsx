@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     color: '#121F3E',
     marginVertical: 19,
     marginHorizontal: 25.8,
-    fontWeight: '700',
+    fontWeight: '600',
   },
   width: {
     flexDirection: 'row',

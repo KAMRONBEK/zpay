@@ -39,7 +39,6 @@ import SetPin2 from '../view/screens/SetPin2';
 import Notifications from '../view/screens/Notifications';
 import Enter from '../view/screens/Enter';
 import Contractss from '../view/screens/Contractss';
-// import Carusel from '../view/screens/Carusel';
 import MoneyPayment from '../view/screens/MoneyPayment';
 import TouchId from '../view/screens/TouchId';
 import Carusel from '../view/screens/Carusel';
@@ -50,18 +49,15 @@ import Flatlist from '../view/screens/CaruselStore';
 import FlatlistTitle from '../view/screens/FlatList';
 import FaceDetection from '../view/screens/FaceDetection';
 import ProductItem from '../view/screens/ProductItem';
-import Instruction1 from '../view/screens/Instruction1';
-import Instruction2 from '../view/screens/Instruction2';
-import Instruction3 from '../view/screens/Instruction3';
-import Instruction4 from '../view/screens/Instruction4';
 import App from '../view/screens/ImagePickerr';
 import Appp from '../view/screens/Appp';
 import VerifiyInput from '../view/screens/TextInput';
 import ActiveButton from '../view/screens/ActivColor';
 import Search from '../view/screens/Search';
 import TorchLight from '../view/screens/BottomSheet';
+import {StoreCarousel} from '../view/screens/StoreCarousel';
 import {InstructionCarousel} from '../view/screens/InstructionCarousel';
-// import Indicator from '../view/screens/indicator';
+import {RegisterCarousel} from '../view/screens/RegisterCarousel';
 
 const Stack = createNativeStackNavigator();
 
@@ -72,6 +68,8 @@ const AppNavigator = () => {
         <Stack.Screen component={Enter} name={'enter'} />
         <Stack.Screen component={DrawerNavigator} name={'DrawerNavigator'} />
         <Stack.Screen component={TabNavigation} name="TabNavigation" />
+        <Stack.Screen component={StoreCarousel} name="storecarousel" />
+        <Stack.Screen component={RegisterCarousel} name="registercarousel" />
         <Stack.Screen
           component={InstructionCarousel}
           name="instructioncarousel"
@@ -79,11 +77,7 @@ const AppNavigator = () => {
         <Stack.Screen component={TorchLight} name="torch" />
         {/* <Stack.Screen component={Search} name="search" /> */}
         <Stack.Screen component={VerifiyInput} name="verifiyinput" />
-        {/* <Stack.Screen component={Instruction1} name="instruction1" />
-        <Stack.Screen component={Instruction2} name="instruction2" />
-        <Stack.Screen component={Instruction3} name="instruction3" /> */}
         {/* <Stack.Screen component={ActiveButton} name="instruction3" /> */}
-        {/* <Stack.Screen component={Instruction4} name="instruction4" /> */}
         <Stack.Screen component={Appp} name="appp" />
         <Stack.Screen component={SetPin} name="setpin" />
         <Stack.Screen component={SetPin2} name="setpin2" />
