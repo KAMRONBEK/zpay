@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   text1: {
     color: '#12154C',
     fontSize: 24,
-    fontWeight: '700',
+    fontWeight: '600',
   },
   text2: {
     alignItems: 'center',

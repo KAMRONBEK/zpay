@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   code1: {
-    color: '#427CF8',
+    color: '#3554D1',
     fontSize: 14,
     alignItems: 'center',
     marginLeft: 5,

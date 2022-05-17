@@ -43,7 +43,10 @@ const Register = () => {
         <Text style={styles.text3}>Номер телефона</Text>
       </View>
       <View style={styles.sectionInput}>
-        <Flag style={{marginLeft: 18}} />
+        <Image
+          source={require('../../assets/images/FlagImg.png')}
+          style={{height: 24, width: 24, marginLeft: 18}}
+        />
         <View style={styles.border} />
         <Text style={{color: '#12154C'}}>+998</Text>
         <TextInput
@@ -108,7 +111,7 @@ const styles = StyleSheet.create({
     color: '#3554D1',
     fontSize: 24,
     // paddingLeft: 20,
-    fontWeight: '700',
+    fontWeight: '600',
   },
   text2: {
     marginTop: 20,

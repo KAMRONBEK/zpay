@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
   text1: {
     color: '#12154C',
     fontSize: 24,
-    fontWeight: '700',
+    fontWeight: '600',
   },
   text2: {
     alignItems: 'center',
@@ -169,10 +169,10 @@ const styles = StyleSheet.create({
   text3: {
     color: '#878B9A',
     fontSize: 14,
-    fontWeight: '700',
+    fontWeight: '600',
   },
   nextButton: {
-    backgroundColor: '#427CF8',
+    backgroundColor: '#3554D1',
     borderRadius: 10,
     alignItems: 'center',
     // marginTop: 115,

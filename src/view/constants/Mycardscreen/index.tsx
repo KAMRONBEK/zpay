@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     color: '#12154C',
     fontSize: 18,
     textAlign: 'center',
-    fontWeight: '700',
+    fontWeight: '600',
     marginTop: 52,
   },
   headimage: {

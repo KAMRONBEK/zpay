@@ -105,7 +105,7 @@ export const RegisterCarousel: React.FC = () => {
               activeSlide === data.length - 1
                 ? {
                     width: '100%',
-                    backgroundColor: '#427CF8',
+                    backgroundColor: '#3554D1',
                     borderRadius: 10,
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -113,7 +113,7 @@ export const RegisterCarousel: React.FC = () => {
                   }
                 : {
                     width: '100%',
-                    backgroundColor: '#427CF8',
+                    backgroundColor: '#3554D1',
                     borderRadius: 10,
                     alignItems: 'center',
                     justifyContent: 'center',

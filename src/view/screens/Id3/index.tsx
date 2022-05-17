@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
   },
 
   headtext: {
-    color: '#3554D1',
+    color: '#12154C',
     fontSize: 18,
     textAlign: 'center',
     fontWeight: '600',
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
   text1: {
     color: '#3554D1',
     fontSize: 24,
-    fontWeight: '700',
+    fontWeight: '600',
   },
   text2: {
     marginTop: 10,
@@ -271,7 +271,7 @@ const styles = StyleSheet.create({
     paddingLeft: 210,
   },
   nextButton: {
-    backgroundColor: '#427CF8',
+    backgroundColor: '#3554D1',
     borderRadius: 10,
     alignItems: 'center',
     borderWidth: 1,

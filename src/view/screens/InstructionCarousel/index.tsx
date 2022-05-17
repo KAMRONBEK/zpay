@@ -20,7 +20,7 @@ const SCREEN_WIDTH = Dimensions.get('screen').width;
 const imgHeight = SCREEN_HEIGHT * 0.66;
 const imgWidth = SCREEN_WIDTH * 0.72;
 
-const instructionBarWidth = SCREEN_HEIGHT * 0.2;
+const instructionBarWidth = SCREEN_HEIGHT * 0.33;
 
 const data = [
   {
@@ -69,6 +69,52 @@ export const InstructionCarousel: React.FC = () => {
     }
   };
 
+  const renderTitle = () => {
+    switch (activeSlide) {
+      case data.length - 4:
+        return 'Приобретайте в рассрочку с ZPAY менее чем за 2 минуты';
+        break;
+
+      case data.length - 3:
+        return 'Откройте для себя множество Партнерских магазинов с товарами именно для вас';
+        break;
+
+      case data.length - 2:
+        return 'Наслаждайтесь  вашей покупкой с приятными бонусами от ZPAY';
+        break;
+
+      case data.length - 1:
+        return 'Просматривайте и управляйте своими покупками!';
+        break;
+      default:
+        return '';
+        break;
+    }
+  };
+
+  const renderDescription = () => {
+    switch (activeSlide) {
+      case data.length - 4:
+        return 'Покупайте сейчас и платите равными частями в срок до 6 месяцев! Пройдите быструю регистрацию, имея только Паспорт и платежную карту ';
+        break;
+
+      case data.length - 3:
+        return 'Находите магазины по категориям, локациям и вдохновляйтесь на новые покупки!';
+        break;
+
+      case data.length - 2:
+        return 'Совершайте покупки у наших партнеров и с приятным кешбеком от ZPAY';
+        break;
+
+      case data.length - 1:
+        return 'Просматривайте свои прошлые и текущие договора, и платежи. Управляйте своими данными в едином приложении';
+        break;
+      default:
+        return '';
+        break;
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View
@@ -85,7 +131,7 @@ export const InstructionCarousel: React.FC = () => {
               color: '#3554D1',
               marginTop: 9,
               fontSize: 16,
-              fontWeight: '700',
+              fontWeight: '600',
               textDecorationLine: 'underline',
               textDecorationStyle: 'solid',
               textDecorationColor: '#3554D1',
@@ -98,7 +144,9 @@ export const InstructionCarousel: React.FC = () => {
           style={{
             flex: 1,
             flexDirection: 'column',
-            justifyContent: 'space-between',
+            justifyContent: 'flex-end',
+            backgroundColor: '#FFF',
+            zIndex: 2,
           }}>
           <Carousel
             onSnapToItem={index => setActiveSlide(index)}
@@ -128,51 +176,47 @@ export const InstructionCarousel: React.FC = () => {
                     },
                   ]}
                   resizeMode="cover"
-                  source={img}>
-                  <LinearGradient
-                    colors={[
-                      '#ffffff00',
-                      'white',
-                      'white',
-                      'white',
-                      'white',
-                      'white',
-                      'white',
-                      'white',
-                    ]}
-                    start={{x: 0, y: 0}}
-                    end={{x: 0, y: 1}}
-                    style={{
-                      height: 260,
-                      width: '100%',
-                      zIndex: 2,
-                      // justifyContent: 'flex-end',
-                    }}>
-                    <Text
-                      style={{
-                        color: '#000000',
-                        fontSize: 18,
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                        marginTop: 69,
-                        zIndex: 99,
-                      }}>
-                      {title}
-                    </Text>
-                    <Text
-                      style={{
-                        color: '#878B9A',
-                        fontSize: 14,
-                        paddingVertical: 10,
-                        textAlign: 'center',
-                      }}>
-                      {label}
-                    </Text>
-                  </LinearGradient>
-                </ImageBackground>
+                  source={img}></ImageBackground>
               </View>
             )}
           />
+          <LinearGradient
+            colors={[
+              '#ffffff00',
+              '#ffffff00',
+              'white',
+              'white',
+              'white',
+              'white',
+              'white',
+              'white',
+              'white',
+              'white',
+            ]}
+            start={{x: 0, y: 0}}
+            end={{x: 0, y: 1.2}}
+            style={{
+              height: instructionBarWidth,
+              width: '100%',
+              zIndex: 99,
+              paddingHorizontal: 24,
+              paddingVertical: 50,
+              position: 'absolute',
+              // backgroundColor: 'red',
+            }}>
+            <Text style={{color: '#000000', fontSize: 18, fontWeight: '700'}}>
+              {renderTitle()}
+            </Text>
+            <Text
+              style={{
+                color: '#878B9A',
+                fontSize: 14,
+                marginTop: 10,
+                fontWeight: '600',
+              }}>
+              {renderDescription()}
+            </Text>
+          </LinearGradient>
         </View>
 
         <View
@@ -217,16 +261,14 @@ export const InstructionCarousel: React.FC = () => {
               activeSlide === data.length - 1
                 ? {
                     width: '100%',
-                    // paddingVertical: 11,
                     backgroundColor: '#427CF8',
                     borderRadius: 10,
                     height: 46,
                     alignItems: 'center',
                     justifyContent: 'center',
+                    marginVertical: 10,
                   }
                 : {
-                    // paddingHorizontal: 37.5,
-                    // paddingVertical: 0,
                     height: 46,
                     width: 110,
                     backgroundColor: '#BAD0FF',

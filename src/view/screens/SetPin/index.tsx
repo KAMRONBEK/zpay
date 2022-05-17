@@ -40,125 +40,132 @@ const SetPin = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.pin}>
-        <Text style={styles.text}>Установите PIN</Text>
-      </View>
-      <View style={styles.code}>
-        {new Array(password.split('').length).fill('').map(() => (
-          <View style={styles.ellipseBlue}></View>
-        ))}
-        {new Array(Math.abs(4 - password.split('').length)).fill('').map(() => (
-          <View style={styles.ellipse}></View>
-        ))}
-      </View>
-      <View style={styles.numbers}>
-        <View style={styles.row}>
-          <TouchableOpacity
-            onPress={() => {
-              onPressNumber('1');
-            }}>
-            <View style={styles.kub}>
-              <Text style={styles.number}>1</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              onPressNumber('2');
-            }}>
-            <View style={styles.kub}>
-              <Text style={styles.number}>2</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              onPressNumber('3');
-            }}>
-            <View style={styles.kub}>
-              <Text style={styles.number}>3</Text>
-            </View>
-          </TouchableOpacity>
+      <View style={styles.container2}>
+        <View style={styles.pin}>
+          <Text style={styles.text}>Установите PIN</Text>
         </View>
-        <View style={styles.row}>
-          <TouchableOpacity
-            onPress={() => {
-              onPressNumber('4');
-            }}>
-            <View style={styles.kub1}>
-              <Text style={styles.number}>4</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              onPressNumber('5');
-            }}>
-            <View style={styles.kub1}>
-              <Text style={styles.number}>5</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              onPressNumber('6');
-            }}>
-            <View style={styles.kub1}>
-              <Text style={styles.number}>6</Text>
-            </View>
-          </TouchableOpacity>
+        <View style={styles.code}>
+          {new Array(password.split('').length).fill('').map(() => (
+            <View style={styles.ellipseBlue}></View>
+          ))}
+          {new Array(Math.abs(4 - password.split('').length))
+            .fill('')
+            .map(() => (
+              <View style={styles.ellipse}></View>
+            ))}
         </View>
-        <View style={styles.row}>
-          <TouchableOpacity
-            onPress={() => {
-              onPressNumber('7');
-            }}>
-            <View style={styles.kub1}>
-              <Text style={styles.number}>7</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              onPressNumber('8');
-            }}>
-            <View style={styles.kub1}>
-              <Text style={styles.number}>8</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              onPressNumber('9');
-            }}>
-            <View style={styles.kub1}>
-              <Text style={styles.number}>9</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.flex}>
-          <View style={styles.kub5}></View>
-          <TouchableOpacity
-            onPress={() => {
-              onPressNumber('0');
-            }}>
-            <View style={styles.kub2}>
-              <Text style={styles.number}>0</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={onPressDelete}>
-            <View style={styles.udalit}>
-              <Text style={styles.udalittext}>Удалить</Text>
-            </View>
-          </TouchableOpacity>
+        <View style={styles.numbers}>
+          <View style={styles.row}>
+            <TouchableOpacity
+              onPress={() => {
+                onPressNumber('1');
+              }}>
+              <View style={styles.kub}>
+                <Text style={styles.number}>1</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                onPressNumber('2');
+              }}>
+              <View style={styles.kub}>
+                <Text style={styles.number}>2</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                onPressNumber('3');
+              }}>
+              <View style={styles.kub}>
+                <Text style={styles.number}>3</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.row}>
+            <TouchableOpacity
+              onPress={() => {
+                onPressNumber('4');
+              }}>
+              <View style={styles.kub1}>
+                <Text style={styles.number}>4</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                onPressNumber('5');
+              }}>
+              <View style={styles.kub1}>
+                <Text style={styles.number}>5</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                onPressNumber('6');
+              }}>
+              <View style={styles.kub1}>
+                <Text style={styles.number}>6</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.row}>
+            <TouchableOpacity
+              onPress={() => {
+                onPressNumber('7');
+              }}>
+              <View style={styles.kub1}>
+                <Text style={styles.number}>7</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                onPressNumber('8');
+              }}>
+              <View style={styles.kub1}>
+                <Text style={styles.number}>8</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                onPressNumber('9');
+              }}>
+              <View style={styles.kub1}>
+                <Text style={styles.number}>9</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.flex}>
+            <View style={styles.kub5}></View>
+            <TouchableOpacity
+              onPress={() => {
+                onPressNumber('0');
+              }}>
+              <View style={styles.kub2}>
+                <Text style={styles.number}>0</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={onPressDelete}>
+              <View style={styles.udalit}>
+                <Text style={styles.udalittext}>Удалить</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
       <View style={styles.face}>
         <TouchableOpacity onPress={FaceDetection}>
           <View style={styles.memo}>
-            <Image source={require('../../assets/images/memo.png')} />
+            <Image
+              source={require('../../assets/images/FaceMemo.png')}
+              style={{height: 30, width: 30, backgroundColor: '#E5EBF0'}}
+            />
           </View>
         </TouchableOpacity>
         <View style={styles.left}>
           <Text style={styles.facetext}>Разблокировка через Face ID </Text>
         </View>
-        <View style={styles.switch}>
+        <View style={{}}>
           <Switch
-            trackColor={{false: '#EAE9EE', true: '#767577'}}
+            trackColor={{false: '#EAE9EE', true: '#EAE9EE'}}
             thumbColor={isEnabled ? '#3554D1' : '#f4f3f4'}
             ios_backgroundColor="#3e3e3e"
             onValueChange={toggleSwitch}
@@ -176,7 +183,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    paddingHorizontal: 49,
+    paddingHorizontal: 24,
+  },
+  container2: {
+    // flex: 1,
+    backgroundColor: '#FFF',
+    paddingHorizontal: 25,
   },
   pin: {
     alignItems: 'center',
@@ -254,7 +266,7 @@ const styles = StyleSheet.create({
   facetext: {
     color: '#121F3E',
     fontSize: 14,
-    marginHorizontal: 2,
+    paddingHorizontal: 3,
   },
 
   ellipse: {

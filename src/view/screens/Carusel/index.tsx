@@ -1,145 +1,202 @@
-import React, {useState, useRef} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import React, {useRef, useState} from 'react';
 import {
-  FlatList,
-  StatusBar,
+  Button,
+  Dimensions,
+  Image,
+  ImageBackground,
+  SafeAreaView,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet,
   View,
-  Image,
-  Dimensions,
-  ImageBackground,
 } from 'react-native';
-// const {width: {height} = Dimensions.get('window')};
-// import carouselItem from '../../assets/carousel.json';
-import Button from '../../components/card';
-import {cartDATA} from './data';
+import Carousel, {Pagination} from 'react-native-snap-carousel';
+import LinearGradient from 'react-native-linear-gradient';
 
-const viewConfigRef = {viewAreaCoveragePercentThreshold: 95};
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
+const SCREEN_WIDTH = Dimensions.get('screen').width;
 
-interface CarouselItems {
-  title: string;
-  url: string;
-  promo: string;
-  backgroundColor: any;
-}
-export default function Carusel() {
-  let flatlistRef = useRef<FlatList<CarouselItems> | null>();
-  const [currentIndex, setCurrentIndex] = useState(0);
+const imgHeight = SCREEN_HEIGHT * 0.66;
+const imgWidth = SCREEN_WIDTH * 0.72;
 
-  const onViewRef = useRef(({changed}: {changed: any}) => {
-    if (changed[0].isViewable) {
-      setCurrentIndex(changed[0].index);
+const instructionBarWidth = SCREEN_HEIGHT * 0.33;
+
+const data = [
+  {
+    id: 1,
+    cartNumber: '8600 9877 5423 2100',
+    cartName: 'Рабочая',
+    instractionCartholderName: 'Имя владельца карты',
+    instractionCartExpiryDate: 'Срок истечения',
+    cartholderName: 'Marina Volkova',
+    cartExpiryDate: '07/24',
+    url: require('../../assets/images/UzCard1.png'),
+    url2: require('../../assets/images/Corner1.png'),
+    url3: require('../../assets/images/Corner2.png'),
+    backgroundColor: '#4A6AB3',
+  },
+  {
+    id: 2,
+    cartNumber: '560 000.00  сум',
+    cartName: 'Кешбек Кошелек',
+    url: require('../../assets/images/Wallet1.png'),
+    url4: require('../../assets/images/ZImg.png'),
+    backgroundColor: '#1E3CA5',
+  },
+  {
+    id: 3,
+    cartNumber: '9860 0124 2516 0000',
+    cartName: 'Zmarket',
+    url: require('../../assets/images/HumoCard1.png'),
+    url5: require('../../assets/images/HumoCircle1.png'),
+    url6: require('../../assets/images/Circles1.png'),
+    url7: require('../../assets/images/HumoCircle2.png'),
+    backgroundColor: '#455A64',
+  },
+];
+
+export const Carusel: React.FC = () => {
+  const navigation = useNavigation();
+
+  const [activeSlide, setActiveSlide] = useState(0);
+  const windowWidth = Dimensions.get('window').width;
+
+  const carouselRef = useRef<Carousel<typeof data[0]>>(null);
+
+  const onNextPress = () => {
+    if (!carouselRef.current?.snapToNext) return;
+    carouselRef.current?.snapToNext();
+
+    if (activeSlide === data.length - 1) {
     }
-  });
-
-  const scrollToIndex = (index: number) => {
-    flatlistRef.current?.scrollToIndex({animated: true, index: index});
   };
 
-  const renderItems: React.FC<{item: CarouselItems}> = ({item}) => {
-    return (
-      <TouchableOpacity
-        onPress={() => console.log('clicked')}
-        activeOpacity={1}>
-        <View style={styles.head}>
+  return (
+    <SafeAreaView style={styles.container}>
+      <Carousel
+        onSnapToItem={index => setActiveSlide(index)}
+        data={data}
+        sliderWidth={windowWidth}
+        itemWidth={windowWidth}
+        pagingEnabled
+        ref={carouselRef}
+        renderItem={({
+          item: {
+            backgroundColor,
+            instractionCartholderName,
+            cartName,
+            cartNumber,
+            cartExpiryDate,
+            cartholderName,
+            url,
+            url2,
+            url3,
+            url4,
+            url5,
+            url6,
+            url7,
+            instractionCartExpiryDate,
+          },
+        }) => (
           <View style={styles.karta}>
-            <View
-              style={[styles.kartu, {backgroundColor: item.backgroundColor}]}>
+            <View style={[styles.kartu, {backgroundColor: backgroundColor}]}>
               <View style={styles.zback}>
-                <Image source={item.url4} style={{height: 170, width: 225}} />
+                <Image source={url4} style={{height: 170, width: 225}} />
               </View>
               <View style={styles.text}>
-                <Text style={styles.headtext}>{item.cartName}</Text>
+                <Text style={styles.headtext}>{cartName}</Text>
               </View>
               <View style={styles.number}>
-                <Text style={styles.numbertext}>{item.cartNumber}</Text>
+                <Text style={styles.numbertext}>{cartNumber}</Text>
               </View>
               <View style={styles.card2}>
                 <View style={styles.card}>
                   <Text style={styles.cardtext2}>
-                    {item.instractionCartholderName}
+                    {instractionCartholderName}
                   </Text>
                 </View>
                 <View style={styles.card3}>
                   <Text style={styles.cardtext2}>
-                    {item.instractionCartExpiryDate}
+                    {instractionCartExpiryDate}
                   </Text>
                 </View>
               </View>
               <View style={styles.two}>
                 <View style={styles.name}>
-                  <Text style={styles.textname}>{item.cartholderName}</Text>
+                  <Text style={styles.textname}>{cartholderName}</Text>
                 </View>
                 <View style={styles.data}>
-                  <Text style={styles.datatext}>{item.cartExpiryDate}</Text>
+                  <Text style={styles.datatext}>{cartExpiryDate}</Text>
                 </View>
               </View>
               <View style={styles.ugl2}>
-                <Image source={item.url3} style={{height: 99, width: 131}} />
+                <Image source={url3} style={{height: 99, width: 131}} />
               </View>
               <View style={styles.humoCircle}>
-                <Image source={item.url5} style={{height: 42, width: 130}} />
+                <Image source={url5} style={{height: 42, width: 130}} />
               </View>
               <View style={styles.ugl}>
-                <Image source={item.url2} style={{height: 99, width: 131}} />
+                <Image source={url2} style={{height: 99, width: 131}} />
               </View>
               <View style={styles.zpay}>
-                <Image source={item.url} style={{height: 42, width: 48}} />
+                <Image source={url} style={{height: 42, width: 48}} />
               </View>
               <View style={styles.humoTocka}>
-                <Image source={item.url6} style={{height: 88, width: 68}} />
+                <Image source={url6} style={{height: 88, width: 68}} />
               </View>
               <View style={styles.humoCircle2}>
-                <Image source={item.url7} style={{height: 104, width: 119}} />
+                <Image source={url7} style={{height: 104, width: 119}} />
               </View>
             </View>
           </View>
-        </View>
-      </TouchableOpacity>
-    );
-  };
-  return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-
-      <FlatList
-        data={cartDATA}
-        renderItem={renderItems}
-        keyExtractor={(item, index) => item.toString()}
-        horizontal
-        showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}
-        pagingEnabled
-        ref={ref => {
-          flatlistRef.current = ref;
-        }}
-        style={styles.carousel}
-        viewabilityConfig={viewConfigRef}
-        onViewableItemsChanged={onViewRef.current}
+        )}
       />
-      <View style={styles.dotview}>
-        {cartDATA.map(({}, index: number) => (
-          <TouchableOpacity
-            key={index.toString()}
-            style={[
-              styles.circle,
-              {backgroundColor: index == currentIndex ? 'black' : 'grey'},
-            ]}
-            onPress={() => scrollToIndex(index)}
-          />
-        ))}
-      </View>
-    </View>
+
+      <Pagination
+        dotColor="#3554D1"
+        dotsLength={3}
+        dotContainerStyle={{
+          paddingHorizontal: 0,
+        }}
+        inactiveDotScale={0.5}
+        inactiveDotOpacity={0.4}
+        activeDotIndex={activeSlide}
+        inactiveDotColor="#EAE9EE"
+        containerStyle={{paddingVertical: 5}}
+        dotStyle={{
+          width: 9,
+          height: 9,
+          borderRadius: 5,
+          marginHorizontal: -5,
+          backgroundColor: '#3554D1',
+        }}
+        inactiveDotStyle={{
+          backgroundColor: '#878B9A',
+          width: 10,
+          height: 10,
+        }}
+      />
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 39,
+    flex: 1,
+  },
+  image: {
+    height: imgHeight,
+    width: imgWidth,
     alignItems: 'center',
     justifyContent: 'center',
+    resizeMode: 'contain',
   },
+  dotContainer: {
+    paddingHorizontal: 0,
+    marginHorizontal: 5.5,
+  },
+
   zback: {
     position: 'absolute',
     marginLeft: 29,
@@ -166,13 +223,7 @@ const styles = StyleSheet.create({
     marginLeft: 150,
     marginTop: 66,
   },
-  image: {
-    height: 206,
-    width: 327,
-    marginHorizontal: 15,
-    // resizeMode: 'cover',
-    borderRadius: 14.23,
-  },
+
   dotview: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -190,7 +241,6 @@ const styles = StyleSheet.create({
     height: 170,
     width: 270,
     backgroundColor: '#4A6AB3',
-    marginTop: 39,
     borderRadius: 11.71,
     paddingHorizontal: 21.19,
     paddingVertical: 21.15,
@@ -267,8 +317,8 @@ const styles = StyleSheet.create({
   },
   karta: {
     flexDirection: 'row',
-    // justifyContent: 'space-between',
-    marginHorizontal: 30,
+    // alignItems: 'center',
+    justifyContent: 'center',
   },
   zpay: {
     position: 'absolute',

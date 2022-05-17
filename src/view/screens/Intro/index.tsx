@@ -136,7 +136,7 @@ const style = StyleSheet.create({
     paddingVertical: 15,
   },
   skipButton: {
-    backgroundColor: 'blue',
+    backgroundColor: '#3554D1',
     borderRadius: 10,
     // padding: 20,
     marginVertical: 10,
@@ -149,6 +149,9 @@ const style = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     paddingVertical: 15,
+    borderWidth: 1,
+    borderColor: '#3554D1',
+    borderRadius: 10,
   },
   head: {
     // flexDirection: 'row',

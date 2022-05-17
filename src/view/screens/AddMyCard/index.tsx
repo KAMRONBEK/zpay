@@ -10,12 +10,15 @@ import {
   TouchableOpacity,
   FlatList,
   Animated,
+  Dimensions,
 } from 'react-native';
 import {Back, RU, Scan} from '../../assets/icons/icon';
 import AddCardFinish from '../AddCardFinish';
-import Carousel from 'react-native-snap-carousel';
-// import Paginator from '../Paginator';
-import Carusel from '../Carusel';
+import {Carusel} from '../Carusel';
+
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
+
+const instructionBarWidth = SCREEN_HEIGHT * 0.24;
 
 const AddMyCard = () => {
   let navigation = useNavigation();
@@ -61,7 +64,16 @@ const AddMyCard = () => {
           <View style={styles.head3}>
             <Text style={styles.head3text}>Выберите дизайн карты</Text>
           </View>
-          <Carusel />
+          <View
+            style={{
+              backgroundColor: '#FFF',
+              alignItems: 'center',
+              height: instructionBarWidth,
+              paddingVertical: 10,
+              marginVertical: 28,
+            }}>
+            <Carusel />
+          </View>
           <View style={styles.numberkarta}>
             <Text style={styles.numberkartatext}>Номер карты</Text>
           </View>
@@ -93,7 +105,7 @@ const AddMyCard = () => {
               style={styles.input}
               placeholder="Дайте название карты"
               placeholderTextColor={'grey'}
-              keyboardType="number-pad"
+              // keyboardType="number-pad"
             />
           </View>
           <TouchableOpacity onPress={AddCardFinish}>
@@ -146,7 +158,7 @@ const styles = StyleSheet.create({
     borderColor: '#EAE9EE',
   },
   headtext: {
-    color: '#3554D1',
+    color: '#12154C',
     fontSize: 18,
     textAlign: 'center',
     fontWeight: '600',
@@ -165,9 +177,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
-  numberkarta: {
-    marginTop: 30,
-  },
+  numberkarta: {},
   numberkarta2: {
     marginTop: 20,
   },

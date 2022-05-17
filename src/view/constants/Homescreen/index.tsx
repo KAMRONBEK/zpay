@@ -161,7 +161,7 @@ const HomeScreen = () => {
                         style={{height: 36, width: 36}}
                       />
                     </View>
-                    <Text style={styles.circletext}>ZCOINS</Text>
+                    <Text style={styles.circletext}>Z-COINS</Text>
                   </View>
                 </View>
               </TouchableOpacity>
@@ -634,7 +634,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   pokazatvse: {
-    fontSize: 12,
+    fontSize: 14,
     color: '#878B9A',
   },
 });

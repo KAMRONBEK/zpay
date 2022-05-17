@@ -163,9 +163,9 @@ const styles = StyleSheet.create({
     // marginTop: 52,
   },
   text1: {
-    color: '#427CF8',
+    color: '#3554D1',
     fontSize: 24,
-    fontWeight: '700',
+    fontWeight: '600',
   },
   text2: {
     marginTop: 10,
