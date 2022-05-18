@@ -49,7 +49,6 @@ import ProductItem from '../view/screens/ProductItem';
 import App from '../view/screens/ImagePickerr';
 import Appp from '../view/screens/Appp';
 import VerifiyInput from '../view/screens/TextInput';
-import ActiveButton from '../view/screens/ActivColor';
 import Search from '../view/screens/Search';
 import TorchLight from '../view/screens/BottomSheet';
 import {StoreCarousel} from '../view/screens/StoreCarousel';
@@ -72,9 +71,8 @@ const AppNavigator = () => {
           name="instructioncarousel"
         />
         <Stack.Screen component={TorchLight} name="torch" />
-        {/* <Stack.Screen component={Search} name="search" /> */}
         <Stack.Screen component={VerifiyInput} name="verifiyinput" />
-        {/* <Stack.Screen component={ActiveButton} name="instruction3" /> */}
+        {/* <Stack.Screen component={Search} name="search" /> */}
         <Stack.Screen component={Appp} name="appp" />
         <Stack.Screen component={SetPin} name="setpin" />
         <Stack.Screen component={SetPin2} name="setpin2" />
@@ -85,11 +83,8 @@ const AppNavigator = () => {
         <Stack.Screen component={Question} name="question" />
         <Stack.Screen component={Notifications} name="notifications" />
         <Stack.Screen component={TouchId} name="touchid" />
-        <Stack.Screen component={Register} name="register" />
         <Stack.Screen component={PartnerStore} name="partnerstore" />
         <Stack.Screen component={AboutProduct} name="aboutproduct" />
-        <Stack.Screen component={Verification} name="verification" />
-        <Stack.Screen component={Id} name="id" />
         <Stack.Screen component={Id3} name="id3" />
         <Stack.Screen component={Scaner} name="scaner" />
         <Stack.Screen component={ScanerFace} name="scanerface" />

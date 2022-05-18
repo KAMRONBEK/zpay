@@ -14,6 +14,7 @@ import {Back, Simkartu} from '../../assets/icons/icon';
 
 const Bonuses3 = () => {
   let navigation = useNavigation();
+  const [value, setValue] = React.useState('');
 
   return (
     // <SafeAreaView>
@@ -54,6 +55,7 @@ const Bonuses3 = () => {
               placeholder="|"
               placeholderTextColor={'grey'}
               keyboardType="number-pad"
+              // value={value}
             />
           </View>
           <View style={styles.nomer1}>
@@ -64,6 +66,7 @@ const Bonuses3 = () => {
               style={styles.input1}
               placeholder="Укажите сумму пополнения"
               placeholderTextColor={'grey'}
+              // value={value}
             />
           </View>
         </View>
@@ -176,11 +179,12 @@ const styles = StyleSheet.create({
     padding: 12,
     alignItems: 'center',
     justifyContent: 'center',
+    color: '#12154C',
   },
   skipbutton: {
     width: '100%',
     borderRadius: 10,
-    backgroundColor: '#427CF8',
+    backgroundColor: '#3554D1',
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 12,

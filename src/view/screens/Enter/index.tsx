@@ -7,20 +7,10 @@ import Instruction1 from '../Instruction1';
 
 const Enter = () => {
   let navigation = useNavigation();
-  const InstructionCarousel = () => {
-    navigation.navigate('instructioncarousel');
-  };
+  // const InstructionCarousel = () => {
+  //   navigation.navigate('instructioncarousel');
+  // };
 
-  // const arr = ['first', 'second', 'third'];
-  // const [animationText, setAnimationText] = useState(arr[0]);
-
-  // for (var i = 1; i <= 10; i++) {
-  //   (function (index) {
-  //     setTimeout(() => {
-  //       setAnimationText(arr[index - 1]);
-  //     }, i * 2000);
-  //   })(i);
-  // }
   const names = ['Покупай', 'Инвестируй', 'Зарабатывай'];
 
   const [newName, setnewName] = useState('');
@@ -34,6 +24,12 @@ const Enter = () => {
     const intervalID = setInterval(shuffle, 1000);
     return () => clearInterval(intervalID);
   }, [shuffle]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('instructioncarousel');
+    }, 4000);
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -58,7 +54,7 @@ const Enter = () => {
       <View style={[styles.container1, styles.horizontal]}>
         <ActivityIndicator size="large" color="#94A1F0" />
       </View>
-      <TouchableOpacity onPress={InstructionCarousel}>
+      <TouchableOpacity>
         <View style={styles.headtext}>
           <Text style={styles.text}>{newName}</Text>
         </View>

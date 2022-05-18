@@ -121,7 +121,7 @@ export const RegisterCarousel: React.FC = () => {
                   }
             }
             onPress={activeSlide === data.length - 1 ? Scaner : onNextPress}>
-            <Text>
+            <Text style={{color: '#FFF', fontSize: 16}}>
               {activeSlide === data.length - 1 ||
               activeSlide === data.length - 2
                 ? 'Потвердить'

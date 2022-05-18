@@ -17,7 +17,7 @@ const ZCoin = () => {
             </TouchableOpacity>
           </View>
           <View>
-            <Text style={styles.text}>ZCOIN</Text>
+            <Text style={styles.text}>Z-COIN</Text>
           </View>
           <View style={styles.back}>
             <Image
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     marginTop: 52,
   },
   text: {
-    color: '#3554D1',
+    color: '#12154C',
     fontSize: 16,
   },
   container2: {

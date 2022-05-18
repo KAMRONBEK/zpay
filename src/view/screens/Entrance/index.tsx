@@ -9,12 +9,29 @@ import {
   Image,
 } from 'react-native';
 import {Back, CheckIcon, Flag, RU} from '../../assets/icons/icon';
+import MaskInput from 'react-native-mask-input';
+
+const creditCardMask = [
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+];
 
 const Entrance = () => {
   let navigation = useNavigation();
   const VerificationNumber = () => {
     navigation.navigate('verificationnumber');
   };
+  const [creditCard, setCreditCard] = React.useState('');
 
   return (
     <View style={styles.container}>
@@ -38,13 +55,21 @@ const Entrance = () => {
         <Flag style={{marginLeft: 18}} />
         <View style={styles.border} />
         <Text style={{color: '#12154C'}}>+998</Text>
-        <TextInput
-          style={styles.input}
+        <MaskInput
+          value={creditCard}
           keyboardType="number-pad"
-          // placeholder="+998"
-          // placeholderTextColor={'#12154C'}
-          // value="This cannot be edited"
-          // secureTextEntry={true}
+          mask={creditCardMask}
+          showObfuscatedValue
+          obfuscationCharacter="#"
+          style={{color: '#12154C', marginTop: 1, width: '100%'}}
+          onChangeText={(masked, unmasked, obfuscated) => {
+            setCreditCard(unmasked); // you can use the masked value as well
+
+            // assuming you typed "1234123412341234":
+            console.log(masked); // "1234 1234 1234 1234"
+            console.log(unmasked); // "1234123412341234"
+            console.log(obfuscated); // "1234 #### #### 1234"
+          }}
         />
         {/* <TextInputMask
   onChangeText={(formatted, extracted) => {

@@ -311,7 +311,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    color: '#3554D1',
+    color: '#12154C',
   },
   row: {
     flexDirection: 'row',

@@ -15,6 +15,24 @@ import {
 import {Back, RU, Scan} from '../../assets/icons/icon';
 import AddCardFinish from '../AddCardFinish';
 import {Carusel} from '../Carusel';
+import MaskInput, {Masks} from 'react-native-mask-input';
+import {Card} from 'react-native-paper';
+
+const creditCardMask = [
+  /\d/,
+  /\d/,
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+];
+
+const CPF_MASK = [/\d/, /\d/, '/', /\d/, /\d/];
+const CNPJ_MASK = [/\d/, /\d/, '/', /\d/, /\d/];
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 
@@ -23,22 +41,22 @@ const instructionBarWidth = SCREEN_HEIGHT * 0.24;
 const AddMyCard = () => {
   let navigation = useNavigation();
   const AddCardFinish = () => {
-    navigation.navigate('addcardfinish');
+    // navigation.navigate('addcardfinish');
   };
+  const [creditCard, setCreditCard] = React.useState('');
+  const [value, setValue] = React.useState('');
+
+  const [card, setCard] = React.useState<string>('');
 
   const [state, setState] = useState('false');
-  // useEffect(() => {
-  //   // number.length<=9
-  //   if (number.length < 9 && number.length > 0) {
-  //     setErrorMessage('Incorrect phone number');
-  //   } else {
-  //     setErrorMessage('');
-  //   }
-  // }, [number]);
 
-  // const onNext = () => {
-  //   navigation.navigate(AddCardFinish);
-  // };
+  const changeCard = () => {
+    if (card.length >= 7) {
+      navigation.navigate('addcardfinish');
+    } else {
+      console.warn('список не был завершен');
+    }
+  };
 
   return (
     <KeyboardAwareScrollView
@@ -78,11 +96,14 @@ const AddMyCard = () => {
             <Text style={styles.numberkartatext}>Номер карты</Text>
           </View>
           <View style={styles.sectionInput1}>
-            <TextInput
-              style={styles.input}
+            <MaskInput
+              value={creditCard}
+              onChangeText={setCreditCard}
+              mask={Masks.CREDIT_CARD}
+              keyboardType="number-pad"
+              style={{color: '#12154C', marginTop: 1, width: '90%'}}
               placeholder="0000 0000 0000 0000"
               placeholderTextColor={'grey'}
-              keyboardType="number-pad"
             />
             <Scan />
           </View>
@@ -90,11 +111,20 @@ const AddMyCard = () => {
             <Text style={styles.numberkartatext}>Срок действия карты</Text>
           </View>
           <View style={styles.sectionInput1}>
-            <TextInput
-              style={styles.input}
+            <MaskInput
+              value={value}
+              onChangeText={setValue}
+              keyboardType="number-pad"
+              style={{color: '#12154C', marginTop: 1, width: '100%'}}
               placeholder="дата/год истечения"
               placeholderTextColor={'grey'}
-              keyboardType="number-pad"
+              mask={text => {
+                if (text.replace(/\D+/g, '').length <= 11) {
+                  return CPF_MASK;
+                } else {
+                  return CNPJ_MASK;
+                }
+              }}
             />
           </View>
           <View style={styles.numberkarta2}>
@@ -102,14 +132,20 @@ const AddMyCard = () => {
           </View>
           <View style={styles.sectionInput1}>
             <TextInput
+              value={card}
               style={styles.input}
               placeholder="Дайте название карты"
               placeholderTextColor={'grey'}
               // keyboardType="number-pad"
+              onChangeText={setCard}
             />
           </View>
-          <TouchableOpacity onPress={AddCardFinish}>
-            <View style={styles.nextButton}>
+          <TouchableOpacity onPress={() => (AddCardFinish(), changeCard())}>
+            <View
+              style={[
+                styles.nextButton,
+                {backgroundColor: card.length >= 7 ? '#3554D1' : '#E5EBF0'},
+              ]}>
               <Text style={{color: '#fff', fontSize: 16}}>Добавить карту</Text>
             </View>
           </TouchableOpacity>
@@ -196,7 +232,7 @@ const styles = StyleSheet.create({
     marginTop: 11,
     borderWidth: 0.9,
     borderColor: '#EAEFF3',
-    paddingHorizontal: 18,
+    paddingHorizontal: 24,
     justifyContent: 'space-between',
   },
   input: {

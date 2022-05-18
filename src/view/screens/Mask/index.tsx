@@ -1,25 +1,46 @@
 import React from 'react';
-import {View} from 'react-native';
-import TextInputMask from 'react-native-text-input-mask';
+import {Text, View} from 'react-native';
+import MaskInput from 'react-native-mask-input';
 
-export function Mask() {
-  const [value, setValue] = React.useState('');
+const creditCardMask = [
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+];
 
+const Mask = () => {
+  const [creditCard, setCreditCard] = React.useState('');
   return (
     <View
       style={{
-        backgroundColor: '#FFF',
         flex: 1,
-        paddingVertical: 50,
-        paddingHorizontal: 20,
+        backgroundColor: '#FFF',
       }}>
-      {/* <TextInputMask
-        onChangeText={(formatted, extracted) => {
-          console.log(formatted); // +1 (123) 456-78-90
-          console.log(extracted); // 1234567890
+      <MaskInput
+        value={creditCard}
+        keyboardType="number-pad"
+        mask={creditCardMask}
+        showObfuscatedValue
+        obfuscationCharacter="#"
+        style={{color: '#12154C', marginTop: 1, width: '100%'}}
+        onChangeText={(masked, unmasked, obfuscated) => {
+          setCreditCard(unmasked);
+          console.log(masked);
+          console.log(unmasked);
+          console.log(obfuscated);
         }}
-        mask={'+1 ([000]) [000] [00] [00]'}
-      /> */}
+      />
     </View>
   );
-}
+};
+
+export default Mask;

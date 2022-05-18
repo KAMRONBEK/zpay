@@ -74,44 +74,11 @@ const Verification = () => {
         </View> */}
       </View>
 
-      {/* <View style={styles.containerInput}>
-        {Array(lengthInput)
-          .fill()
-          .map((data, index) => (
-            <TouchableOpacity
-              key={index}
-              onPress={() => {
-                // if (textInput.current) {
-                console.log('FOCUSING');
-                textInput.current.focus();
-                // }
-              }}>
-              <View style={styles.cellView}>
-                <Text style={styles.cellText}>
-                  {internalVal && internalVal.length > 0
-                    ? internalVal[index]
-                    : ''}
-                </Text>
-              </View>
-            </TouchableOpacity>
-          ))}
-      </View> */}
       <VerifiyInput />
       <View style={styles.codetext}>
         <Text style={styles.code}>Не получили код?</Text>
         <Text style={styles.code1}>Переслать</Text>
       </View>
-      {/* <TouchableOpacity onPress={Id}>
-        <View style={styles.nextButton}>
-          <Text style={{color: 'white', fontSize: 16}}>Потвердить</Text>
-        </View>
-      </TouchableOpacity>
-      <View style={styles.img}>
-        <Image
-          source={require('../../assets/images/IndicatorIcon2.png')}
-          style={{height: 9.5, width: 32}}
-        />
-      </View> */}
     </View>
   );
 };

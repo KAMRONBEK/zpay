@@ -262,6 +262,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: 25,
+    paddingHorizontal: 26,
   },
   facetext: {
     color: '#121F3E',

@@ -11,14 +11,40 @@ import {
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {Back, CheckIcon, Flag, RU} from '../../assets/icons/icon';
+import Mask from '../Mask';
 import VerificationNumber from '../VerificationNumber';
 // import TextInputMask from 'react-native-text-input-mask';
+import MaskInput from 'react-native-mask-input';
+
+const creditCardMask = [
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+];
 
 const Register = () => {
+  const [value, setValue] = React.useState('');
+
   let navigation = useNavigation();
   const Verification = () => {
     navigation.navigate('verification');
   };
+
+  // const pressHandler = () => {
+  //   if (phone.length == 9) {
+  //   } else {
+  //   }
+  // };
+  const [creditCard, setCreditCard] = React.useState('');
 
   return (
     <View style={styles.container}>
@@ -49,34 +75,22 @@ const Register = () => {
         />
         <View style={styles.border} />
         <Text style={{color: '#12154C'}}>+998</Text>
-        <TextInput
-          style={styles.input}
+        <Mask />
+        <MaskInput
+          value={creditCard}
           keyboardType="number-pad"
-          // placeholder="+998"
-          // placeholderTextColor={'#12154C'}
-          // value="This cannot be edited"
-          // secureTextEntry={true}
+          mask={creditCardMask}
+          showObfuscatedValue
+          obfuscationCharacter="#"
+          style={{color: '#12154C', marginTop: 1, width: '100%'}}
+          onChangeText={(masked, unmasked, obfuscated) => {
+            setCreditCard(unmasked);
+            console.log(masked);
+            console.log(unmasked);
+            console.log(obfuscated);
+          }}
         />
-        {/* <TextInputMask
-  onChangeText={(formatted, extracted) => {
-    console.log(formatted) // +1 (123) 456-78-90
-    console.log(extracted) // 1234567890
-  }}
-  mask={"+1 ([000]) [000] [00] [00]"}
-/> */}
       </View>
-      {/* <TouchableOpacity onPress={Verification}>
-          <View style={styles.nextButton}>
-            <Text style={{color: 'white', fontSize: 14}}>Продолжить</Text>
-          </View>
-        </TouchableOpacity>
-        <View style={styles.img}>
-          <Image
-            source={require('../../assets/images/IndicatorIcon.png')}
-            style={{height: 9.1, width: 32}}
-          />
-        </View> */}
-      {/* </KeyboardAwareScrollView> */}
     </View>
   );
 };

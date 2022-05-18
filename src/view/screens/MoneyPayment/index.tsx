@@ -12,7 +12,14 @@ import {
   View,
 } from 'react-native';
 import {UzcartIcon, XIcon} from '../../assets/icons/icon';
+import MaskInput, {createNumberMask} from 'react-native-mask-input';
 
+const dollarMask = createNumberMask({
+  delimiter: '.',
+  separator: '.',
+  precision: 3,
+  // prefix: ['cum'],
+});
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 
@@ -25,9 +32,14 @@ const modalHeight = SCREEN_HEIGHT * 0.26;
 const errorModalHeight = SCREEN_HEIGHT * 0.04;
 
 const MoneyPayment = () => {
+  const [value, setValue] = React.useState('');
+
   let navigation = useNavigation();
+
   const [modalVisible, setModalVisible] = useState(false);
+
   const [modal, setModal] = useState(false);
+
   return (
     <View style={styles.container}>
       <View style={styles.modalView}>
@@ -40,11 +52,17 @@ const MoneyPayment = () => {
                 <Text style={styles.summatext}>Сумма</Text>
               </View>
               <View style={styles.container2}>
-                <TextInput
-                  style={styles.input}
-                  // placeholder=""
-                  // placeholderTextColor={'grey'}
+                <MaskInput
+                  mask={dollarMask}
+                  value={value}
                   keyboardType="number-pad"
+                  style={{color: '#12154C', marginTop: 1, width: '100%'}}
+                  onChangeText={(masked, unmasked) => {
+                    setValue(unmasked); // you can use the masked value as well
+
+                    console.log(unmasked); // "123456"
+                    console.log(masked); // "R$ 1.234,56"
+                  }}
                 />
               </View>
               <View style={styles.oplati}>

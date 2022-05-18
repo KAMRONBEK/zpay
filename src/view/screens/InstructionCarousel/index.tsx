@@ -51,6 +51,7 @@ const data = [
 
 export const InstructionCarousel: React.FC = () => {
   const navigation = useNavigation();
+
   const Intro = () => {
     navigation.navigate('intro');
   };
@@ -87,8 +88,6 @@ export const InstructionCarousel: React.FC = () => {
         return 'Просматривайте и управляйте своими покупками!';
         break;
       default:
-        return '';
-        break;
     }
   };
 
@@ -110,8 +109,6 @@ export const InstructionCarousel: React.FC = () => {
         return 'Просматривайте свои прошлые и текущие договора, и платежи. Управляйте своими данными в едином приложении';
         break;
       default:
-        return '';
-        break;
     }
   };
 
@@ -182,7 +179,6 @@ export const InstructionCarousel: React.FC = () => {
           />
           <LinearGradient
             colors={[
-              '#ffffff00',
               '#ffffff00',
               'white',
               'white',
@@ -261,7 +257,7 @@ export const InstructionCarousel: React.FC = () => {
               activeSlide === data.length - 1
                 ? {
                     width: '100%',
-                    backgroundColor: '#427CF8',
+                    backgroundColor: '#3554D1',
                     borderRadius: 10,
                     height: 46,
                     alignItems: 'center',
@@ -271,14 +267,14 @@ export const InstructionCarousel: React.FC = () => {
                 : {
                     height: 46,
                     width: 110,
-                    backgroundColor: '#BAD0FF',
+                    backgroundColor: '#3554D1',
                     borderRadius: 10,
                     alignItems: 'center',
                     justifyContent: 'center',
                   }
             }
             onPress={activeSlide === data.length - 1 ? Intro : onNextPress}>
-            <Text>
+            <Text style={{color: '#FFF'}}>
               {activeSlide === data.length - 1
                 ? 'Пройти регистрацию'
                 : 'Дальше'}

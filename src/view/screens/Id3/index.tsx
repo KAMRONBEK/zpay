@@ -8,10 +8,24 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
+  ScrollView,
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {Back, CheckIcon, RU} from '../../assets/icons/icon';
 import Entrance from '../Entrance';
+import MaskInput, {createNumberMask} from 'react-native-mask-input';
+
+const CPF_MASK = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
+const CNPJ_MASK = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
+
+const dollarMask = createNumberMask({
+  // delimiter: '.',
+  separator: '.',
+  precision: 4,
+  // prefix: ['hjhd'],
+});
+
+const creditCardMask = [/\d/, /\d/, /\d/, ' ', /\d/, /\d/, ' ', /\d/, /\d/];
 
 const Id3 = () => {
   let navigation = useNavigation();
@@ -21,12 +35,11 @@ const Id3 = () => {
   const DrawerNavigator = () => {
     navigation.navigate('DrawerNavigator');
   };
+  const [creditCard, setCreditCard] = React.useState('');
+  const [value, setValue] = React.useState('');
 
   return (
     <View style={styles.container}>
-      {/* <View style={styles.head}>
-        <Text style={styles.headText}>Идентификация</Text>
-      </View> */}
       <View style={styles.headbar}>
         <TouchableOpacity onPress={navigation.goBack}>
           <View style={styles.headback}>
@@ -39,88 +52,89 @@ const Id3 = () => {
           <RU />
         </View>
       </View>
-      <View style={styles.flex}>
-        <View>
-          {/* <View style={styles.headbar}>
-          <View style={styles.headbar1}>
-            <View style={styles.head}>
-              <Text style={styles.textIdentifikatsiya}>Идентификация</Text>
-            </View>
-          </View>
-        </View> */}
-          <View style={styles.text}>
-            <Text style={styles.text1}>Персональные данные</Text>
-          </View>
-          <View style={styles.nomer1}>
-            <Text style={styles.nomer}>ФИО</Text>
-          </View>
-          <View style={styles.sectionInput1}>
-            <TextInput
-              style={styles.input}
-              placeholder="Марина Волкова Александрова"
-              placeholderTextColor={'grey'}
-            />
-          </View>
-          <View style={styles.nomer1}>
-            <Text style={styles.nomer}>Номер паспорта</Text>
-          </View>
-          <View style={styles.headinput}>
-            <View style={styles.littleinput}>
-              <TextInput
-                style={styles.input}
-                placeholder="AA"
-                placeholderTextColor={'grey'}
-              />
-            </View>
 
-            <View style={styles.sectionInput}>
+      <View style={styles.flex}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={{backgroundColor: '#FFF', flex: 1}}>
+          <View>
+            <View style={styles.text}>
+              <Text style={styles.text1}>Персональные Данные</Text>
+            </View>
+            <View style={styles.nomer1}>
+              <Text style={styles.nomer}>ФИО</Text>
+            </View>
+            <View style={styles.sectionInput1}>
               <TextInput
                 style={styles.input}
-                placeholder="Номер паспорта"
+                placeholder="Марина Волкова Александрова"
                 placeholderTextColor={'grey'}
+                value={value}
+              />
+            </View>
+            <View style={styles.nomer1}>
+              <Text style={styles.nomer}>Номер паспорта</Text>
+            </View>
+            <View style={styles.headinput}>
+              <View style={styles.littleinput}>
+                <TextInput
+                  style={styles.input}
+                  placeholder="AA"
+                  placeholderTextColor={'grey'}
+                  value={value}
+                />
+              </View>
+
+              <View style={styles.sectionInput}>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Номер паспорта"
+                  placeholderTextColor={'grey'}
+                  keyboardType="number-pad"
+                  value={value}
+                />
+              </View>
+            </View>
+            <View style={styles.nomer1}>
+              <Text style={styles.nomer}>Год рождения</Text>
+            </View>
+            <View style={styles.sectionInput1}>
+              <MaskInput
+                value={value}
+                onChangeText={setValue}
                 keyboardType="number-pad"
+                style={{color: '#12154C', marginTop: 1, width: '100%'}}
+                placeholder="12/07/2002"
+                placeholderTextColor={'grey'}
+                mask={text => {
+                  if (text.replace(/\D+/g, '').length <= 11) {
+                    return CPF_MASK;
+                  } else {
+                    return CNPJ_MASK;
+                  }
+                }}
+              />
+            </View>
+            <View style={styles.nomer1}>
+              <Text style={styles.nomer}>Адрес проживания</Text>
+            </View>
+            <View style={styles.sectionInput1}>
+              <TextInput
+                style={styles.input}
+                placeholder="г. Ташкент, Мирабадский р-н, 5кв, д30-21"
+                placeholderTextColor={'grey'}
+                value={value}
               />
             </View>
           </View>
-          <View style={styles.nomer1}>
-            <Text style={styles.nomer}>Год рождения</Text>
-          </View>
-          <View style={styles.sectionInput1}>
-            <TextInput
-              style={styles.input}
-              placeholder="16.09.2002"
-              placeholderTextColor={'grey'}
-              keyboardType="number-pad"
-            />
-          </View>
-          <View style={styles.nomer1}>
-            <Text style={styles.nomer}>Адрес проживания</Text>
-          </View>
-          <View style={styles.sectionInput1}>
-            <TextInput
-              style={styles.input}
-              placeholder="г. Ташкент, Мирабадский р-н, 5кв, д30-21"
-              placeholderTextColor={'grey'}
-            />
-          </View>
-        </View>
+        </ScrollView>
+
         <View>
           <TouchableOpacity onPress={Setpin}>
             <View style={styles.nextButton}>
               <Text style={{color: 'white', fontSize: 16}}>Продолжить</Text>
             </View>
           </TouchableOpacity>
-          {/* <TouchableOpacity onPress={DrawerNavigator}>
-            <View style={styles.skipButton}>
-              <Text style={{color: '#427CF8', fontSize: 16}}>Пропустить</Text>
-            </View>
-          </TouchableOpacity>
-          <View style={styles.img}>
-            <Image
-              source={require('../../assets/images/IndicatorIcon2.png')}
-              style={{height: 9, width: 31}}
-            />
-          </View> */}
         </View>
       </View>
     </View>
@@ -277,6 +291,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#EAEFF3',
     paddingVertical: 15,
+    // marginTop: 200,
+    justifyContent: 'flex-end',
   },
   skipButton: {
     backgroundColor: '#ffff',

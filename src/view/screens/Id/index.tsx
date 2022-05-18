@@ -12,30 +12,20 @@ import {
 } from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 import {Back, CheckIcon, RU} from '../../assets/icons/icon';
+import MaskInput, {createNumberMask} from 'react-native-mask-input';
+
+const CPF_MASK = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
+const CNPJ_MASK = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
 
 const Id = () => {
   let navigation = useNavigation();
   const Scaner = () => {
     navigation.navigate('scaner');
   };
+  const [value, setValue] = React.useState('');
 
   return (
     <View style={styles.container}>
-      {/* <View style={styles.headbar}>
-        <View style={styles.headbar1}>
-          <TouchableOpacity onPress={navigation.goBack}>
-            <View style={styles.headback}>
-              <Back />
-            </View>
-          </TouchableOpacity>
-          <View style={styles.head}>
-            <Text style={styles.textIdentifikatsiya}>Идентификация</Text>
-          </View>
-          <View style={styles.headback}>
-            <RU />
-          </View>
-        </View>
-      </View> */}
       <View style={styles.flex}>
         <View style={{}}>
           <View style={styles.text}>
@@ -53,6 +43,7 @@ const Id = () => {
                 style={styles.input}
                 placeholder="AA"
                 placeholderTextColor={'grey'}
+                // value={value}
               />
             </View>
             {/* <View style={styles.section}> */}
@@ -63,6 +54,7 @@ const Id = () => {
                 placeholder="Номер паспорта"
                 placeholderTextColor={'grey'}
                 keyboardType="number-pad"
+                // value={value}
               />
               {/* <View style={styles.checkIcon}>
               <CheckIcon />
@@ -73,36 +65,26 @@ const Id = () => {
             <Text style={styles.nomer}>Год рождения</Text>
           </View>
           <View style={styles.sectionInput1}>
-            <TextInput
-              style={styles.input}
-              placeholder="16.09.2002"
-              placeholderTextColor={'grey'}
+            <MaskInput
+              value={value}
+              onChangeText={setValue}
               keyboardType="number-pad"
+              style={{color: '#12154C', marginTop: 1, width: '100%'}}
+              placeholder="12/07/2002"
+              placeholderTextColor={'grey'}
+              mask={text => {
+                if (text.replace(/\D+/g, '').length <= 11) {
+                  return CPF_MASK;
+                } else {
+                  return CNPJ_MASK;
+                }
+              }}
             />
             {/* <View style={styles.checkIcon1}>
             <CheckIcon />
           </View> */}
           </View>
         </View>
-
-        {/* <View style={{}}>
-          <TouchableOpacity onPress={Scaner}>
-            <View style={styles.nextButton}>
-              <Text style={{color: 'white', fontSize: 16}}>Потвердить</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.skipButton}>
-              <Text style={{color: '#427CF8', fontSize: 16}}>Пропустить</Text>
-            </View>
-          </TouchableOpacity>
-          <View style={styles.img}>
-            <Image
-              source={require('../../assets/images/IndicatorIcon2.png')}
-              style={{height: 9, width: 30}}
-            />
-          </View>
-        </View> */}
       </View>
     </View>
   );
