@@ -37,6 +37,7 @@ const Id3 = () => {
   };
   const [creditCard, setCreditCard] = React.useState('');
   const [value, setValue] = React.useState('');
+  const [number, setNumber] = React.useState('');
 
   return (
     <View style={styles.container}>
@@ -69,7 +70,7 @@ const Id3 = () => {
                 style={styles.input}
                 placeholder="Марина Волкова Александрова"
                 placeholderTextColor={'grey'}
-                value={value}
+                // value={value}
               />
             </View>
             <View style={styles.nomer1}>
@@ -81,7 +82,7 @@ const Id3 = () => {
                   style={styles.input}
                   placeholder="AA"
                   placeholderTextColor={'grey'}
-                  value={value}
+                  // value={value}
                 />
               </View>
 
@@ -91,7 +92,7 @@ const Id3 = () => {
                   placeholder="Номер паспорта"
                   placeholderTextColor={'grey'}
                   keyboardType="number-pad"
-                  value={value}
+                  // value={value}
                 />
               </View>
             </View>
@@ -123,7 +124,7 @@ const Id3 = () => {
                 style={styles.input}
                 placeholder="г. Ташкент, Мирабадский р-н, 5кв, д30-21"
                 placeholderTextColor={'grey'}
-                value={value}
+                // value={value}
               />
             </View>
           </View>
