@@ -79,7 +79,7 @@ const Id3 = () => {
             <View style={styles.headinput}>
               <View style={styles.littleinput}>
                 <TextInput
-                  style={styles.input}
+                  style={styles.input2}
                   placeholder="AA"
                   placeholderTextColor={'grey'}
                   // value={value}
@@ -278,6 +278,13 @@ const styles = StyleSheet.create({
     color: '#12154C',
     fontSize: 14,
     width: '100%',
+  },
+  input2: {
+    padding: 12,
+    color: '#12154C',
+    fontSize: 14,
+    width: '100%',
+    textAlign: 'center',
   },
   checkIcon: {
     paddingLeft: 90,

@@ -30,31 +30,31 @@ const VerificationNumber = () => {
   // const TabNavigation = () => {
   //   navigation.navigate('DrawerNavigator');
   // };
-  const DrawerNavigator = () => {
-    navigation.navigate('DrawerNavigator');
-  };
+  // const DrawerNavigator = () => {
+  //   navigation.navigate('DrawerNavigator');
+  // };
 
-  let textInput = useRef(null);
+  // let textInput = useRef(null);
 
-  const lengthInput = 4;
+  // const lengthInput = 4;
 
-  const [internalVal, setInterVal] = useState('');
+  // const [internalVal, setInterVal] = useState('');
 
-  const onChangeText = val => {
-    setInterVal(val);
-  };
+  // const onChangeText = val => {
+  //   setInterVal(val);
+  // };
 
-  useEffect(() => {
-    let handler = BackHandler.addEventListener('hardwareBackPress', () => {
-      textInput.current.blur();
-      return true;
-    });
-    if (textInput.current) {
-      console.log('Focusing');
-      textInput.current.focus();
-    }
-    return () => BackHandler.removeEventListener('hardwareBackPress', handler);
-  }, []);
+  // useEffect(() => {
+  //   let handler = BackHandler.addEventListener('hardwareBackPress', () => {
+  //     textInput.current.blur();
+  //     return true;
+  //   });
+  //   if (textInput.current) {
+  //     console.log('Focusing');
+  //     textInput.current.focus();
+  //   }
+  //   return () => BackHandler.removeEventListener('hardwareBackPress', handler);
+  // }, []);
 
   // useEffect(() => {
   //   if (internalVal.length === 4) {
@@ -66,7 +66,7 @@ const VerificationNumber = () => {
     <SafeAreaView style={{flex: 1, backgroundColor: '#FFF'}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
-          <View style={styles.headbar}>
+          {/* <View style={styles.headbar}>
             <TouchableOpacity onPress={navigation.goBack}>
               <View style={styles.headback}>
                 <Back />
@@ -75,7 +75,7 @@ const VerificationNumber = () => {
             <View style={styles.headback}>
               <RU />
             </View>
-          </View>
+          </View> */}
           <View style={styles.text}>
             <Text style={styles.text1}>Верификация</Text>
             <Text style={styles.text1}>пользователя</Text>
@@ -123,7 +123,7 @@ const VerificationNumber = () => {
             <Text style={styles.code}>Не получили код?</Text>
             <Text style={styles.code1}> Переслать</Text>
           </View>
-          <TouchableOpacity onPress={DrawerNavigator}>
+          {/* <TouchableOpacity onPress={DrawerNavigator}>
             <View style={styles.nextButton}>
               <Text style={{color: 'white', fontSize: 16}}>Потвердить</Text>
             </View>
@@ -133,7 +133,7 @@ const VerificationNumber = () => {
               source={require('../../assets/images/IndicatorIcon2.png')}
               style={{height: 10, width: 35}}
             />
-          </View>
+          </View> */}
         </View>
       </ScrollView>
     </SafeAreaView>

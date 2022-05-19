@@ -54,6 +54,7 @@ import TorchLight from '../view/screens/BottomSheet';
 import {StoreCarousel} from '../view/screens/StoreCarousel';
 import {InstructionCarousel} from '../view/screens/InstructionCarousel';
 import {RegisterCarousel} from '../view/screens/RegisterCarousel';
+import {EntranceCarousel} from '../view/screens/EntranceCarousel';
 
 const Stack = createNativeStackNavigator();
 
@@ -70,6 +71,7 @@ const AppNavigator = () => {
           component={InstructionCarousel}
           name="instructioncarousel"
         />
+        <Stack.Screen component={EntranceCarousel} name="entrancecarousel" />
         <Stack.Screen component={TorchLight} name="torch" />
         <Stack.Screen component={VerifiyInput} name="verifiyinput" />
         {/* <Stack.Screen component={Search} name="search" /> */}

@@ -10,6 +10,7 @@ import {
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {RU} from '../../assets/icons/icon';
+import {EntranceCarousel} from '../EntranceCarousel';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -22,8 +23,8 @@ const Intro = () => {
   const RegisterCarousel = () => {
     navigation.navigate('registercarousel');
   };
-  const Entrance = () => {
-    navigation.navigate('entrance');
+  const EntranceCarousel = () => {
+    navigation.navigate('entrancecarousel');
   };
   const DrawerNavigator = () => {
     navigation.navigate('DrawerNavigator');
@@ -61,7 +62,7 @@ const Intro = () => {
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={Entrance}>
+          <TouchableOpacity onPress={EntranceCarousel}>
             <View style={style.skipButton}>
               <Text style={{color: 'white', fontSize: 16}}>Войти</Text>
             </View>

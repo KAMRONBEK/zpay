@@ -50,16 +50,6 @@ const Verification = () => {
 
   return (
     <View style={styles.container}>
-      {/* <View style={styles.headbar}>
-        <TouchableOpacity onPress={navigation.goBack}>
-          <View style={styles.headback}>
-            <Back />
-          </View>
-        </TouchableOpacity>
-        <View style={styles.headback}>
-          <RU />
-        </View>
-      </View> */}
       <View style={styles.text}>
         <Text style={styles.text1}>Верификация номера</Text>
       </View>

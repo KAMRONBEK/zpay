@@ -23,6 +23,7 @@ const Id = () => {
     navigation.navigate('scaner');
   };
   const [value, setValue] = React.useState('');
+  const [number, onChangeNumber] = React.useState(null);
 
   return (
     <View style={styles.container}>
@@ -40,10 +41,10 @@ const Id = () => {
           <View style={styles.headinput}>
             <View style={styles.littleinput}>
               <TextInput
-                style={styles.input}
+                style={styles.input2}
                 placeholder="AA"
                 placeholderTextColor={'grey'}
-                // value={value}
+                value={number}
               />
             </View>
             {/* <View style={styles.section}> */}
@@ -54,7 +55,8 @@ const Id = () => {
                 placeholder="Номер паспорта"
                 placeholderTextColor={'grey'}
                 keyboardType="number-pad"
-                // value={value}
+                // value={number}
+                // onChangeText={setNumber}
               />
               {/* <View style={styles.checkIcon}>
               <CheckIcon />
@@ -212,6 +214,15 @@ const styles = StyleSheet.create({
     color: '#12154C',
     alignItems: 'center',
     width: '100%',
+    justifyContent: 'center',
+  },
+  input2: {
+    padding: 12,
+    color: '#12154C',
+    alignItems: 'center',
+    width: '100%',
+    justifyContent: 'center',
+    textAlign: 'center',
   },
   checkIcon: {},
   checkIcon1: {

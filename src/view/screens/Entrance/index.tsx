@@ -35,7 +35,7 @@ const Entrance = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headbar}>
+      {/* <View style={styles.headbar}>
         <TouchableOpacity onPress={navigation.goBack}>
           <View style={styles.headback}>
             <Back />
@@ -44,7 +44,7 @@ const Entrance = () => {
         <View style={styles.headback}>
           <RU />
         </View>
-      </View>
+      </View> */}
       <View style={styles.enter}>
         <Text style={styles.entertext}>Вход</Text>
       </View>
@@ -71,15 +71,8 @@ const Entrance = () => {
             console.log(obfuscated); // "1234 #### #### 1234"
           }}
         />
-        {/* <TextInputMask
-  onChangeText={(formatted, extracted) => {
-    console.log(formatted) // +1 (123) 456-78-90
-    console.log(extracted) // 1234567890
-  }}
-  mask={"+1 ([000]) [000] [00] [00]"}
-/> */}
       </View>
-      <TouchableOpacity onPress={VerificationNumber}>
+      {/* <TouchableOpacity onPress={VerificationNumber}>
         <View style={styles.nextButton}>
           <Text style={{color: 'white', fontSize: 16}}>Продолжить</Text>
         </View>
@@ -89,7 +82,7 @@ const Entrance = () => {
           source={require('../../assets/images/IndicatorIcon.png')}
           style={{height: 10, width: 35}}
         />
-      </View>
+      </View> */}
     </View>
   );
 };
