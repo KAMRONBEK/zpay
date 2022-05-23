@@ -10,6 +10,7 @@ import {
   Dimensions,
 } from 'react-native';
 import {Back, BottomIcon, RU, ScanerIcon} from '../../assets/icons/icon';
+import LanguageDropDown from '../LanguageDropDown';
 
 const windowHeight = Dimensions.get('screen').height;
 const windowWidth = Dimensions.get('screen').width;
@@ -23,9 +24,7 @@ const ScanerFace = () => {
     <View style={styles.container1}>
       <View style={styles.headflex}>
         <View style={styles.headback1}></View>
-        <View style={styles.headback}>
-          <RU />
-        </View>
+        <LanguageDropDown />
       </View>
       <View style={{alignItems: 'center', justifyContent: 'center'}}>
         <View

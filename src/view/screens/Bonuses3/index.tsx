@@ -11,45 +11,74 @@ import {
   View,
 } from 'react-native';
 import {Back, Simkartu} from '../../assets/icons/icon';
+import MaskInput, {createNumberMask} from 'react-native-mask-input';
+
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {strings} from '../../locales/strings';
+
+const creditCardMask = [
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+  ' ',
+  /\d/,
+  /\d/,
+];
+
+const dollarMask = createNumberMask({
+  delimiter: '.',
+  separator: '.',
+  precision: 3,
+  // prefix: ['cum'],
+});
 
 const Bonuses3 = () => {
   let navigation = useNavigation();
   const [value, setValue] = React.useState('');
+  const [creditCard, setCreditCard] = React.useState('');
 
   return (
     // <SafeAreaView>
-    //   <ScrollView>
-    <View style={styles.container}>
-      <View style={styles.head}>
-        <View style={styles.head2}>
-          <View style={styles.headback}>
-            <TouchableOpacity onPress={navigation.goBack}>
-              <View style={styles.back}>
-                <Back />
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View>
-            <Text style={styles.text}>Мобильная связь</Text>
-          </View>
-          <View style={styles.back}>
-            <Simkartu />
+    <ScrollView style={{backgroundColor: '#FFF'}}>
+      <View style={styles.container}>
+        <View style={styles.head}>
+          <View style={styles.head2}>
+            <View style={styles.headback}>
+              <TouchableOpacity onPress={navigation.goBack}>
+                <View style={styles.back}>
+                  <Back />
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View>
+              <Text style={styles.text}>Мобильная связь</Text>
+            </View>
+            <View style={styles.back}>
+              <Simkartu />
+            </View>
           </View>
         </View>
-      </View>
 
-      <View style={styles.container2}>
-        <View>
-          <View style={styles.sim}>
-            <Image
-              source={require('../../assets/images/SimCart.png')}
-              style={{height: 78, width: 110}}
-            />
-          </View>
-          <View style={styles.nomer}>
-            <Text style={styles.nomertext}>Номер телефона</Text>
-          </View>
-          <View style={styles.button}>
+        {/* <KeyboardAwareScrollView> */}
+
+        <View style={styles.container2}>
+          <View>
+            <View style={styles.sim}>
+              <Image
+                source={require('../../assets/images/SimCart.png')}
+                style={{height: 78, width: 110}}
+              />
+            </View>
+            <View style={styles.nomer}>
+              <Text style={styles.nomertext}>Номер телефона</Text>
+            </View>
+            {/* <View style={styles.button}>
             <TextInput
               style={styles.input}
               placeholder="|"
@@ -57,29 +86,65 @@ const Bonuses3 = () => {
               keyboardType="number-pad"
               // value={value}
             />
-          </View>
-          <View style={styles.nomer1}>
-            <Text style={styles.nomertext1}>Сумма платежа</Text>
-          </View>
-          <View style={styles.button1}>
-            <TextInput
-              style={styles.input1}
-              placeholder="Укажите сумму пополнения"
-              placeholderTextColor={'grey'}
-              // value={value}
-            />
-          </View>
-        </View>
-        <View>
-          <TouchableOpacity>
-            <View style={styles.skipbutton}>
-              <Text style={styles.skipbuttontext}>Оплатить</Text>
+          </View> */}
+            <View style={styles.sectionInput}>
+              <Image
+                source={require('../../assets/images/FlagImg.png')}
+                style={{height: 24, width: 24, marginLeft: 18}}
+              />
+              <View style={styles.border} />
+              <Text style={{color: '#12154C'}}>+998</Text>
+              {/* <Mask /> */}
+              <MaskInput
+                value={creditCard}
+                keyboardType="number-pad"
+                mask={creditCardMask}
+                showObfuscatedValue
+                obfuscationCharacter="#"
+                style={{color: '#12154C', marginTop: 1, width: '100%'}}
+                onChangeText={(masked, unmasked, obfuscated) => {
+                  setCreditCard(unmasked);
+                  console.log(masked);
+                  console.log(unmasked);
+                  console.log(obfuscated);
+                }}
+              />
             </View>
-          </TouchableOpacity>
+            <View style={styles.nomer1}>
+              <Text style={styles.nomertext1}>Сумма платежа</Text>
+            </View>
+            <View style={styles.button1}>
+              <MaskInput
+                mask={dollarMask}
+                placeholder="Укажите сумму пополнения"
+                placeholderTextColor={'grey'}
+                value={value}
+                keyboardType="number-pad"
+                style={{
+                  color: '#12154C',
+                  marginTop: 1,
+                  width: '100%',
+                  paddingHorizontal: 18,
+                }}
+                onChangeText={(masked, unmasked) => {
+                  setValue(unmasked); // you can use the masked value as well
+
+                  console.log(unmasked); // "123456"
+                  console.log(masked); // "R$ 1.234,56"
+                }}
+              />
+            </View>
+          </View>
+          <View>
+            <TouchableOpacity>
+              <View style={styles.skipbutton}>
+                <Text style={styles.skipbuttontext}>{strings.Оплатить}</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-    </View>
-    //   </ScrollView>
+    </ScrollView>
     // </SafeAreaView>
   );
 };
@@ -100,6 +165,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 45,
     backgroundColor: '#FFF',
+  },
+  sectionInput: {
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 0.5,
+    borderColor: '#EAEFF3',
+    marginTop: 11,
+  },
+  border: {
+    height: 23,
+    width: 1,
+    backgroundColor: 'grey',
+    marginRight: 10,
+    marginLeft: 15,
   },
   head: {
     height: 109,

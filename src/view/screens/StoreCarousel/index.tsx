@@ -24,7 +24,7 @@ const imgWidth = SCREEN_WIDTH * 0.21;
 const img2Height = SCREEN_HEIGHT * 0.12;
 const img2Width = SCREEN_WIDTH * 0.27;
 
-const containerHeight = SCREEN_HEIGHT * 0.16;
+const containerHeight = SCREEN_HEIGHT * 0.17;
 const containerWidth = SCREEN_WIDTH * 0.86;
 
 const instructionBarWidth = SCREEN_HEIGHT * 0.2;
@@ -39,19 +39,19 @@ const data = [
   {
     title: 'Подвеска DolceVita',
     label: '136 000 сум/мес',
-    img: require('../../assets/images/StoreBrand.png'),
+    img: require('../../assets/images/jewerlies.png'),
     url: require('../../assets/images/StoreBrand.png'),
   },
   {
     title: 'Подвеска DolceVita',
     label: '136 000 сум/мес',
-    img: require('../../assets/images/StoreBrand.png'),
+    img: require('../../assets/images/jewerlies.png'),
     url: require('../../assets/images/StoreBrand.png'),
   },
   {
     title: 'Подвеска DolceVita',
     label: '136 000 сум/мес',
-    img: require('../../assets/images/StoreBrand.png'),
+    img: require('../../assets/images/jewerlies.png'),
     url: require('../../assets/images/StoreBrand.png'),
   },
 ];
@@ -90,7 +90,7 @@ export const StoreCarousel: React.FC = () => {
           itemWidth={windowWidth}
           pagingEnabled
           ref={carouselRef}
-          renderItem={({item: {img, title, label}}) => (
+          renderItem={({item: {img, title, label, url}}) => (
             <View style={{alignItems: 'center', marginTop: 25}}>
               <View
                 style={{
@@ -106,7 +106,7 @@ export const StoreCarousel: React.FC = () => {
                   borderColor: '#E5EBF0',
                 }}>
                 <View>
-                  <Image style={styles.image} source={img} />
+                  <Image style={styles.image} source={url} />
                   <Text
                     style={{
                       color: '#926C4B',
@@ -149,8 +149,8 @@ export const StoreCarousel: React.FC = () => {
             activeDotIndex={activeSlide}
             inactiveDotColor="#EAE9EE"
             dotStyle={{
-              width: 6,
-              height: 6,
+              width: 7,
+              height: 7,
               borderRadius: 5,
               marginHorizontal: -5,
               backgroundColor: '#3554D1',

@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import {FaceidIcon} from '../../assets/icons/icon';
+import {strings} from '../../locales/strings';
 import Memo from '../FaceId';
 import TouchId from '../TouchId';
 
@@ -147,7 +148,7 @@ const SetPin2 = () => {
           </TouchableOpacity>
           <TouchableOpacity onPress={onPressDelete}>
             <View style={styles.udalit}>
-              <Text style={styles.udalittext}>Удалить</Text>
+              <Text style={styles.udalittext}>{strings.Удалить}</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -205,9 +206,10 @@ const styles = StyleSheet.create({
   kub5: {
     height: 76,
     width: 76,
-    marginTop: 10,
+    borderRadius: 15.83,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingVertical: 15,
   },
   number: {
     color: '#878B9A',

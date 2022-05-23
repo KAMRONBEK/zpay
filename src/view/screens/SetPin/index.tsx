@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import {FaceidIcon} from '../../assets/icons/icon';
+import {strings} from '../../locales/strings';
 import Memo from '../FaceId';
 
 const SetPin = () => {
@@ -145,7 +146,7 @@ const SetPin = () => {
             </TouchableOpacity>
             <TouchableOpacity onPress={onPressDelete}>
               <View style={styles.udalit}>
-                <Text style={styles.udalittext}>Удалить</Text>
+                <Text style={styles.udalittext}>{strings.Удалить}</Text>
               </View>
             </TouchableOpacity>
           </View>

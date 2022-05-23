@@ -13,18 +13,19 @@ import {
 } from 'react-native';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import LinearGradient from 'react-native-linear-gradient';
+import {strings} from '../../locales/strings';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 
-const imgHeight = SCREEN_HEIGHT * 0.66;
-const imgWidth = SCREEN_WIDTH * 0.72;
+const imgHeight = SCREEN_HEIGHT * 0.67;
+const imgWidth = SCREEN_WIDTH * 0.73;
 
-const instructionBarWidth = SCREEN_HEIGHT * 0.33;
+const instructionBarWidth = SCREEN_HEIGHT * 0.23;
 
 const data = [
   {
-    title: 'Приобретайте в рассрочку с ZPAY менее чем за 2 минуты',
+    title: 'Приобретайте в рассрочку с Z-PAY менее чем за 2 минуты',
     label:
       'Покупайте сейчас и платите равными частями в срок до 6 месяцев! Пройдите быструю регистрацию, имея только Паспорт и платежную карту ',
     img: require('../../assets/images/InstructionImg1.png'),
@@ -37,8 +38,9 @@ const data = [
     img: require('../../assets/images/InstructionImg2.png'),
   },
   {
-    title: 'AnНаслаждайтесь  вашей покупкой с приятными бонусами от ZPAY',
-    label: 'Совершайте покупки у наших партнеров и с приятным кешбеком от ZPAY',
+    title: 'AnНаслаждайтесь  вашей покупкой с приятными бонусами от Z-PAY',
+    label:
+      'Совершайте покупки у наших партнеров и с приятным кешбеком от Z-PAY',
     img: require('../../assets/images/InstructionImg3.png'),
   },
   {
@@ -117,8 +119,10 @@ export const InstructionCarousel: React.FC = () => {
       <View
         style={{
           flex: 1,
-          paddingVertical: 60,
+          // paddingVertical: 60,
           backgroundColor: '#FFF',
+          // backgroundColor: 'black',
+
           // paddingHorizontal: 24,
         }}>
         <TouchableOpacity onPress={Intro}>
@@ -126,7 +130,7 @@ export const InstructionCarousel: React.FC = () => {
             style={{
               textAlign: 'right',
               color: '#3554D1',
-              marginTop: 9,
+              marginTop: 69,
               fontSize: 16,
               fontWeight: '600',
               textDecorationLine: 'underline',
@@ -134,7 +138,7 @@ export const InstructionCarousel: React.FC = () => {
               textDecorationColor: '#3554D1',
               paddingHorizontal: 24,
             }}>
-            Пропустить
+            {strings.Пропустить}
           </Text>
         </TouchableOpacity>
         <View
@@ -200,7 +204,7 @@ export const InstructionCarousel: React.FC = () => {
               position: 'absolute',
               // backgroundColor: 'red',
             }}>
-            <Text style={{color: '#000000', fontSize: 18, fontWeight: '700'}}>
+            <Text style={{color: '#000000', fontSize: 18, fontWeight: '600'}}>
               {renderTitle()}
             </Text>
             <Text
@@ -208,7 +212,7 @@ export const InstructionCarousel: React.FC = () => {
                 color: '#878B9A',
                 fontSize: 14,
                 marginTop: 10,
-                fontWeight: '600',
+                fontWeight: '500',
               }}>
               {renderDescription()}
             </Text>
@@ -219,9 +223,10 @@ export const InstructionCarousel: React.FC = () => {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
-            backgroundColor: '#FFF',
+            // backgroundColor: 'red',
             alignItems: 'center',
             paddingHorizontal: 24,
+            marginVertical: 60,
             // height: 70,
           }}>
           {activeSlide === data.length - 1 ? null : (

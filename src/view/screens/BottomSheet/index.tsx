@@ -16,11 +16,14 @@ const TorchLight = () => {
     Torch.switchState(!isTorchON);
     setisTorchON(!isTorchON);
   };
-
+  const onPressHandler = () => {};
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
-        style={styles.buttonStyle}
+        style={[
+          styles.buttonStyle,
+          {backgroundColor: handlerTurnOnOFFTorch ? '#FFF' : '#E5EBF0'},
+        ]}
         onPress={handlerTurnOnOFFTorch}>
         <Image source={require('../../assets/images/flash.png')} />
         <Text

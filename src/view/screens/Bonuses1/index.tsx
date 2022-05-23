@@ -24,6 +24,7 @@ import {
   Telephone,
   Vallet,
 } from '../../assets/icons/icon';
+import {strings} from '../../locales/strings';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -51,7 +52,7 @@ const Bonuses1 = () => {
               </TouchableOpacity>
             </View>
             <View style={styles.bonus}>
-              <Text style={styles.text}>Бонусы</Text>
+              <Text style={styles.text}>{strings.Бонусы}</Text>
             </View>
             <View style={styles.back1}></View>
           </View>
@@ -118,7 +119,7 @@ const Bonuses1 = () => {
             </View>
             <View style={styles.littlecontainer}>
               <Lovehome />
-              <Text style={styles.text1}>Приюты</Text>
+              <Text style={styles.text1}>{strings.Приюты}</Text>
             </View>
           </View>
         </View>

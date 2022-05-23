@@ -1,11 +1,16 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../view/constants/Homescreen';
 import AgreementScreen from '../view/constants/Agreementscreen';
 import MycardScreen from '../view/constants/Mycardscreen';
 import ProfileScreen from '../view/constants/Profilescreen';
+import {strings} from '../view/locales/strings';
+
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
+
+const tabBarHeight = SCREEN_HEIGHT * 0.07;
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +22,7 @@ const TabNavigation = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           bottom: 0,
-          height: 70,
+          height: tabBarHeight,
         },
         tabBarActiveTintColor: 'black',
         tabBarInactiveTintColor: 'red',
@@ -44,7 +49,7 @@ const TabNavigation = () => {
                   fontSize: 12,
                   top: 2,
                 }}>
-                Главная
+                {strings.Главная}
               </Text>
             </View>
           ),
@@ -66,7 +71,7 @@ const TabNavigation = () => {
               />
               <Text
                 style={{color: focused ? '#3554D1' : '#717394', fontSize: 12}}>
-                Договора
+                {strings.Договора}
               </Text>
             </View>
           ),
@@ -111,7 +116,7 @@ const TabNavigation = () => {
 
               <Text
                 style={{color: focused ? '#3554D1' : '#717394', fontSize: 12}}>
-                Профиль
+                {strings.Профиль}
               </Text>
             </View>
           ),

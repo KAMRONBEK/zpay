@@ -19,6 +19,7 @@ import Entrance from '../Entrance';
 import Id3 from '../Id3';
 import VerificationNumber from '../VerificationNumber';
 import DrawerNavigator from '../../constants/Drawer';
+import LanguageDropDown from '../LanguageDropDown';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -68,9 +69,7 @@ export const EntranceCarousel: React.FC = () => {
               <Back />
             </View>
           </TouchableOpacity>
-          <View style={styles.headback}>
-            <RU />
-          </View>
+          <LanguageDropDown />
         </View>
         <Carousel
           onSnapToItem={index => setActiveSlide(index)}

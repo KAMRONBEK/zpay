@@ -34,9 +34,7 @@ const Question = () => {
           <Text style={styles.text}>Часто задаваемые</Text>
           <Text style={styles.text}>вопросы</Text>
         </View>
-        <View style={styles.back1}>
-          <Text style={{color: '#FFF'}}>kk</Text>
-        </View>
+        <View style={styles.back1}></View>
       </View>
       <View style={styles.headtext}>
         <Text style={styles.text2}>регистрация в сервисе ZPAY</Text>

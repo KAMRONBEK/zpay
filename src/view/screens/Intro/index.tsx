@@ -11,6 +11,8 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {RU} from '../../assets/icons/icon';
 import {EntranceCarousel} from '../EntranceCarousel';
+import {strings} from '../../locales/strings';
+import LanguageDropDown from '../LanguageDropDown';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -39,7 +41,7 @@ const Intro = () => {
       }}
       source={require('../../assets/images/backgroundimg.png')}>
       <View style={style.headback}>
-        <RU />
+        <LanguageDropDown />
       </View>
 
       <View style={style.flex}>
@@ -58,18 +60,22 @@ const Intro = () => {
           <TouchableOpacity onPress={RegisterCarousel}>
             <View style={style.nextButton}>
               <Text style={{color: 'white', fontSize: 16}}>
-                Зарегистрироваться
+                {strings.Зарегистрироваться}
               </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={EntranceCarousel}>
             <View style={style.skipButton}>
-              <Text style={{color: 'white', fontSize: 16}}>Войти</Text>
+              <Text style={{color: 'white', fontSize: 16}}>
+                {strings.Войти}
+              </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={DrawerNavigator}>
             <View style={style.skipButton2}>
-              <Text style={{color: '#3554D1', fontSize: 16}}>Пропустить</Text>
+              <Text style={{color: '#3554D1', fontSize: 16}}>
+                {strings.Пропустить}
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -93,16 +99,7 @@ const style = StyleSheet.create({
   // },
   headback: {
     position: 'absolute',
-    backgroundColor: '#ffff',
-    borderWidth: 1,
-    borderColor: '#EAE9EE',
-    borderRadius: 10,
-    height: 41,
-    width: 57,
-    justifyContent: 'center',
-    alignItems: 'center',
-    // paddingHorizontal: 17,
-    // paddingVertical: 11,
+
     right: 0,
     marginTop: 51,
     marginRight: 24,

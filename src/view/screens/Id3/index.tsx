@@ -14,6 +14,9 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {Back, CheckIcon, RU} from '../../assets/icons/icon';
 import Entrance from '../Entrance';
 import MaskInput, {createNumberMask} from 'react-native-mask-input';
+import {MaskedTextInput} from 'react-native-mask-text';
+import LanguageDropDown from '../LanguageDropDown';
+import {strings} from '../../locales/strings';
 
 const CPF_MASK = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
 const CNPJ_MASK = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
@@ -47,10 +50,9 @@ const Id3 = () => {
             <Back />
           </View>
         </TouchableOpacity>
-        <Text style={styles.headtext}>Идентификация</Text>
-
-        <View style={styles.headback}>
-          <RU />
+        <Text style={styles.headtext}>{strings.Идентификация}</Text>
+        <View style={{marginTop: 52}}>
+          <LanguageDropDown />
         </View>
       </View>
 
@@ -63,7 +65,7 @@ const Id3 = () => {
               <Text style={styles.text1}>Персональные Данные</Text>
             </View>
             <View style={styles.nomer1}>
-              <Text style={styles.nomer}>ФИО</Text>
+              <Text style={styles.nomer}>{strings.ФИО}</Text>
             </View>
             <View style={styles.sectionInput1}>
               <TextInput
@@ -78,11 +80,15 @@ const Id3 = () => {
             </View>
             <View style={styles.headinput}>
               <View style={styles.littleinput}>
-                <TextInput
-                  style={styles.input2}
+                <MaskedTextInput
+                  mask="AA"
                   placeholder="AA"
                   placeholderTextColor={'grey'}
-                  // value={value}
+                  onChangeText={(text, rawText) => {
+                    console.log(text);
+                    console.log(rawText);
+                  }}
+                  style={{textAlign: 'center', color: '#12154C'}}
                 />
               </View>
 
@@ -100,7 +106,7 @@ const Id3 = () => {
               <Text style={styles.nomer}>Год рождения</Text>
             </View>
             <View style={styles.sectionInput1}>
-              <MaskInput
+              {/* <MaskInput
                 value={value}
                 onChangeText={setValue}
                 keyboardType="number-pad"
@@ -114,6 +120,17 @@ const Id3 = () => {
                     return CNPJ_MASK;
                   }
                 }}
+              /> */}
+              <MaskedTextInput
+                mask="99.99.9999"
+                placeholder="12.07.2002"
+                placeholderTextColor={'grey'}
+                keyboardType="number-pad"
+                onChangeText={(text, rawText) => {
+                  console.log(text);
+                  console.log(rawText);
+                }}
+                style={styles.input}
               />
             </View>
             <View style={styles.nomer1}>
@@ -133,7 +150,9 @@ const Id3 = () => {
         <View>
           <TouchableOpacity onPress={Setpin}>
             <View style={styles.nextButton}>
-              <Text style={{color: 'white', fontSize: 16}}>Продолжить</Text>
+              <Text style={{color: 'white', fontSize: 16}}>
+                {strings.Продолжить}
+              </Text>
             </View>
           </TouchableOpacity>
         </View>

@@ -13,11 +13,12 @@ import {
 } from 'react-native';
 import {UzcartIcon, XIcon} from '../../assets/icons/icon';
 import MaskInput, {createNumberMask} from 'react-native-mask-input';
+import {strings} from '../../locales/strings';
 
 const dollarMask = createNumberMask({
-  delimiter: '.',
-  separator: '.',
-  precision: 3,
+  // delimiter: '.',
+  // separator: '.',
+  // precision: 3,
   // prefix: ['cum'],
 });
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
@@ -49,20 +50,30 @@ const MoneyPayment = () => {
           <View style={styles.padding}>
             <View>
               <View>
-                <Text style={styles.summatext}>Сумма</Text>
+                <Text style={styles.summatext}>{strings.Сумма}</Text>
               </View>
               <View style={styles.container2}>
-                <MaskInput
+                {/* <MaskInput
                   mask={dollarMask}
                   value={value}
                   keyboardType="number-pad"
-                  style={{color: '#12154C', marginTop: 1, width: '100%'}}
+                  style={{
+                    color: '#12154C',
+                    marginTop: 1,
+                    width: '100%',
+                    paddingHorizontal: 18,
+                  }}
                   onChangeText={(masked, unmasked) => {
                     setValue(unmasked); // you can use the masked value as well
 
                     console.log(unmasked); // "123456"
                     console.log(masked); // "R$ 1.234,56"
                   }}
+                /> */}
+                <TextInput
+                  style={styles.input}
+                  // value={value}
+                  keyboardType="number-pad"
                 />
               </View>
               <View style={styles.oplati}>
@@ -85,7 +96,10 @@ const MoneyPayment = () => {
               <TouchableOpacity>
                 <View style={styles.row}>
                   <View style={styles.kub}>
-                    <Image source={require('../../assets/images/Humo.png')} />
+                    <Image
+                      source={require('../../assets/images/HumoCard1.png')}
+                      style={{height: 20, width: 24}}
+                    />
                   </View>
                   <View style={styles.kartanumber}>
                     <Text style={styles.number}>9800 00** **** **97</Text>
@@ -116,7 +130,7 @@ const MoneyPayment = () => {
             <View>
               <TouchableOpacity onPress={() => setModalVisible(true)}>
                 <View style={styles.button}>
-                  <Text style={styles.buttontext}>Оплатить</Text>
+                  <Text style={styles.buttontext}>{strings.Оплатить}</Text>
                 </View>
               </TouchableOpacity>
             </View>

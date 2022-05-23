@@ -55,6 +55,8 @@ import {StoreCarousel} from '../view/screens/StoreCarousel';
 import {InstructionCarousel} from '../view/screens/InstructionCarousel';
 import {RegisterCarousel} from '../view/screens/RegisterCarousel';
 import {EntranceCarousel} from '../view/screens/EntranceCarousel';
+import LanguageDropDown from '../view/screens/LanguageDropDown';
+import SwipeElement from '../view/screens/SwipeElement';
 
 const Stack = createNativeStackNavigator();
 
@@ -72,6 +74,7 @@ const AppNavigator = () => {
           name="instructioncarousel"
         />
         <Stack.Screen component={EntranceCarousel} name="entrancecarousel" />
+        <Stack.Screen component={LanguageDropDown} name="languagedropdown" />
         <Stack.Screen component={TorchLight} name="torch" />
         <Stack.Screen component={VerifiyInput} name="verifiyinput" />
         {/* <Stack.Screen component={Search} name="search" /> */}

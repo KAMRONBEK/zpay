@@ -17,6 +17,7 @@ import AddCardFinish from '../AddCardFinish';
 import {Carusel} from '../Carusel';
 import MaskInput, {Masks} from 'react-native-mask-input';
 import {Card} from 'react-native-paper';
+import LanguageDropDown from '../LanguageDropDown';
 
 const creditCardMask = [
   /\d/,
@@ -61,7 +62,7 @@ const AddMyCard = () => {
   return (
     <KeyboardAwareScrollView
       showsVerticalScrollIndicator={false}
-      style={{backgroundColor: '#FFF'}}>
+      style={{backgroundColor: '#FFF', flex: 1}}>
       <View style={styles.container}>
         <View style={styles.headbar}>
           <TouchableOpacity onPress={navigation.goBack}>
@@ -71,8 +72,8 @@ const AddMyCard = () => {
           </TouchableOpacity>
           <Text style={styles.headtext}>Мои карты</Text>
 
-          <View style={styles.headback}>
-            <RU />
+          <View style={styles.language}>
+            <LanguageDropDown />
           </View>
         </View>
         <View style={styles.container1}>
@@ -88,7 +89,7 @@ const AddMyCard = () => {
               alignItems: 'center',
               height: instructionBarWidth,
               paddingVertical: 10,
-              marginVertical: 28,
+              marginTop: 30,
             }}>
             <Carusel />
           </View>
@@ -160,15 +161,16 @@ export default AddMyCard;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
+    // backgroundColor: 'red',
   },
   container1: {
     flex: 1,
     backgroundColor: '#FFF',
     paddingHorizontal: 24,
-    paddingVertical: 30,
+    // paddingVertical: 30,
     flexDirection: 'column',
     justifyContent: 'space-between',
+    // marginTop: 30,
   },
   headback: {
     backgroundColor: '#ffff',
@@ -178,6 +180,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 15,
+    marginTop: 52,
+  },
+  language: {
     marginTop: 52,
   },
   headbar: {
@@ -204,6 +209,7 @@ const styles = StyleSheet.create({
   head2text: {
     color: '#12154C',
     fontSize: 24,
+    marginTop: 30,
   },
   head3: {
     marginTop: 10,
@@ -213,7 +219,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
-  numberkarta: {},
+  numberkarta: {marginTop: 20},
   numberkarta2: {
     marginTop: 20,
   },

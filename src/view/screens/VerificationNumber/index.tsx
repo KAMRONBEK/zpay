@@ -16,6 +16,7 @@ import {
 import TabNavigation from '../../../navigationtap';
 import {Routes} from '../../../routes/routes';
 import {Back, CheckIcon, Flag, RU} from '../../assets/icons/icon';
+import {strings} from '../../locales/strings';
 import VerifiyInput from '../TextInput';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
@@ -66,19 +67,9 @@ const VerificationNumber = () => {
     <SafeAreaView style={{flex: 1, backgroundColor: '#FFF'}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
-          {/* <View style={styles.headbar}>
-            <TouchableOpacity onPress={navigation.goBack}>
-              <View style={styles.headback}>
-                <Back />
-              </View>
-            </TouchableOpacity>
-            <View style={styles.headback}>
-              <RU />
-            </View>
-          </View> */}
           <View style={styles.text}>
-            <Text style={styles.text1}>Верификация</Text>
-            <Text style={styles.text1}>пользователя</Text>
+            <Text style={styles.text1}>{strings.Верификация}</Text>
+            <Text style={styles.text1}>{strings.пользователя}</Text>
           </View>
           <View style={styles.text2}>
             <Text style={styles.text3}>Мы выслали код подверждения</Text>
@@ -87,53 +78,12 @@ const VerificationNumber = () => {
               <Text style={styles.number}>+998909900110</Text>
             </View>
           </View>
-          {/* <TextInput
-            ref={input => (textInput.current = input)}
-            onChangeText={onChangeText}
-            style={{width: 0, height: 0}}
-            value={internalVal}
-            maxLength={lengthInput}
-            returnKeyType="done"
-            on
-          />
-          <View style={styles.containerInput}>
-            {Array(lengthInput)
-              .fill()
-              .map((data, index) => (
-                <TouchableOpacity
-                  key={index}
-                  onPress={() => {
-                    // if (textInput.current) {
-                    console.log('FOCUSING');
-                    textInput.current.focus();
-                    // }
-                  }}>
-                  <View style={styles.cellView}>
-                    <Text style={styles.cellText}>
-                      {internalVal && internalVal.length > 0
-                        ? internalVal[index]
-                        : ''}
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              ))}
-          </View> */}
+
           <VerifiyInput />
           <View style={styles.codetext}>
             <Text style={styles.code}>Не получили код?</Text>
             <Text style={styles.code1}> Переслать</Text>
           </View>
-          {/* <TouchableOpacity onPress={DrawerNavigator}>
-            <View style={styles.nextButton}>
-              <Text style={{color: 'white', fontSize: 16}}>Потвердить</Text>
-            </View>
-          </TouchableOpacity>
-          <View style={styles.img}>
-            <Image
-              source={require('../../assets/images/IndicatorIcon2.png')}
-              style={{height: 10, width: 35}}
-            />
-          </View> */}
         </View>
       </ScrollView>
     </SafeAreaView>

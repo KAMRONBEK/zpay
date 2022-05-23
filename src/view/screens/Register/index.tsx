@@ -15,6 +15,7 @@ import Mask from '../Mask';
 import VerificationNumber from '../VerificationNumber';
 // import TextInputMask from 'react-native-text-input-mask';
 import MaskInput from 'react-native-mask-input';
+import {strings} from '../../locales/strings';
 
 const creditCardMask = [
   /\d/,
@@ -51,7 +52,7 @@ const Register = () => {
       {/* <KeyboardAwareScrollView showsVerticalScrollIndicator={false}> */}
 
       <View style={styles.text}>
-        <Text style={styles.text1}>Регистрация</Text>
+        <Text style={styles.text1}>{strings.Регистрация}</Text>
       </View>
       <Text style={{fontSize: 16, color: '#878B9A', marginTop: 10}}>
         Создание нового аккунта
@@ -66,7 +67,7 @@ const Register = () => {
         />
         <View style={styles.border} />
         <Text style={{color: '#12154C'}}>+998</Text>
-        <Mask />
+        {/* <Mask /> */}
         <MaskInput
           value={creditCard}
           keyboardType="number-pad"
