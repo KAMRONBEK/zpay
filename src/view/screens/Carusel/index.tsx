@@ -165,8 +165,8 @@ export const Carusel: React.FC = () => {
         inactiveDotColor="#EAE9EE"
         containerStyle={{paddingVertical: 5}}
         dotStyle={{
-          width: 9,
-          height: 9,
+          width: 7,
+          height: 7,
           borderRadius: 5,
           marginHorizontal: -5,
           backgroundColor: '#3554D1',

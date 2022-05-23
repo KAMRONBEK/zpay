@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {Back, CheckIcon, Flag, RU} from '../../assets/icons/icon';
 import MaskInput from 'react-native-mask-input';
+import {strings} from '../../locales/strings';
 
 const creditCardMask = [
   /\d/,
@@ -35,18 +36,8 @@ const Entrance = () => {
 
   return (
     <View style={styles.container}>
-      {/* <View style={styles.headbar}>
-        <TouchableOpacity onPress={navigation.goBack}>
-          <View style={styles.headback}>
-            <Back />
-          </View>
-        </TouchableOpacity>
-        <View style={styles.headback}>
-          <RU />
-        </View>
-      </View> */}
       <View style={styles.enter}>
-        <Text style={styles.entertext}>Вход</Text>
+        <Text style={styles.entertext}>{strings.Вход}</Text>
       </View>
       <View style={styles.number}>
         <Text style={styles.numbertext}>Номер телефона</Text>
@@ -72,17 +63,6 @@ const Entrance = () => {
           }}
         />
       </View>
-      {/* <TouchableOpacity onPress={VerificationNumber}>
-        <View style={styles.nextButton}>
-          <Text style={{color: 'white', fontSize: 16}}>Продолжить</Text>
-        </View>
-      </TouchableOpacity>
-      <View style={styles.img}>
-        <Image
-          source={require('../../assets/images/IndicatorIcon.png')}
-          style={{height: 10, width: 35}}
-        />
-      </View> */}
     </View>
   );
 };

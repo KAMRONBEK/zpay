@@ -1,7 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
+import {ScrollView} from 'react-native';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Back} from '../../assets/icons/icon';
+import SwipeElement from '../SwipeElement';
 
 const Notifications = () => {
   let navigation = useNavigation();
@@ -16,144 +18,35 @@ const Notifications = () => {
         <View style={styles.bonus}>
           <Text style={styles.text}>Уведомления</Text>
         </View>
+        <View style={styles.back1}></View>
       </View>
-      <View style={styles.container2}>
-        <View style={styles.row}>
-          <Text style={styles.rowtext}>Показать все</Text>
-          <Text style={styles.rowtext}>Отметить как прочитано</Text>
-        </View>
-        <View style={styles.container3}>
-          <View style={styles.row2}>
-            <Text style={styles.headtext}>Начислен Бонус</Text>
-            <Image source={require('../../assets/images/orange.png')} />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{backgroundColor: '#FFF', flex: 1}}>
+        <View style={styles.container2}>
+          <View style={styles.row}>
+            <Text style={styles.rowtext}>Показать все</Text>
+            <Text style={styles.rowtext}>Отметить как прочитано</Text>
           </View>
-
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              paddingVertical: 5,
-              paddingHorizontal: 15,
-              // backgroundColor: 'red',
-            }}>
-            <Image
-              source={require('../../assets/images/ZCoinBlueIcon.png')}
-              style={{height: 36, width: 36}}
-            />
-            <View style={{marginHorizontal: 25}}>
-              <Text style={styles.notificationText}>
-                Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
-                so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
-                bo’yicha qolgan qarzdorlik...
-              </Text>
-            </View>
-          </View>
-          <View style={styles.data}>
-            <Text style={styles.datatext}>03.17.2022, 14:04</Text>
-          </View>
-        </View>
-
-        <View style={styles.container5}>
-          <View style={styles.row2}>
-            <Text style={styles.headtext}>Начислен Бонус</Text>
-            <Image source={require('../../assets/images/orange.png')} />
-          </View>
-
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              paddingVertical: 5,
-              paddingHorizontal: 15,
-              // backgroundColor: 'red',
-            }}>
-            <Image
-              source={require('../../assets/images/ZCoinBlueIcon.png')}
-              style={{height: 36, width: 36}}
-            />
-            <View style={{marginHorizontal: 25}}>
-              <Text style={styles.notificationText}>
-                Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
-                so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
-                bo’yicha qolgan qarzdorlik...
-              </Text>
-            </View>
-          </View>
-          <View style={styles.data}>
-            <Text style={styles.datatext}>03.17.2022, 14:04</Text>
-          </View>
-        </View>
-        <View style={styles.container3}>
-          <View style={styles.row2}>
-            <Text style={styles.headtext}>Списание</Text>
-            <Image source={require('../../assets/images/orange.png')} />
-          </View>
-
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              paddingVertical: 5,
-              paddingHorizontal: 15,
-              // backgroundColor: 'red',
-            }}>
-            <Image
-              source={require('../../assets/images/ZCoinBlueIcon.png')}
-              style={{height: 36, width: 36}}
-            />
-            <View style={{marginHorizontal: 25}}>
-              <Text style={styles.notificationText}>
-                Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
-                so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
-                bo’yicha qolgan qarzdorlik...
-              </Text>
-            </View>
-          </View>
-          <View style={styles.data}>
-            <Text style={styles.datatext}>03.17.2022, 14:04</Text>
-          </View>
-        </View>
-        <View style={styles.container5}>
-          <View style={styles.row2}>
-            <Text style={styles.headtext}>Списание</Text>
-            <Image source={require('../../assets/images/orange.png')} />
-          </View>
-
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              paddingVertical: 5,
-              paddingHorizontal: 15,
-              // backgroundColor: 'red',
-            }}>
-            <Image
-              source={require('../../assets/images/ZCoinBlueIcon.png')}
-              style={{height: 36, width: 36}}
-            />
-            <View style={{marginHorizontal: 25}}>
-              <Text style={styles.notificationText}>
-                Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
-                so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
-                bo’yicha qolgan qarzdorlik...
-              </Text>
-            </View>
-          </View>
-          <View style={styles.data}>
-            <Text style={styles.datatext}>03.17.2022, 14:04</Text>
-          </View>
-        </View>
-        {/* <View style={styles.container4}>
-          <View style={{}}>
+          {/* <View style={styles.container3}>
             <View style={styles.row2}>
               <Text style={styles.headtext}>Начислен Бонус</Text>
-              <View>
-                <Image source={require('../../assets/images/orange.png')} />
-              </View>
+              <Image source={require('../../assets/images/orange.png')} />
             </View>
-            <View style={styles.flex}>
-              <Image source={require('../../assets/images/zcoinblue.png')} />
-              <View style={styles.text2}>
+
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                paddingVertical: 5,
+                paddingHorizontal: 15,
+                // backgroundColor: 'red',
+              }}>
+              <Image
+                source={require('../../assets/images/ZCoinBlueIcon.png')}
+                style={{height: 36, width: 36}}
+              />
+              <View style={{marginHorizontal: 25}}>
                 <Text style={styles.notificationText}>
                   Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
                   so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
@@ -161,22 +54,60 @@ const Notifications = () => {
                 </Text>
               </View>
             </View>
+            <View style={styles.data}>
+              <Text style={styles.datatext}>03.17.2022, 14:04</Text>
+            </View>
           </View>
-          <View style={styles.data1}>
-            <Text style={styles.datatext}>03.17.2022, 14:04</Text>
+
+          <View style={styles.container5}>
+            <View style={styles.row2}>
+              <Text style={styles.headtext}>Начислен Бонус</Text>
+              <Image source={require('../../assets/images/orange.png')} />
+            </View>
+
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                paddingVertical: 5,
+                paddingHorizontal: 15,
+                // backgroundColor: 'red',
+              }}>
+              <Image
+                source={require('../../assets/images/ZCoinBlueIcon.png')}
+                style={{height: 36, width: 36}}
+              />
+              <View style={{marginHorizontal: 25}}>
+                <Text style={styles.notificationText}>
+                  Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
+                  so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
+                  bo’yicha qolgan qarzdorlik...
+                </Text>
+              </View>
+            </View>
+            <View style={styles.data}>
+              <Text style={styles.datatext}>03.17.2022, 14:04</Text>
+            </View>
           </View>
-        </View>
-        <View style={styles.container3}>
-          <View style={{}}>
+          <View style={styles.container3}>
             <View style={styles.row2}>
               <Text style={styles.headtext}>Списание</Text>
-              <View>
-                <Image source={require('../../assets/images/orange.png')} />
-              </View>
+              <Image source={require('../../assets/images/orange.png')} />
             </View>
-            <View style={styles.flex}>
-              <Image source={require('../../assets/images/zcoinblue.png')} />
-              <View style={styles.text2}>
+
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                paddingVertical: 5,
+                paddingHorizontal: 15,
+                // backgroundColor: 'red',
+              }}>
+              <Image
+                source={require('../../assets/images/ZCoinBlueIcon.png')}
+                style={{height: 36, width: 36}}
+              />
+              <View style={{marginHorizontal: 25}}>
                 <Text style={styles.notificationText}>
                   Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
                   so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
@@ -184,24 +115,29 @@ const Notifications = () => {
                 </Text>
               </View>
             </View>
+            <View style={styles.data}>
+              <Text style={styles.datatext}>03.17.2022, 14:04</Text>
+            </View>
           </View>
-
-          <View style={styles.data1}>
-            <Text style={styles.datatext}>03.17.2022, 14:04</Text>
-          </View>
-        </View>
-        <View style={styles.container3}>
-          <View style={{}}>
+          <View style={styles.container5}>
             <View style={styles.row2}>
               <Text style={styles.headtext}>Списание</Text>
-              <View>
-                <Image source={require('../../assets/images/orange.png')} />
-              </View>
+              <Image source={require('../../assets/images/orange.png')} />
             </View>
-            <View style={styles.flex}>
-              <Image source={require('../../assets/images/zcoinblue.png')} />
 
-              <View style={styles.text2}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                paddingVertical: 5,
+                paddingHorizontal: 15,
+                // backgroundColor: 'red',
+              }}>
+              <Image
+                source={require('../../assets/images/ZCoinBlueIcon.png')}
+                style={{height: 36, width: 36}}
+              />
+              <View style={{marginHorizontal: 25}}>
                 <Text style={styles.notificationText}>
                   Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
                   so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
@@ -209,13 +145,94 @@ const Notifications = () => {
                 </Text>
               </View>
             </View>
-          </View>
+            <View style={styles.data}>
+              <Text style={styles.datatext}>03.17.2022, 14:04</Text>
+            </View>
+          </View> */}
+          <SwipeElement />
+          <SwipeElement />
+          {/* <View style={styles.container4}>
+            <View style={{}}>
+              <View style={styles.row2}>
+                <Text style={styles.headtext}>Начислен Бонус</Text>
+                <View>
+                  <Image source={require('../../assets/images/orange.png')} />
+                </View>
+              </View>
+              <View style={styles.flex}>
+                <Image
+                  source={require('../../assets/images/ZCoinBlueIcon.png')}
+                  style={{height: 36, width: 36}}
+                />
+                <View style={styles.text2}>
+                  <Text style={styles.notificationText}>
+                    Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
+                    so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
+                    bo’yicha qolgan qarzdorlik...
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <View style={styles.data1}>
+              <Text style={styles.datatext}>03.17.2022, 14:04</Text>
+            </View>
+          </View> */}
+          {/* <View style={styles.container3}>
+            <View style={{}}>
+              <View style={styles.row2}>
+                <Text style={styles.headtext}>Списание</Text>
+                <View>
+                  <Image source={require('../../assets/images/orange.png')} />
+                </View>
+              </View>
+              <View style={styles.flex}>
+                <Image
+                  source={require('../../assets/images/ZCoinBlueIcon.png')}
+                  style={{height: 36, width: 36}}
+                />
+                <View style={styles.text2}>
+                  <Text style={styles.notificationText}>
+                    Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
+                    so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
+                    bo’yicha qolgan qarzdorlik...
+                  </Text>
+                </View>
+              </View>
+            </View>
 
-          <View style={styles.data1}>
-            <Text style={styles.datatext}>03.17.2022, 14:04</Text>
-          </View>
-        </View> */}
-      </View>
+            <View style={styles.data1}>
+              <Text style={styles.datatext}>03.17.2022, 14:04</Text>
+            </View>
+          </View> */}
+          {/* <View style={styles.container3}>
+            <View style={{}}>
+              <View style={styles.row2}>
+                <Text style={styles.headtext}>Списание</Text>
+                <View>
+                  <Image source={require('../../assets/images/orange.png')} />
+                </View>
+              </View>
+              <View style={styles.flex}>
+                <Image
+                  source={require('../../assets/images/ZCoinBlueIcon.png')}
+                  style={{height: 36, width: 36}}
+                />
+                <View style={styles.text2}>
+                  <Text style={styles.notificationText}>
+                    Hurmatli RAXMANOV SHAXBOZ RASULDJON O`G`LI! Sizning 191400
+                    so'mlik to'lovingiz muvaffaqiyatli o'tkazildi. Shartnoma
+                    bo’yicha qolgan qarzdorlik...
+                  </Text>
+                </View>
+              </View>
+            </View>
+
+            <View style={styles.data1}>
+              <Text style={styles.datatext}>03.17.2022, 14:04</Text>
+            </View>
+          </View> */}
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -231,8 +248,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 24,
     paddingVertical: 6.5,
-    borderWidth: 0.3,
-    borderColor: '#878B9A',
   },
   container3: {
     // height: 126,
@@ -280,26 +295,30 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   back: {
-    borderWidth: 0.9,
     borderRadius: 10,
     height: 40,
     width: 40,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
+    borderWidth: 0.9,
     borderColor: '#EBF0FA',
     marginTop: 52,
     // position: 'absolute',
   },
+  back1: {
+    borderRadius: 10,
+    height: 40,
+    width: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+    marginTop: 52,
+  },
   bonus: {
-    // alignItems: 'center',
-    marginLeft: 90,
     marginTop: 62,
-    // justifyContent: 'center',
   },
-  headback: {
-    // position: 'absolute',
-  },
+  headback: {},
   head2: {
     flexDirection: 'row',
     // alignItems: 'center',
@@ -307,7 +326,9 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#FFFFFF',
     paddingHorizontal: 24,
-    // justifyContent: 'center',
+    justifyContent: 'space-between',
+    borderWidth: 0.3,
+    borderColor: '#878B9A',
   },
   text: {
     fontSize: 18,
@@ -319,7 +340,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   rowtext: {
-    fontSize: 12,
+    fontSize: 14,
     color: '#878B9A',
   },
   flex: {

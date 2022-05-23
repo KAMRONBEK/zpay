@@ -26,7 +26,7 @@ export function DemoTitle({children}: Props) {
             borderRadius: 10,
             borderWidth: 1,
             backgroundColor: '#FFF',
-            borderColor: '#FFF',
+            borderColor: '#E5EBF0',
             alignItems: 'center',
             justifyContent: 'center',
             marginTop: 15,
@@ -39,10 +39,10 @@ export function DemoTitle({children}: Props) {
         style={{
           height: 40,
           width: 40,
-          borderColor: 'EAEFF3',
+          // borderColor: 'EAEFF3',
           // alignItems: 'center',
           // justifyContent: 'center',
-          backgroundColor: '#3949A9',
+          backgroundColor: '#FFF',
           marginTop: 15,
         }}></View>
     </View>
@@ -62,12 +62,14 @@ const styles = StyleSheet.create<Styles>({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: '#3949A9',
+    backgroundColor: '#FFF',
     paddingHorizontal: 24,
+    borderWidth: 1,
+    borderColor: '#E5EBF0',
   },
   text: {
     fontSize: 24,
-    color: 'white',
+    color: '#12154C',
     marginRight: 15,
     marginTop: 15,
   },

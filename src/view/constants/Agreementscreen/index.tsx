@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import {Calendar, Littlehome, Monitoring} from '../../assets/icons/icon';
+import TorchLight from '../../screens/BottomSheet';
 import Search from '../../screens/Search';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
@@ -108,6 +109,7 @@ const AgreementScreen = () => {
           </View>
         </TouchableOpacity>
       </View>
+      {/* <TorchLight /> */}
     </View>
   );
 };
@@ -246,6 +248,7 @@ const styles = StyleSheet.create({
   },
   uglkubno: {
     fontSize: 8,
+    color: '#FFF',
   },
   aktiv: {
     // height: buttonDimensions,

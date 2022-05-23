@@ -18,6 +18,7 @@ import VerifiyInput from '../TextInput';
 import Register from '../Register';
 import Id from '../Id';
 import Verification from '../Verification';
+import LanguageDropDown from '../LanguageDropDown';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -70,9 +71,7 @@ export const RegisterCarousel: React.FC = () => {
               <Back />
             </View>
           </TouchableOpacity>
-          <View style={styles.headback}>
-            <RU />
-          </View>
+          <LanguageDropDown />
         </View>
         <Carousel
           onSnapToItem={index => setActiveSlide(index)}

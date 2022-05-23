@@ -13,6 +13,7 @@ import {
 import {TextInput} from 'react-native-gesture-handler';
 import {Back, CheckIcon, RU} from '../../assets/icons/icon';
 import MaskInput, {createNumberMask} from 'react-native-mask-input';
+import {MaskedTextInput} from 'react-native-mask-text';
 
 const CPF_MASK = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
 const CNPJ_MASK = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
@@ -40,11 +41,15 @@ const Id = () => {
           </View>
           <View style={styles.headinput}>
             <View style={styles.littleinput}>
-              <TextInput
-                style={styles.input2}
+              <MaskedTextInput
+                mask="AA"
                 placeholder="AA"
                 placeholderTextColor={'grey'}
-                value={number}
+                onChangeText={(text, rawText) => {
+                  console.log(text);
+                  console.log(rawText);
+                }}
+                style={{textAlign: 'center', color: '#12154C'}}
               />
             </View>
             {/* <View style={styles.section}> */}
@@ -55,8 +60,7 @@ const Id = () => {
                 placeholder="Номер паспорта"
                 placeholderTextColor={'grey'}
                 keyboardType="number-pad"
-                // value={number}
-                // onChangeText={setNumber}
+                // value={value}
               />
               {/* <View style={styles.checkIcon}>
               <CheckIcon />
@@ -67,7 +71,7 @@ const Id = () => {
             <Text style={styles.nomer}>Год рождения</Text>
           </View>
           <View style={styles.sectionInput1}>
-            <MaskInput
+            {/* <MaskInput
               value={value}
               onChangeText={setValue}
               keyboardType="number-pad"
@@ -81,6 +85,17 @@ const Id = () => {
                   return CNPJ_MASK;
                 }
               }}
+            /> */}
+            <MaskedTextInput
+              mask="99.99.9999"
+              placeholder="12.07.2002"
+              placeholderTextColor={'grey'}
+              keyboardType="number-pad"
+              onChangeText={(text, rawText) => {
+                console.log(text);
+                console.log(rawText);
+              }}
+              style={styles.input}
             />
             {/* <View style={styles.checkIcon1}>
             <CheckIcon />

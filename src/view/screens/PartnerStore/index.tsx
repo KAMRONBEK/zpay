@@ -42,6 +42,7 @@ const PartnerStore = () => {
           <View style={styles.bonus}>
             <Text style={styles.text}>Магазин партнеров</Text>
           </View>
+          <View style={styles.back2}></View>
         </View>
       </View>
       <ScrollView
@@ -163,9 +164,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#F2F5F8',
   },
-  bonus: {
-    marginLeft: 70,
-  },
+  bonus: {},
   back: {
     borderWidth: 0.9,
     borderRadius: 10,
@@ -176,6 +175,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderColor: '#EBF0FA',
   },
+  back2: {
+    borderRadius: 10,
+    height: 40,
+    width: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+  },
   headback: {
     justifyContent: 'center',
   },
@@ -183,6 +190,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 52,
+    justifyContent: 'space-between',
   },
   text: {
     color: '#12154C',
