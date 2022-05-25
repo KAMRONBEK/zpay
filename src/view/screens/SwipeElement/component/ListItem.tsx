@@ -22,7 +22,7 @@ interface ListItemProps
   onDismiss?: (task: TaskInterface) => void;
 }
 
-const LIST_ITEM_HEIGHT = windowHeight / 6.9;
+const LIST_ITEM_HEIGHT = windowHeight / 6.8;
 const {width: SCREEN_WIDTH} = Dimensions.get('window');
 const TRANSLATE_X_THRESHOLD = -SCREEN_WIDTH * 0.3;
 
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 5,
     borderLeftColor: '#32B179',
     paddingLeft: 14,
-    paddingRight: 5,
+    // paddingRight: 5,
     paddingVertical: 10,
     shadowOpacity: 0.08,
     borderRadius: 10,
