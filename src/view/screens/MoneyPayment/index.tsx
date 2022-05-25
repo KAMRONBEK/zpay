@@ -14,6 +14,8 @@ import {
 import {UzcartIcon, XIcon} from '../../assets/icons/icon';
 import MaskInput, {createNumberMask} from 'react-native-mask-input';
 import {strings} from '../../locales/strings';
+import CheckBox from '@react-native-community/checkbox';
+import {Checkbox} from 'react-native-paper';
 
 const dollarMask = createNumberMask({
   // delimiter: '.',
@@ -41,6 +43,9 @@ const MoneyPayment = () => {
 
   const [modal, setModal] = useState(false);
 
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+
+  const [checked, setChecked] = React.useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.modalView}>
@@ -84,6 +89,7 @@ const MoneyPayment = () => {
                   <View style={styles.kub}>
                     <UzcartIcon />
                   </View>
+
                   <View style={styles.kartanumber}>
                     <Text style={styles.number}>8600 00** **** **97</Text>
                     <View style={styles.data}>
@@ -196,6 +202,12 @@ const MoneyPayment = () => {
             </View>
           </View>
         </Modal> */}
+        {/* <Checkbox
+          status={checked ? 'checked' : 'unchecked'}
+          onPress={() => {
+            setChecked(!checked);
+          }}
+        /> */}
       </View>
     </View>
   );

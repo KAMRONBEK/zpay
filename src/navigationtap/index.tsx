@@ -8,9 +8,9 @@ import MycardScreen from '../view/constants/Mycardscreen';
 import ProfileScreen from '../view/constants/Profilescreen';
 import {strings} from '../view/locales/strings';
 
-const SCREEN_HEIGHT = Dimensions.get('screen').height;
+const windowHeight = Dimensions.get('window').height;
 
-const tabBarHeight = SCREEN_HEIGHT * 0.07;
+// const tabBarHeight = SCREEN_HEIGHT * 0.08;
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +22,7 @@ const TabNavigation = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           bottom: 0,
-          height: tabBarHeight,
+          height: windowHeight / 12.5,
         },
         tabBarActiveTintColor: 'black',
         tabBarInactiveTintColor: 'red',
@@ -32,7 +32,11 @@ const TabNavigation = () => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
               {
                 <Image
                   source={require('../view/assets/images/HomeNavigation.png')}

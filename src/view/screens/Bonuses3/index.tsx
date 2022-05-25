@@ -101,7 +101,12 @@ const Bonuses3 = () => {
                 mask={creditCardMask}
                 showObfuscatedValue
                 obfuscationCharacter="#"
-                style={{color: '#12154C', marginTop: 1, width: '100%'}}
+                style={{
+                  color: '#12154C',
+                  marginTop: 1,
+                  width: '100%',
+                  padding: 12,
+                }}
                 onChangeText={(masked, unmasked, obfuscated) => {
                   setCreditCard(unmasked);
                   console.log(masked);
@@ -125,6 +130,7 @@ const Bonuses3 = () => {
                   marginTop: 1,
                   width: '100%',
                   paddingHorizontal: 18,
+                  padding: 12,
                 }}
                 onChangeText={(masked, unmasked) => {
                   setValue(unmasked); // you can use the masked value as well

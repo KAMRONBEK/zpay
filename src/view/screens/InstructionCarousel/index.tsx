@@ -154,7 +154,7 @@ export const InstructionCarousel: React.FC = () => {
             data={data}
             sliderWidth={windowWidth}
             itemWidth={windowWidth}
-            scrollEnabled={false}
+            // scrollEnabled={false}
             pagingEnabled
             ref={carouselRef}
             renderItem={({item: {img, title, label}}) => (
