@@ -361,6 +361,8 @@ PODS:
     - React-perflogger (= 0.67.4)
   - ReactNativeLocalization (2.3.1):
     - React-Core
+  - RNCCheckbox (0.5.12):
+    - React-Core
   - RNGestureHandler (2.4.2):
     - React-Core
   - RNImageCropPicker (0.37.3):
@@ -476,6 +478,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeLocalization (from `../node_modules/react-native-localization`)
+  - "RNCCheckbox (from `../node_modules/@react-native-community/checkbox`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNKeychain (from `../node_modules/react-native-keychain`)
@@ -577,6 +580,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeLocalization:
     :path: "../node_modules/react-native-localization"
+  RNCCheckbox:
+    :path: "../node_modules/@react-native-community/checkbox"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNImageCropPicker:
@@ -646,6 +651,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: a9d3c82ddf7ffdad9fbe6a81c6d6f8c06385464d
   ReactCommon: 07d0c460b9ba9af3eaf1b8f5abe7daaad28c9c4e
   ReactNativeLocalization: 076497d7ca70341c751cd3b3e7c86187332a182d
+  RNCCheckbox: ed1b4ca295475b41e7251ebae046360a703b6eb5
   RNGestureHandler: 61628a2c859172551aa2100d3e73d1e57878392f
   RNImageCropPicker: 44e2807bc410741f35d4c45b6586aedfe3da39d2
   RNKeychain: 4f63aada75ebafd26f4bc2c670199461eab85d94

@@ -1,4 +1,4 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
   ScrollView,
@@ -9,10 +9,10 @@ import {
   StatusBar,
   Image,
 } from 'react-native';
-import {List, Snackbar} from 'react-native-paper';
-import {color} from 'react-native-reanimated';
-import {SafeAreaView} from 'react-navigation';
-import {AccordingIcon, Back} from '../../assets/icons/icon';
+import { List, Snackbar } from 'react-native-paper';
+import { color } from 'react-native-reanimated';
+import { SafeAreaView } from 'react-navigation';
+import { AccordingIcon, Back } from '../../assets/icons/icon';
 
 const Question = () => {
   let navigation = useNavigation();
@@ -46,13 +46,13 @@ const Question = () => {
             <List.Accordion
               titleNumberOfLines={0}
               title="Как начать пользоваться сервисом?"
-              titleStyle={{color: '#121F3E', fontSize: 16, fontWeight: '600'}}
+              titleStyle={{ color: '#121F3E', fontSize: 16, fontWeight: '600' }}
               right={() => (
                 <Image
                   source={require('../../assets/images/Vector.png')}
                   style={[
                     styles.img,
-                    {transform: [{rotate: expanded ? '-180deg' : '0deg'}]},
+                    { transform: [{ rotate: expanded ? '-180deg' : '0deg' }] },
                   ]}
                 />
               )}
@@ -64,7 +64,8 @@ const Question = () => {
                 borderBottomColor: '#EAEFF3',
                 padding: 5,
                 justifyContent: 'space-between',
-              }}>
+              }}
+            >
               <List.Item
                 titleNumberOfLines={0}
                 title={
@@ -91,13 +92,13 @@ const Question = () => {
               titleNumberOfLines={0}
               title="Как пройти регистрацию?"
               // right={props => <List.Icon icon={AccordingIcon} />}
-              titleStyle={{color: '#121F3E', fontSize: 16, fontWeight: '600'}}
+              titleStyle={{ color: '#121F3E', fontSize: 16, fontWeight: '600' }}
               right={() => (
                 <Image
                   source={require('../../assets/images/Vector.png')}
                   style={[
                     styles.img,
-                    {transform: [{rotate: expanded ? '-180deg' : '0deg'}]},
+                    { transform: [{ rotate: expanded ? '-180deg' : '0deg' }] },
                   ]}
                 />
               )}
@@ -134,13 +135,13 @@ const Question = () => {
               titleNumberOfLines={0}
               title="Что, если получили “ОТКАЗ” в верификации?"
               // right={props => <List.Icon icon={AccordingIcon} />}
-              titleStyle={{color: '#121F3E', fontSize: 16, fontWeight: '600'}}
+              titleStyle={{ color: '#121F3E', fontSize: 16, fontWeight: '600' }}
               right={() => (
                 <Image
                   source={require('../../assets/images/Vector.png')}
                   style={[
                     styles.img,
-                    {transform: [{rotate: expanded ? '-180deg' : '0deg'}]},
+                    { transform: [{ rotate: expanded ? '-180deg' : '0deg' }] },
                   ]}
                 />
               )}
@@ -176,13 +177,13 @@ const Question = () => {
               titleNumberOfLines={0}
               title="Можно ли пройти регистрацию через другую карту"
               // right={props => <List.Icon icon={AccordingIcon} />}
-              titleStyle={{color: '#121F3E', fontSize: 16, fontWeight: '600'}}
+              titleStyle={{ color: '#121F3E', fontSize: 16, fontWeight: '600' }}
               right={() => (
                 <Image
                   source={require('../../assets/images/Vector.png')}
                   style={[
                     styles.img,
-                    {transform: [{rotate: expanded ? '-180deg' : '0deg'}]},
+                    { transform: [{ rotate: expanded ? '-180deg' : '0deg' }] },
                   ]}
                 />
               )}
@@ -228,7 +229,7 @@ const Question = () => {
                   source={require('../../assets/images/Vector.png')}
                   style={[
                     styles.img,
-                    {transform: [{rotate: expanded ? '-180deg' : '0deg'}]},
+                    { transform: [{ rotate: expanded ? '-180deg' : '0deg' }] },
                   ]}
                 />
               )}
@@ -274,7 +275,7 @@ const Question = () => {
                   source={require('../../assets/images/Vector.png')}
                   style={[
                     styles.img,
-                    {transform: [{rotate: expanded ? '-180deg' : '0deg'}]},
+                    { transform: [{ rotate: expanded ? '-180deg' : '0deg' }] },
                   ]}
                 />
               )}
@@ -309,13 +310,13 @@ const Question = () => {
             <List.Accordion
               titleNumberOfLines={0}
               title="Что ТАКОЕ"
-              titleStyle={{color: '#121F3E', fontSize: 24, fontWeight: '600'}}
+              titleStyle={{ color: '#121F3E', fontSize: 24, fontWeight: '600' }}
               right={() => (
                 <Image
                   source={require('../../assets/images/Vector.png')}
                   style={[
                     styles.img,
-                    {transform: [{rotate: expanded ? '-180deg' : '0deg'}]},
+                    { transform: [{ rotate: expanded ? '-180deg' : '0deg' }] },
                   ]}
                 />
               )}

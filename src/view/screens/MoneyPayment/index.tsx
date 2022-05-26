@@ -1,9 +1,8 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
 import {
   Dimensions,
   Image,
-  Modal,
   ScrollView,
   StyleSheet,
   Text,
@@ -11,10 +10,11 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {UzcartIcon, XIcon} from '../../assets/icons/icon';
-import MaskInput, {createNumberMask} from 'react-native-mask-input';
-import {strings} from '../../locales/strings';
+import { UzcartIcon, XIcon } from '../../assets/icons/icon';
+import MaskInput, { createNumberMask } from 'react-native-mask-input';
+import { strings } from '../../locales/strings';
 import CheckBox from '@react-native-community/checkbox';
+import Modal from 'react-native-modal'
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -74,7 +74,7 @@ export default function MoneyPayment() {
                     <Text
                       style={[
                         styles.number,
-                        {color: toggleCheckBox ? '#33409E' : '#000000'},
+                        { color: toggleCheckBox ? '#33409E' : '#000000' },
                       ]}>
                       8600 00** **** **97
                     </Text>
@@ -82,7 +82,7 @@ export default function MoneyPayment() {
                       <Text
                         style={[
                           styles.datatext,
-                          {color: toggleCheckBox ? '#33409E' : '#000000'},
+                          { color: toggleCheckBox ? '#33409E' : '#000000' },
                         ]}>
                         05/27
                       </Text>
@@ -100,11 +100,12 @@ export default function MoneyPayment() {
                       backgroundColor: '#FFF',
                     }}>
                     <CheckBox
+                      tintColor={"white"}
                       disabled={false}
                       value={toggleCheckBox}
                       onValueChange={() => setToggleCheckBox(e => !e)}
                       boxType="circle"
-                      tintColors={{true: '#33409E', false: '#FFF'}}
+                      tintColors={{ true: '#33409E', false: '#FFF' }}
                     />
                   </View>
                 </View>
@@ -118,14 +119,14 @@ export default function MoneyPayment() {
                   <View style={styles.kub}>
                     <Image
                       source={require('../../assets/images/HumoCard1.png')}
-                      style={{height: 20, width: 24}}
+                      style={{ height: 20, width: 24 }}
                     />
                   </View>
                   <View style={styles.kartanumber}>
                     <Text
                       style={[
                         styles.number,
-                        {color: toggleUnCheckBox ? '#33409E' : '#000000'},
+                        { color: toggleUnCheckBox ? '#33409E' : '#000000' },
                       ]}>
                       9800 00** **** **97
                     </Text>
@@ -133,7 +134,7 @@ export default function MoneyPayment() {
                       <Text
                         style={[
                           styles.datatext,
-                          {color: toggleUnCheckBox ? '#33409E' : '#000000'},
+                          { color: toggleUnCheckBox ? '#33409E' : '#000000' },
                         ]}>
                         05/27
                       </Text>
@@ -151,11 +152,12 @@ export default function MoneyPayment() {
                       backgroundColor: '#FFF',
                     }}>
                     <CheckBox
+                      tintColor={"white"}
                       disabled={false}
                       value={toggleUnCheckBox}
                       onValueChange={newValue => setToggleUnCheckBox(newValue)}
                       boxType="circle"
-                      tintColors={{true: '#33409E', false: '#FFF'}}
+                      tintColors={{ true: '#33409E', false: '#FFF' }}
                     />
                   </View>
                 </View>
@@ -175,7 +177,7 @@ export default function MoneyPayment() {
                     <Text
                       style={[
                         styles.number,
-                        {color: toggleUnCheckedBox ? '#33409E' : '#000000'},
+                        { color: toggleUnCheckedBox ? '#33409E' : '#000000' },
                       ]}>
                       Лицевой счет
                     </Text>
@@ -183,7 +185,7 @@ export default function MoneyPayment() {
                       <Text
                         style={[
                           styles.datatext2,
-                          {color: toggleUnCheckedBox ? '#33409E' : '#32B179'},
+                          { color: toggleUnCheckedBox ? '#33409E' : '#32B179' },
                         ]}>
                         244 000 сум
                       </Text>
@@ -201,13 +203,14 @@ export default function MoneyPayment() {
                       backgroundColor: '#FFF',
                     }}>
                     <CheckBox
+                      tintColor={"white"}
                       disabled={false}
                       value={toggleUnCheckedBox}
                       onValueChange={newValue =>
                         setToggleUnCheckedBox(newValue)
                       }
                       boxType="circle"
-                      tintColors={{true: '#33409E', false: '#FFF'}}
+                      tintColors={{ true: '#33409E', false: '#FFF' }}
                     />
                   </View>
                 </View>
@@ -226,7 +229,7 @@ export default function MoneyPayment() {
         </View>
       </View>
       <View>
-        <Modal animationType="slide" transparent={true} visible={modalVisible}>
+        <Modal animationIn={"fadeIn"} animationInTiming={500} animationOutTiming={200} animationOut={"fadeOut"} coverScreen isVisible={modalVisible}>
           <View style={styles.modal}>
             <TouchableOpacity>
               <View style={styles.modalview}>
@@ -396,7 +399,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.7)',
   },
   modalview: {
     height: modalHeight,

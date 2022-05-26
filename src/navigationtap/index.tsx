@@ -1,12 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../view/constants/Homescreen';
 import AgreementScreen from '../view/constants/Agreementscreen';
 import MycardScreen from '../view/constants/Mycardscreen';
 import ProfileScreen from '../view/constants/Profilescreen';
-import {strings} from '../view/locales/strings';
+import { strings } from '../view/locales/strings';
 
 const windowHeight = Dimensions.get('window').height;
 
@@ -22,7 +22,7 @@ const TabNavigation = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           bottom: 0,
-          height: windowHeight / 12.5,
+          paddingTop: 10
         },
         tabBarActiveTintColor: 'black',
         tabBarInactiveTintColor: 'red',
@@ -31,7 +31,7 @@ const TabNavigation = () => {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ focused }) => (
             <View
               style={{
                 alignItems: 'center',
@@ -63,8 +63,8 @@ const TabNavigation = () => {
         name="Agreement"
         component={AgreementScreen}
         options={{
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+          tabBarIcon: ({ focused }) => (
+            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
               <Image
                 source={require('../view/assets/images/BriefcaseNavigation.png')}
                 style={{
@@ -74,7 +74,7 @@ const TabNavigation = () => {
                 }}
               />
               <Text
-                style={{color: focused ? '#3554D1' : '#717394', fontSize: 12}}>
+                style={{ color: focused ? '#3554D1' : '#717394', fontSize: 12 }}>
                 {strings.Договора}
               </Text>
             </View>
@@ -85,8 +85,8 @@ const TabNavigation = () => {
         name="Mycard"
         component={MycardScreen}
         options={{
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+          tabBarIcon: ({ focused }) => (
+            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
               <Image
                 source={require('../view/assets/images/CardholderNavigation.png')}
                 style={{
@@ -96,7 +96,7 @@ const TabNavigation = () => {
                 }}
               />
               <Text
-                style={{color: focused ? '#3554D1' : '#717394', fontSize: 12}}>
+                style={{ color: focused ? '#3554D1' : '#717394', fontSize: 12 }}>
                 Мои карты
               </Text>
             </View>
@@ -107,8 +107,8 @@ const TabNavigation = () => {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarIcon: ({focused}) => (
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+          tabBarIcon: ({ focused }) => (
+            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
               <Image
                 source={require('../view/assets/images/ProfileNavigation.png')}
                 style={{
@@ -119,7 +119,7 @@ const TabNavigation = () => {
               />
 
               <Text
-                style={{color: focused ? '#3554D1' : '#717394', fontSize: 12}}>
+                style={{ color: focused ? '#3554D1' : '#717394', fontSize: 12 }}>
                 {strings.Профиль}
               </Text>
             </View>
