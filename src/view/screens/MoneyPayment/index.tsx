@@ -71,9 +71,21 @@ export default function MoneyPayment() {
                   </View>
 
                   <View style={styles.kartanumber}>
-                    <Text style={styles.number}>8600 00** **** **97</Text>
+                    <Text
+                      style={[
+                        styles.number,
+                        {color: toggleCheckBox ? '#33409E' : '#000000'},
+                      ]}>
+                      8600 00** **** **97
+                    </Text>
                     <View style={styles.data}>
-                      <Text style={styles.datatext}>05/27</Text>
+                      <Text
+                        style={[
+                          styles.datatext,
+                          {color: toggleCheckBox ? '#33409E' : '#000000'},
+                        ]}>
+                        05/27
+                      </Text>
                     </View>
                   </View>
                   <View
@@ -92,7 +104,7 @@ export default function MoneyPayment() {
                       value={toggleCheckBox}
                       onValueChange={() => setToggleCheckBox(e => !e)}
                       boxType="circle"
-                      tintColors={{true: '#32B179', false: '#FFF'}}
+                      tintColors={{true: '#33409E', false: '#FFF'}}
                     />
                   </View>
                 </View>
@@ -110,9 +122,21 @@ export default function MoneyPayment() {
                     />
                   </View>
                   <View style={styles.kartanumber}>
-                    <Text style={styles.number}>9800 00** **** **97</Text>
+                    <Text
+                      style={[
+                        styles.number,
+                        {color: toggleUnCheckBox ? '#33409E' : '#000000'},
+                      ]}>
+                      9800 00** **** **97
+                    </Text>
                     <View style={styles.data}>
-                      <Text style={styles.datatext}>05/27</Text>
+                      <Text
+                        style={[
+                          styles.datatext,
+                          {color: toggleUnCheckBox ? '#33409E' : '#000000'},
+                        ]}>
+                        05/27
+                      </Text>
                     </View>
                   </View>
                   <View
@@ -131,7 +155,7 @@ export default function MoneyPayment() {
                       value={toggleUnCheckBox}
                       onValueChange={newValue => setToggleUnCheckBox(newValue)}
                       boxType="circle"
-                      tintColors={{true: '#32B179', false: '#FFF'}}
+                      tintColors={{true: '#33409E', false: '#FFF'}}
                     />
                   </View>
                 </View>
@@ -148,9 +172,21 @@ export default function MoneyPayment() {
                     />
                   </View>
                   <View style={styles.kartanumber}>
-                    <Text style={styles.number}>Лицевой счет</Text>
+                    <Text
+                      style={[
+                        styles.number,
+                        {color: toggleUnCheckedBox ? '#33409E' : '#000000'},
+                      ]}>
+                      Лицевой счет
+                    </Text>
                     <View style={styles.data}>
-                      <Text style={styles.datatext2}>244 000 сум</Text>
+                      <Text
+                        style={[
+                          styles.datatext2,
+                          {color: toggleUnCheckedBox ? '#33409E' : '#32B179'},
+                        ]}>
+                        244 000 сум
+                      </Text>
                     </View>
                   </View>
                   <View
@@ -171,7 +207,7 @@ export default function MoneyPayment() {
                         setToggleUnCheckedBox(newValue)
                       }
                       boxType="circle"
-                      tintColors={{true: '#32B179', false: '#FFF'}}
+                      tintColors={{true: '#33409E', false: '#FFF'}}
                     />
                   </View>
                 </View>
