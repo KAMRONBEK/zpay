@@ -61,124 +61,121 @@ export default function MoneyPayment() {
               <View style={styles.oplati}>
                 <Text style={styles.summatext}>Выберите способ оплаты</Text>
               </View>
-              {/* <TouchableOpacity> */}
-              <View style={styles.row}>
-                <View style={styles.kub}>
-                  <UzcartIcon />
-                </View>
+              <TouchableOpacity
+                onPress={() => {
+                  setToggleCheckBox(e => !e);
+                }}>
+                <View style={styles.row}>
+                  <View style={styles.kub}>
+                    <UzcartIcon />
+                  </View>
 
-                <View style={styles.kartanumber}>
-                  <Text style={styles.number}>8600 00** **** **97</Text>
-                  <View style={styles.data}>
-                    <Text style={styles.datatext}>05/27</Text>
+                  <View style={styles.kartanumber}>
+                    <Text style={styles.number}>8600 00** **** **97</Text>
+                    <View style={styles.data}>
+                      <Text style={styles.datatext}>05/27</Text>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      height: 33,
+                      width: 33,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: 100,
+                      position: 'absolute',
+                      right: 0,
+                      backgroundColor: '#FFF',
+                    }}>
+                    <CheckBox
+                      disabled={false}
+                      value={toggleCheckBox}
+                      onValueChange={() => setToggleCheckBox(e => !e)}
+                      boxType="circle"
+                      tintColors={{true: '#32B179', false: '#FFF'}}
+                    />
                   </View>
                 </View>
-                <View
-                  style={{
-                    height: 33,
-                    width: 33,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    borderRadius: 100,
-                    position: 'absolute',
-                    right: 0,
-                    backgroundColor: '#F2F5F8',
-                  }}>
-                  <CheckBox
-                    disabled={false}
-                    value={toggleCheckBox}
-                    onValueChange={newValue => setToggleCheckBox(newValue)}
-                    // style={{
-                    //   position: 'absolute',
-                    //   right: 0,
-                    //   backgroundColor: '#F2F5F8',
-                    // }}
-                    boxType="circle"
-                    tintColors={{true: '#32B179', false: '#FFF'}}
-                  />
-                </View>
-              </View>
-              {/* </TouchableOpacity> */}
+              </TouchableOpacity>
               <View style={styles.line}></View>
-              {/* <TouchableOpacity> */}
-              <View style={styles.row}>
-                <View style={styles.kub}>
-                  <Image
-                    source={require('../../assets/images/HumoCard1.png')}
-                    style={{height: 20, width: 24}}
-                  />
-                </View>
-                <View style={styles.kartanumber}>
-                  <Text style={styles.number}>9800 00** **** **97</Text>
-                  <View style={styles.data}>
-                    <Text style={styles.datatext}>05/27</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  setToggleUnCheckBox(e => !e);
+                }}>
+                <View style={styles.row}>
+                  <View style={styles.kub}>
+                    <Image
+                      source={require('../../assets/images/HumoCard1.png')}
+                      style={{height: 20, width: 24}}
+                    />
+                  </View>
+                  <View style={styles.kartanumber}>
+                    <Text style={styles.number}>9800 00** **** **97</Text>
+                    <View style={styles.data}>
+                      <Text style={styles.datatext}>05/27</Text>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      height: 33,
+                      width: 33,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: 100,
+                      position: 'absolute',
+                      right: 0,
+                      backgroundColor: '#FFF',
+                    }}>
+                    <CheckBox
+                      disabled={false}
+                      value={toggleUnCheckBox}
+                      onValueChange={newValue => setToggleUnCheckBox(newValue)}
+                      boxType="circle"
+                      tintColors={{true: '#32B179', false: '#FFF'}}
+                    />
                   </View>
                 </View>
-                <View
-                  style={{
-                    height: 33,
-                    width: 33,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    borderRadius: 100,
-                    position: 'absolute',
-                    right: 0,
-                    backgroundColor: '#F2F5F8',
-                  }}>
-                  <CheckBox
-                    disabled={false}
-                    value={toggleUnCheckBox}
-                    onValueChange={newValue => setToggleUnCheckBox(newValue)}
-                    // style={{
-                    //   position: 'absolute',
-                    //   right: 0,
-                    //   backgroundColor: '#F2F5F8',
-                    // }}
-
-                    boxType="circle"
-                    tintColors={{true: '#32B179', false: '#FFF'}}
-                  />
-                </View>
-              </View>
-              {/* </TouchableOpacity> */}
+              </TouchableOpacity>
               <View style={styles.line}></View>
-              {/* <TouchableOpacity> */}
-              <View style={styles.row}>
-                <View style={styles.kub}>
-                  <Image source={require('../../assets/images/scotimg.png')} />
-                </View>
-                <View style={styles.kartanumber}>
-                  <Text style={styles.number}>Лицевой счет</Text>
-                  <View style={styles.data}>
-                    <Text style={styles.datatext2}>244 000 сум</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  setToggleUnCheckedBox(e => !e);
+                }}>
+                <View style={styles.row}>
+                  <View style={styles.kub}>
+                    <Image
+                      source={require('../../assets/images/scotimg.png')}
+                    />
+                  </View>
+                  <View style={styles.kartanumber}>
+                    <Text style={styles.number}>Лицевой счет</Text>
+                    <View style={styles.data}>
+                      <Text style={styles.datatext2}>244 000 сум</Text>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      height: 33,
+                      width: 33,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: 100,
+                      position: 'absolute',
+                      right: 0,
+                      backgroundColor: '#FFF',
+                    }}>
+                    <CheckBox
+                      disabled={false}
+                      value={toggleUnCheckedBox}
+                      onValueChange={newValue =>
+                        setToggleUnCheckedBox(newValue)
+                      }
+                      boxType="circle"
+                      tintColors={{true: '#32B179', false: '#FFF'}}
+                    />
                   </View>
                 </View>
-                <View
-                  style={{
-                    height: 33,
-                    width: 33,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    borderRadius: 100,
-                    position: 'absolute',
-                    right: 0,
-                    backgroundColor: '#F2F5F8',
-                  }}>
-                  <CheckBox
-                    disabled={false}
-                    value={toggleUnCheckedBox}
-                    onValueChange={newValue => setToggleUnCheckedBox(newValue)}
-                    // style={{
-                    //   position: 'absolute',
-                    //   right: 0,
-                    //   backgroundColor: '#F2F5F8',
-                    // }}
-                    boxType="circle"
-                    tintColors={{true: '#32B179', false: '#FFF'}}
-                  />
-                </View>
-              </View>
-              {/* </TouchableOpacity> */}
+              </TouchableOpacity>
               <View style={styles.line}></View>
             </View>
             <View>

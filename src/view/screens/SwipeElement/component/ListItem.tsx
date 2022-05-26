@@ -135,7 +135,6 @@ const styles = StyleSheet.create({
     borderLeftWidth: 5,
     borderLeftColor: '#32B179',
     paddingLeft: 14,
-    // paddingRight: 5,
     paddingVertical: 10,
     shadowOpacity: 0.08,
     borderRadius: 10,
@@ -153,7 +152,6 @@ const styles = StyleSheet.create({
   iconContainer: {
     height: LIST_ITEM_HEIGHT,
     width: LIST_ITEM_HEIGHT,
-    // backgroundColor: 'red',
     position: 'absolute',
     right: '10%',
     alignItems: 'center',
