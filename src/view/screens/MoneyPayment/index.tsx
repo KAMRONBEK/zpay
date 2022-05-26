@@ -15,14 +15,7 @@ import {UzcartIcon, XIcon} from '../../assets/icons/icon';
 import MaskInput, {createNumberMask} from 'react-native-mask-input';
 import {strings} from '../../locales/strings';
 import CheckBox from '@react-native-community/checkbox';
-import {Checkbox} from 'react-native-paper';
 
-const dollarMask = createNumberMask({
-  // delimiter: '.',
-  // separator: '.',
-  // precision: 3,
-  // prefix: ['cum'],
-});
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 
@@ -34,18 +27,19 @@ const buttonOplatitHeight = SCREEN_HEIGHT * 0.053;
 const modalHeight = SCREEN_HEIGHT * 0.26;
 const errorModalHeight = SCREEN_HEIGHT * 0.04;
 
-const MoneyPayment = () => {
+export default function MoneyPayment() {
   const [value, setValue] = React.useState('');
 
   let navigation = useNavigation();
+
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [toggleUnCheckBox, setToggleUnCheckBox] = useState(false);
+  const [toggleUnCheckedBox, setToggleUnCheckedBox] = useState(false);
 
   const [modalVisible, setModalVisible] = useState(false);
 
   const [modal, setModal] = useState(false);
 
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
-
-  const [checked, setChecked] = React.useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.modalView}>
@@ -58,23 +52,6 @@ const MoneyPayment = () => {
                 <Text style={styles.summatext}>{strings.Сумма}</Text>
               </View>
               <View style={styles.container2}>
-                {/* <MaskInput
-                  mask={dollarMask}
-                  value={value}
-                  keyboardType="number-pad"
-                  style={{
-                    color: '#12154C',
-                    marginTop: 1,
-                    width: '100%',
-                    paddingHorizontal: 18,
-                  }}
-                  onChangeText={(masked, unmasked) => {
-                    setValue(unmasked); // you can use the masked value as well
-
-                    console.log(unmasked); // "123456"
-                    console.log(masked); // "R$ 1.234,56"
-                  }}
-                /> */}
                 <TextInput
                   style={styles.input}
                   // value={value}
@@ -84,53 +61,124 @@ const MoneyPayment = () => {
               <View style={styles.oplati}>
                 <Text style={styles.summatext}>Выберите способ оплаты</Text>
               </View>
-              <TouchableOpacity>
-                <View style={styles.row}>
-                  <View style={styles.kub}>
-                    <UzcartIcon />
-                  </View>
+              {/* <TouchableOpacity> */}
+              <View style={styles.row}>
+                <View style={styles.kub}>
+                  <UzcartIcon />
+                </View>
 
-                  <View style={styles.kartanumber}>
-                    <Text style={styles.number}>8600 00** **** **97</Text>
-                    <View style={styles.data}>
-                      <Text style={styles.datatext}>05/27</Text>
-                    </View>
+                <View style={styles.kartanumber}>
+                  <Text style={styles.number}>8600 00** **** **97</Text>
+                  <View style={styles.data}>
+                    <Text style={styles.datatext}>05/27</Text>
                   </View>
                 </View>
-              </TouchableOpacity>
+                <View
+                  style={{
+                    height: 33,
+                    width: 33,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 100,
+                    position: 'absolute',
+                    right: 0,
+                    backgroundColor: '#F2F5F8',
+                  }}>
+                  <CheckBox
+                    disabled={false}
+                    value={toggleCheckBox}
+                    onValueChange={newValue => setToggleCheckBox(newValue)}
+                    // style={{
+                    //   position: 'absolute',
+                    //   right: 0,
+                    //   backgroundColor: '#F2F5F8',
+                    // }}
+                    boxType="circle"
+                    tintColors={{true: '#32B179', false: '#FFF'}}
+                  />
+                </View>
+              </View>
+              {/* </TouchableOpacity> */}
               <View style={styles.line}></View>
-              <TouchableOpacity>
-                <View style={styles.row}>
-                  <View style={styles.kub}>
-                    <Image
-                      source={require('../../assets/images/HumoCard1.png')}
-                      style={{height: 20, width: 24}}
-                    />
-                  </View>
-                  <View style={styles.kartanumber}>
-                    <Text style={styles.number}>9800 00** **** **97</Text>
-                    <View style={styles.data}>
-                      <Text style={styles.datatext}>05/27</Text>
-                    </View>
+              {/* <TouchableOpacity> */}
+              <View style={styles.row}>
+                <View style={styles.kub}>
+                  <Image
+                    source={require('../../assets/images/HumoCard1.png')}
+                    style={{height: 20, width: 24}}
+                  />
+                </View>
+                <View style={styles.kartanumber}>
+                  <Text style={styles.number}>9800 00** **** **97</Text>
+                  <View style={styles.data}>
+                    <Text style={styles.datatext}>05/27</Text>
                   </View>
                 </View>
-              </TouchableOpacity>
+                <View
+                  style={{
+                    height: 33,
+                    width: 33,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 100,
+                    position: 'absolute',
+                    right: 0,
+                    backgroundColor: '#F2F5F8',
+                  }}>
+                  <CheckBox
+                    disabled={false}
+                    value={toggleUnCheckBox}
+                    onValueChange={newValue => setToggleUnCheckBox(newValue)}
+                    // style={{
+                    //   position: 'absolute',
+                    //   right: 0,
+                    //   backgroundColor: '#F2F5F8',
+                    // }}
+
+                    boxType="circle"
+                    tintColors={{true: '#32B179', false: '#FFF'}}
+                  />
+                </View>
+              </View>
+              {/* </TouchableOpacity> */}
               <View style={styles.line}></View>
-              <TouchableOpacity>
-                <View style={styles.row}>
-                  <View style={styles.kub}>
-                    <Image
-                      source={require('../../assets/images/scotimg.png')}
-                    />
-                  </View>
-                  <View style={styles.kartanumber}>
-                    <Text style={styles.number}>Лицевой счет</Text>
-                    <View style={styles.data}>
-                      <Text style={styles.datatext2}>244 000 сум</Text>
-                    </View>
+              {/* <TouchableOpacity> */}
+              <View style={styles.row}>
+                <View style={styles.kub}>
+                  <Image source={require('../../assets/images/scotimg.png')} />
+                </View>
+                <View style={styles.kartanumber}>
+                  <Text style={styles.number}>Лицевой счет</Text>
+                  <View style={styles.data}>
+                    <Text style={styles.datatext2}>244 000 сум</Text>
                   </View>
                 </View>
-              </TouchableOpacity>
+                <View
+                  style={{
+                    height: 33,
+                    width: 33,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 100,
+                    position: 'absolute',
+                    right: 0,
+                    backgroundColor: '#F2F5F8',
+                  }}>
+                  <CheckBox
+                    disabled={false}
+                    value={toggleUnCheckedBox}
+                    onValueChange={newValue => setToggleUnCheckedBox(newValue)}
+                    // style={{
+                    //   position: 'absolute',
+                    //   right: 0,
+                    //   backgroundColor: '#F2F5F8',
+                    // }}
+                    boxType="circle"
+                    tintColors={{true: '#32B179', false: '#FFF'}}
+                  />
+                </View>
+              </View>
+              {/* </TouchableOpacity> */}
               <View style={styles.line}></View>
             </View>
             <View>
@@ -211,9 +259,7 @@ const MoneyPayment = () => {
       </View>
     </View>
   );
-};
-
-export default MoneyPayment;
+}
 
 const styles = StyleSheet.create({
   container: {

@@ -82,7 +82,7 @@ const ListItem: React.FC<ListItemProps> = ({
   return (
     <Animated.View style={[styles.taskContainer, rTaskContainerStyle]}>
       <Animated.View style={[styles.iconContainer, rIconContainerStyle]}>
-        <Text style={styles.iconContainerText}>delete</Text>
+        <Text style={styles.iconContainerText}>удалить </Text>
       </Animated.View>
       <PanGestureHandler
         simultaneousHandlers={simultaneousHandlers}
