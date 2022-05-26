@@ -250,6 +250,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#EAEFF3',
     alignItems: 'center',
+    justifyContent: 'center',
     paddingVertical: 1,
   },
   sectionInput: {

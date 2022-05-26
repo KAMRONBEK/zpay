@@ -14,13 +14,8 @@ import {
 import {UzcartIcon, XIcon} from '../../assets/icons/icon';
 import MaskInput, {createNumberMask} from 'react-native-mask-input';
 import {strings} from '../../locales/strings';
+import CheckBox from '@react-native-community/checkbox';
 
-const dollarMask = createNumberMask({
-  // delimiter: '.',
-  // separator: '.',
-  // precision: 3,
-  // prefix: ['cum'],
-});
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 
@@ -32,10 +27,14 @@ const buttonOplatitHeight = SCREEN_HEIGHT * 0.053;
 const modalHeight = SCREEN_HEIGHT * 0.26;
 const errorModalHeight = SCREEN_HEIGHT * 0.04;
 
-const MoneyPayment = () => {
+export default function MoneyPayment() {
   const [value, setValue] = React.useState('');
 
   let navigation = useNavigation();
+
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [toggleUnCheckBox, setToggleUnCheckBox] = useState(false);
+  const [toggleUnCheckedBox, setToggleUnCheckedBox] = useState(false);
 
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -53,23 +52,6 @@ const MoneyPayment = () => {
                 <Text style={styles.summatext}>{strings.Сумма}</Text>
               </View>
               <View style={styles.container2}>
-                {/* <MaskInput
-                  mask={dollarMask}
-                  value={value}
-                  keyboardType="number-pad"
-                  style={{
-                    color: '#12154C',
-                    marginTop: 1,
-                    width: '100%',
-                    paddingHorizontal: 18,
-                  }}
-                  onChangeText={(masked, unmasked) => {
-                    setValue(unmasked); // you can use the masked value as well
-
-                    console.log(unmasked); // "123456"
-                    console.log(masked); // "R$ 1.234,56"
-                  }}
-                /> */}
                 <TextInput
                   style={styles.input}
                   // value={value}
@@ -79,21 +61,59 @@ const MoneyPayment = () => {
               <View style={styles.oplati}>
                 <Text style={styles.summatext}>Выберите способ оплаты</Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  setToggleCheckBox(e => !e);
+                }}>
                 <View style={styles.row}>
                   <View style={styles.kub}>
                     <UzcartIcon />
                   </View>
+
                   <View style={styles.kartanumber}>
-                    <Text style={styles.number}>8600 00** **** **97</Text>
+                    <Text
+                      style={[
+                        styles.number,
+                        {color: toggleCheckBox ? '#33409E' : '#000000'},
+                      ]}>
+                      8600 00** **** **97
+                    </Text>
                     <View style={styles.data}>
-                      <Text style={styles.datatext}>05/27</Text>
+                      <Text
+                        style={[
+                          styles.datatext,
+                          {color: toggleCheckBox ? '#33409E' : '#000000'},
+                        ]}>
+                        05/27
+                      </Text>
                     </View>
+                  </View>
+                  <View
+                    style={{
+                      height: 33,
+                      width: 33,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: 100,
+                      position: 'absolute',
+                      right: 0,
+                      backgroundColor: '#FFF',
+                    }}>
+                    <CheckBox
+                      disabled={false}
+                      value={toggleCheckBox}
+                      onValueChange={() => setToggleCheckBox(e => !e)}
+                      boxType="circle"
+                      tintColors={{true: '#33409E', false: '#FFF'}}
+                    />
                   </View>
                 </View>
               </TouchableOpacity>
               <View style={styles.line}></View>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  setToggleUnCheckBox(e => !e);
+                }}>
                 <View style={styles.row}>
                   <View style={styles.kub}>
                     <Image
@@ -102,15 +122,49 @@ const MoneyPayment = () => {
                     />
                   </View>
                   <View style={styles.kartanumber}>
-                    <Text style={styles.number}>9800 00** **** **97</Text>
+                    <Text
+                      style={[
+                        styles.number,
+                        {color: toggleUnCheckBox ? '#33409E' : '#000000'},
+                      ]}>
+                      9800 00** **** **97
+                    </Text>
                     <View style={styles.data}>
-                      <Text style={styles.datatext}>05/27</Text>
+                      <Text
+                        style={[
+                          styles.datatext,
+                          {color: toggleUnCheckBox ? '#33409E' : '#000000'},
+                        ]}>
+                        05/27
+                      </Text>
                     </View>
+                  </View>
+                  <View
+                    style={{
+                      height: 33,
+                      width: 33,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: 100,
+                      position: 'absolute',
+                      right: 0,
+                      backgroundColor: '#FFF',
+                    }}>
+                    <CheckBox
+                      disabled={false}
+                      value={toggleUnCheckBox}
+                      onValueChange={newValue => setToggleUnCheckBox(newValue)}
+                      boxType="circle"
+                      tintColors={{true: '#33409E', false: '#FFF'}}
+                    />
                   </View>
                 </View>
               </TouchableOpacity>
               <View style={styles.line}></View>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  setToggleUnCheckedBox(e => !e);
+                }}>
                 <View style={styles.row}>
                   <View style={styles.kub}>
                     <Image
@@ -118,10 +172,43 @@ const MoneyPayment = () => {
                     />
                   </View>
                   <View style={styles.kartanumber}>
-                    <Text style={styles.number}>Лицевой счет</Text>
+                    <Text
+                      style={[
+                        styles.number,
+                        {color: toggleUnCheckedBox ? '#33409E' : '#000000'},
+                      ]}>
+                      Лицевой счет
+                    </Text>
                     <View style={styles.data}>
-                      <Text style={styles.datatext2}>244 000 сум</Text>
+                      <Text
+                        style={[
+                          styles.datatext2,
+                          {color: toggleUnCheckedBox ? '#33409E' : '#32B179'},
+                        ]}>
+                        244 000 сум
+                      </Text>
                     </View>
+                  </View>
+                  <View
+                    style={{
+                      height: 33,
+                      width: 33,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: 100,
+                      position: 'absolute',
+                      right: 0,
+                      backgroundColor: '#FFF',
+                    }}>
+                    <CheckBox
+                      disabled={false}
+                      value={toggleUnCheckedBox}
+                      onValueChange={newValue =>
+                        setToggleUnCheckedBox(newValue)
+                      }
+                      boxType="circle"
+                      tintColors={{true: '#33409E', false: '#FFF'}}
+                    />
                   </View>
                 </View>
               </TouchableOpacity>
@@ -196,12 +283,16 @@ const MoneyPayment = () => {
             </View>
           </View>
         </Modal> */}
+        {/* <Checkbox
+          status={checked ? 'checked' : 'unchecked'}
+          onPress={() => {
+            setChecked(!checked);
+          }}
+        /> */}
       </View>
     </View>
   );
-};
-
-export default MoneyPayment;
+}
 
 const styles = StyleSheet.create({
   container: {

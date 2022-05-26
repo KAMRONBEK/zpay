@@ -77,7 +77,6 @@ const AppNavigator = () => {
         <Stack.Screen component={LanguageDropDown} name="languagedropdown" />
         <Stack.Screen component={TorchLight} name="torch" />
         <Stack.Screen component={VerifiyInput} name="verifiyinput" />
-        {/* <Stack.Screen component={Search} name="search" /> */}
         <Stack.Screen component={Appp} name="appp" />
         <Stack.Screen component={SetPin} name="setpin" />
         <Stack.Screen component={SetPin2} name="setpin2" />
@@ -87,6 +86,7 @@ const AppNavigator = () => {
         <Stack.Screen component={MoneyPayment} name="moneypayment" />
         <Stack.Screen component={Question} name="question" />
         <Stack.Screen component={Notifications} name="notifications" />
+        <Stack.Screen component={SwipeElement} name="swipeelement" />
         <Stack.Screen component={TouchId} name="touchid" />
         <Stack.Screen component={PartnerStore} name="partnerstore" />
         <Stack.Screen component={AboutProduct} name="aboutproduct" />
@@ -107,6 +107,7 @@ const AppNavigator = () => {
         <Stack.Screen component={Bonuses1} name="bonuses1" />
         <Stack.Screen component={Bonuses2} name="bonuses2" />
         <Stack.Screen component={Bonuses3} name="bonuses3" />
+        {/* <Stack.Screen component={Search} name="search" /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
   },
   number: {
     zIndex: 99,
-    marginTop: 37,
+    marginTop: 30,
   },
   numbertext: {
     fontSize: 19,
@@ -281,11 +281,11 @@ const styles = StyleSheet.create({
     color: '#FFF',
   },
   card: {
-    marginTop: 27,
+    marginTop: 20,
   },
   card3: {
-    marginTop: 27,
-    marginLeft: 53,
+    marginTop: 20,
+    marginLeft: 15,
   },
   cardtext: {
     fontSize: 6.39,
@@ -306,7 +306,7 @@ const styles = StyleSheet.create({
   },
   data: {
     marginTop: 6.39,
-    marginLeft: 60,
+    marginLeft: 22,
   },
   datatext: {
     fontSize: 10.64,
@@ -323,7 +323,7 @@ const styles = StyleSheet.create({
   zpay: {
     position: 'absolute',
     marginLeft: 200,
-    marginTop: 20,
+    marginTop: 10,
   },
   headtext: {
     fontSize: 15,

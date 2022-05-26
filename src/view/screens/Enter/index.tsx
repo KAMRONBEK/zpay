@@ -36,14 +36,14 @@ const Enter = () => {
       <View style={styles.img}>
         <View>
           <Image
-            source={require('../../assets/images/zpay.png')}
+            source={require('../../assets/images/ZPayImg.png')}
             style={styles.imgpng}
           />
         </View>
         <Text
           style={{
             marginTop: 20,
-            color: '#FFF',
+            color: '#12154C',
             fontSize: 16,
             fontWeight: '600',
             textAlign: 'center',
@@ -68,7 +68,7 @@ export default Enter;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3554d1',
+    backgroundColor: '#FFF',
     paddingHorizontal: 44,
   },
   img: {
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: '#FFFFFF',
+    color: '#12154C',
     textAlign: 'center',
   },
   container1: {
