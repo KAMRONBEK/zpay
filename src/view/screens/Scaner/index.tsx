@@ -1,4 +1,4 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
   Image,
@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-import {Back, RU, ScanerIcon} from '../../assets/icons/icon';
+import { Back, RU, ScanerIcon } from '../../assets/icons/icon';
 import LanguageDropDown from '../LanguageDropDown';
 
 const windowHeight = Dimensions.get('screen').height;
@@ -32,12 +32,12 @@ const Scaner = () => {
         <LanguageDropDown />
       </View>
       <View>
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
           <Image
             source={require('../../assets/images/UserImg1.png')}
             style={{
               position: 'absolute',
-              height: windowHeight / 4.5,
+              height: windowHeight / 4.4,
               width: windowWidth / 1.8,
               // alignItems:'center',
               // justifyContent:'center'
@@ -49,7 +49,7 @@ const Scaner = () => {
               style={{
                 position: 'absolute',
                 zIndex: 99,
-                height: windowHeight / 6.9,
+                height: windowHeight / 6.8,
                 width: windowWidth / 3.1,
                 left: 30,
                 top: 30,
@@ -59,7 +59,7 @@ const Scaner = () => {
           <Image
             source={require('../../assets/images/MyId1.png')}
             style={{
-              height: windowHeight / 3.4,
+              height: windowHeight / 3.3,
               width: windowWidth / 1.47,
               // backgroundColor: 'red',
             }}
@@ -89,7 +89,7 @@ const Scaner = () => {
       </View>
       <TouchableOpacity onPress={ScanerFace}>
         <View style={styles.nextButton}>
-          <Text style={{color: 'white', fontSize: 17}}>
+          <Text style={{ color: 'white', fontSize: 17 }}>
             Начать сканирование
           </Text>
         </View>

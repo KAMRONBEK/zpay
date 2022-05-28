@@ -1,6 +1,6 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useState, useRef, useEffect} from 'react';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import { useNavigation } from '@react-navigation/native';
+import React, { useState, useRef, useEffect } from 'react';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import {
   StyleSheet,
   View,
@@ -12,11 +12,11 @@ import {
   Animated,
   Dimensions,
 } from 'react-native';
-import {Back, RU, Scan} from '../../assets/icons/icon';
+import { Back, RU, Scan } from '../../assets/icons/icon';
 import AddCardFinish from '../AddCardFinish';
-import {Carusel} from '../Carusel';
-import MaskInput, {Masks} from 'react-native-mask-input';
-import {Card} from 'react-native-paper';
+import { Carusel } from '../Carusel';
+import MaskInput, { Masks } from 'react-native-mask-input';
+import { Card } from 'react-native-paper';
 import LanguageDropDown from '../LanguageDropDown';
 
 const creditCardMask = [
@@ -62,7 +62,7 @@ const AddMyCard = () => {
   return (
     <KeyboardAwareScrollView
       showsVerticalScrollIndicator={false}
-      style={{backgroundColor: '#FFF', flex: 1}}>
+      style={{ backgroundColor: '#FFF', flex: 1 }}>
       <View style={styles.container}>
         <View style={styles.headbar}>
           <TouchableOpacity onPress={navigation.goBack}>
@@ -88,7 +88,7 @@ const AddMyCard = () => {
               backgroundColor: '#FFF',
               alignItems: 'center',
               height: instructionBarWidth,
-              paddingVertical: 10,
+
               marginTop: 30,
             }}>
             <Carusel />
@@ -102,7 +102,7 @@ const AddMyCard = () => {
               onChangeText={setCreditCard}
               mask={Masks.CREDIT_CARD}
               keyboardType="number-pad"
-              style={{color: '#12154C', width: '90%'}}
+              style={{ color: '#12154C', width: '90%' }}
               placeholder="0000 0000 0000 0000"
               placeholderTextColor={'grey'}
             />
@@ -116,7 +116,7 @@ const AddMyCard = () => {
               value={value}
               onChangeText={setValue}
               keyboardType="number-pad"
-              style={{color: '#12154C', width: '100%'}}
+              style={{ color: '#12154C', width: '100%' }}
               placeholder="дата/год истечения"
               placeholderTextColor={'grey'}
               mask={text => {
@@ -145,9 +145,9 @@ const AddMyCard = () => {
             <View
               style={[
                 styles.nextButton,
-                {backgroundColor: card.length >= 7 ? '#3554D1' : '#E5EBF0'},
+                { backgroundColor: card.length >= 7 ? '#3554D1' : '#E5EBF0' },
               ]}>
-              <Text style={{color: '#fff', fontSize: 16}}>Добавить карту</Text>
+              <Text style={{ color: '#fff', fontSize: 16 }}>Добавить карту</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
-  numberkarta: {marginTop: 20},
+  numberkarta: { marginTop: 20 },
   numberkarta2: {
     marginTop: 20,
   },

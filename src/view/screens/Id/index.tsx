@@ -1,4 +1,4 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
   BackHandler,
@@ -10,10 +10,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {TextInput} from 'react-native-gesture-handler';
-import {Back, CheckIcon, RU} from '../../assets/icons/icon';
-import MaskInput, {createNumberMask} from 'react-native-mask-input';
-import {MaskedTextInput} from 'react-native-mask-text';
+import { TextInput } from 'react-native-gesture-handler';
+import { Back, CheckIcon, RU } from '../../assets/icons/icon';
+import MaskInput, { createNumberMask } from 'react-native-mask-input';
+import { MaskedTextInput } from 'react-native-mask-text';
 
 const CPF_MASK = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
 const CNPJ_MASK = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
@@ -41,14 +41,11 @@ const Id = () => {
             <Text style={styles.nomer}>Номер паспорта</Text>
           </View>
           <View style={styles.headinput}>
-            {/* <TouchableOpacity
-              onPress={() => {
-                value;
-              }}> */}
+
             <View
               style={[
                 styles.littleinput,
-                {borderColor: value ? '#3554D1' : '#EAEFF3'},
+                { borderColor: value ? '#3554D1' : '#EAEFF3' },
               ]}>
               <MaskedTextInput
                 value={value}
@@ -59,18 +56,14 @@ const Id = () => {
                   console.log(text);
                   console.log(rawText);
                 }}
-                style={{textAlign: 'center', color: '#12154C'}}
+                style={{ textAlign: 'center', color: '#12154C' }}
               />
             </View>
-            {/* </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => {
-                creditCard;
-              }}> */}
+
             <View
               style={[
                 styles.sectionInput,
-                {borderColor: creditCard ? '#3554D1' : '#EAEFF3'},
+                { borderColor: creditCard ? '#3554D1' : '#EAEFF3' },
               ]}>
               <TextInput
                 style={styles.input}
@@ -92,7 +85,7 @@ const Id = () => {
           <View
             style={[
               styles.sectionInput1,
-              {borderColor: creditCard ? '#3554D1' : '#EAEFF3'},
+              { borderColor: creditCard ? '#3554D1' : '#EAEFF3' },
             ]}>
             <MaskedTextInput
               mask="99.99.9999"

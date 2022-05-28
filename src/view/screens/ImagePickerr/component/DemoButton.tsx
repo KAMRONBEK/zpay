@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, Pressable, ViewStyle, TextStyle} from 'react-native';
+import { StyleSheet, Text, Pressable, ViewStyle, TextStyle } from 'react-native';
 
 interface Props {
   onPress: () => void;
@@ -12,7 +12,7 @@ export function DemoButton({
   return (
     <Pressable
       onPress={onPress}
-      style={({pressed}) => [
+      style={({ pressed }) => [
         {
           backgroundColor: pressed ? '#3554D1' : '#FFF',
           borderWidth: 1,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create<Styles>({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 45,
+
     minWidth: '45%',
     maxWidth: '100%',
     marginHorizontal: 8,

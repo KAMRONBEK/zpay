@@ -1,5 +1,5 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useRef, useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useRef, useState } from 'react';
 import {
   Button,
   Dimensions,
@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Carousel, {Pagination} from 'react-native-snap-carousel';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
 import LinearGradient from 'react-native-linear-gradient';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
@@ -100,9 +100,9 @@ export const Carusel: React.FC = () => {
           },
         }) => (
           <View style={styles.karta}>
-            <View style={[styles.kartu, {backgroundColor: backgroundColor}]}>
+            <View style={[styles.kartu, { backgroundColor: backgroundColor }]}>
               <View style={styles.zback}>
-                <Image source={url4} style={{height: 170, width: 225}} />
+                <Image source={url4} style={{ height: 170, width: 225 }} />
               </View>
               <View style={styles.text}>
                 <Text style={styles.headtext}>{cartName}</Text>
@@ -131,22 +131,22 @@ export const Carusel: React.FC = () => {
                 </View>
               </View>
               <View style={styles.ugl2}>
-                <Image source={url3} style={{height: 99, width: 131}} />
+                <Image source={url3} style={{ height: 99, width: 131 }} />
               </View>
               <View style={styles.humoCircle}>
-                <Image source={url5} style={{height: 42, width: 130}} />
+                <Image source={url5} style={{ height: 42, width: 130 }} />
               </View>
               <View style={styles.ugl}>
-                <Image source={url2} style={{height: 99, width: 131}} />
+                <Image source={url2} style={{ height: 99, width: 131 }} />
               </View>
               <View style={styles.zpay}>
-                <Image source={url} style={{height: 42, width: 48}} />
+                <Image source={url} style={{ height: 42, width: 48 }} />
               </View>
               <View style={styles.humoTocka}>
-                <Image source={url6} style={{height: 88, width: 68}} />
+                <Image source={url6} style={{ height: 88, width: 68 }} />
               </View>
               <View style={styles.humoCircle2}>
-                <Image source={url7} style={{height: 104, width: 119}} />
+                <Image source={url7} style={{ height: 104, width: 119 }} />
               </View>
             </View>
           </View>
@@ -163,7 +163,7 @@ export const Carusel: React.FC = () => {
         inactiveDotOpacity={0.4}
         activeDotIndex={activeSlide}
         inactiveDotColor="#EAE9EE"
-        containerStyle={{paddingVertical: 5}}
+        containerStyle={{ paddingVertical: 5 }}
         dotStyle={{
           width: 7,
           height: 7,

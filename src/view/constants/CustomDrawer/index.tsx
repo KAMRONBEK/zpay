@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -13,7 +13,7 @@ import {
 } from '@react-navigation/drawer';
 import Modal from 'react-native-modal';
 
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import {
   CheckIcon,
   CheckIcon3,
@@ -77,7 +77,7 @@ const CustomDrawer = (props, index) => {
               <View
                 style={[
                   styles.standart,
-                  {backgroundColor: active === true ? '#FFF' : '#EAE9EE'},
+                  { backgroundColor: active === true ? '#FFF' : '#EAE9EE' },
                 ]}>
                 <Text style={styles.incontainertext1}>Статус</Text>
               </View>
@@ -86,7 +86,7 @@ const CustomDrawer = (props, index) => {
               <View
                 style={[
                   styles.standart,
-                  {backgroundColor: active === false ? '#FFF' : '#EAE9EE'},
+                  { backgroundColor: active === false ? '#FFF' : '#EAE9EE' },
                 ]}>
                 <Text style={styles.incontainertext2}>Стандарт</Text>
               </View>

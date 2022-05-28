@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
@@ -12,7 +12,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import {TaskInterface} from '..';
+import { TaskInterface } from '..';
 
 const windowHeight = Dimensions.get('window').height;
 
@@ -22,8 +22,8 @@ interface ListItemProps
   onDismiss?: (task: TaskInterface) => void;
 }
 
-const LIST_ITEM_HEIGHT = windowHeight / 6.8;
-const {width: SCREEN_WIDTH} = Dimensions.get('window');
+const LIST_ITEM_HEIGHT = windowHeight / 6.4;
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const TRANSLATE_X_THRESHOLD = -SCREEN_WIDTH * 0.3;
 
 const ListItem: React.FC<ListItemProps> = ({
@@ -68,7 +68,7 @@ const ListItem: React.FC<ListItemProps> = ({
 
   const rIconContainerStyle = useAnimatedStyle(() => {
     const opacity = translateX.value < TRANSLATE_X_THRESHOLD ? 1 : 0;
-    return {opacity};
+    return { opacity };
   });
 
   const rTaskContainerStyle = useAnimatedStyle(() => {
@@ -92,7 +92,7 @@ const ListItem: React.FC<ListItemProps> = ({
             <Text style={styles.headText}>Начислен Бонус</Text>
             <Image
               source={require('../../../assets/images/orange.png')}
-              style={{position: 'absolute', right: 0}}
+              style={{ position: 'absolute', right: 0 }}
             />
           </View>
           <View
@@ -103,7 +103,7 @@ const ListItem: React.FC<ListItemProps> = ({
             }}>
             <Image
               source={require('../../../assets/images/ZCoinBlueIcon.png')}
-              style={{height: 36, width: 36}}
+              style={{ height: 36, width: 36 }}
             />
             <View
               style={{
@@ -134,6 +134,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderLeftWidth: 5,
     borderLeftColor: '#32B179',
+    borderWidth: 0.1,
     paddingLeft: 14,
     paddingVertical: 10,
     shadowOpacity: 0.08,

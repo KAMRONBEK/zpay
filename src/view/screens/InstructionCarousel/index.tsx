@@ -1,5 +1,5 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useRef, useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useRef, useState } from 'react';
 import {
   Button,
   Dimensions,
@@ -11,17 +11,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Carousel, {Pagination} from 'react-native-snap-carousel';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
 import LinearGradient from 'react-native-linear-gradient';
-import {strings} from '../../locales/strings';
+import { strings } from '../../locales/strings';
 
 const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 
-const imgHeight = SCREEN_HEIGHT * 0.67;
-const imgWidth = SCREEN_WIDTH * 0.73;
+const imgHeight = SCREEN_HEIGHT * 0.66;
+const imgWidth = SCREEN_WIDTH * 0.71;
 
-const instructionBarWidth = SCREEN_HEIGHT * 0.23;
+const instructionBarWidth = SCREEN_HEIGHT * 0.18;
 
 const data = [
   {
@@ -157,7 +157,7 @@ export const InstructionCarousel: React.FC = () => {
             // scrollEnabled={false}
             pagingEnabled
             ref={carouselRef}
-            renderItem={({item: {img, title, label}}) => (
+            renderItem={({ item: { img, title, label } }) => (
               <View
                 style={{
                   flex: 1,
@@ -193,8 +193,8 @@ export const InstructionCarousel: React.FC = () => {
               'white',
               'white',
             ]}
-            start={{x: 0, y: 0}}
-            end={{x: 0, y: 1.2}}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 0, y: 1.2 }}
             style={{
               height: instructionBarWidth,
               width: '100%',
@@ -204,7 +204,7 @@ export const InstructionCarousel: React.FC = () => {
               position: 'absolute',
               // backgroundColor: 'red',
             }}>
-            <Text style={{color: '#000000', fontSize: 18, fontWeight: '600'}}>
+            <Text style={{ color: '#000000', fontSize: 18, fontWeight: '600' }}>
               {renderTitle()}
             </Text>
             <Text
@@ -261,25 +261,25 @@ export const InstructionCarousel: React.FC = () => {
             style={
               activeSlide === data.length - 1
                 ? {
-                    width: '100%',
-                    backgroundColor: '#3554D1',
-                    borderRadius: 10,
-                    height: 46,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginVertical: 10,
-                  }
+                  width: '100%',
+                  backgroundColor: '#3554D1',
+                  borderRadius: 10,
+                  height: 46,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginVertical: 10,
+                }
                 : {
-                    height: 46,
-                    width: 110,
-                    backgroundColor: '#3554D1',
-                    borderRadius: 10,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }
+                  height: 46,
+                  width: 110,
+                  backgroundColor: '#3554D1',
+                  borderRadius: 10,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }
             }
             onPress={activeSlide === data.length - 1 ? Intro : onNextPress}>
-            <Text style={{color: '#FFF'}}>
+            <Text style={{ color: '#FFF' }}>
               {activeSlide === data.length - 1
                 ? 'Пройти регистрацию'
                 : 'Дальше'}

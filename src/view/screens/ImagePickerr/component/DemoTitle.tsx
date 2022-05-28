@@ -1,4 +1,4 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
 import {
   View,
@@ -8,13 +8,13 @@ import {
   TextStyle,
   TouchableOpacity,
 } from 'react-native';
-import {Back} from '../../../assets/icons/icon';
+import { Back } from '../../../assets/icons/icon';
 
 interface Props {
   children: string;
 }
 
-export function DemoTitle({children}: Props) {
+export function DemoTitle({ children }: Props) {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -64,8 +64,9 @@ const styles = StyleSheet.create<Styles>({
     justifyContent: 'space-between',
     backgroundColor: '#FFF',
     paddingHorizontal: 24,
-    borderWidth: 1,
-    borderColor: '#E5EBF0',
+
+    borderBottomColor: '#E5EBF0',
+    borderBottomWidth: 1
   },
   text: {
     fontSize: 24,

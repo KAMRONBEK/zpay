@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {StyleSheet, SafeAreaView, View, Image, ScrollView} from 'react-native';
-import {DemoTitle} from './component/DemoTitle';
+import { StyleSheet, SafeAreaView, View, Image, ScrollView } from 'react-native';
+import { DemoTitle } from './component/DemoTitle';
 
 import * as ImagePicker from 'react-native-image-picker';
-import {DemoButton} from './component/DemoButton';
+import { DemoButton } from './component/DemoButton';
 // import {DemoResponse} from './component/DemoResponse';
 
 /* toggle includeExtra */
@@ -25,7 +25,7 @@ export default function App() {
       <DemoTitle>Profile</DemoTitle>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.buttonContainer}>
-          {actions.map(({title, type, options}) => {
+          {actions.map(({ title, type, options }) => {
             return (
               <DemoButton
                 key={title}
@@ -38,13 +38,13 @@ export default function App() {
         {/* <DemoResponse>{response}</DemoResponse> */}
 
         {response?.assets &&
-          response?.assets.map(({uri}) => (
+          response?.assets.map(({ uri }) => (
             <View key={uri} style={styles.image}>
               <Image
                 resizeMode="cover"
                 resizeMethod="scale"
-                style={{width: 90, height: 90, borderRadius: 50}}
-                source={{uri: uri}}
+                style={{ width: 90, height: 90, borderRadius: 50 }}
+                source={{ uri: uri }}
               />
             </View>
           ))}

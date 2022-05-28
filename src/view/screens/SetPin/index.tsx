@@ -1,5 +1,5 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useEffect, useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
 import {
   Dimensions,
   Image,
@@ -9,12 +9,12 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {FaceidIcon} from '../../assets/icons/icon';
-import {strings} from '../../locales/strings';
+import { FaceidIcon } from '../../assets/icons/icon';
+import { strings } from '../../locales/strings';
 import Memo from '../FaceId';
 
 const SetPin = () => {
-  let {navigate} = useNavigation();
+  let { navigate } = useNavigation();
   const FaceDetection = () => {
     navigate('facedetection');
   };
@@ -157,7 +157,7 @@ const SetPin = () => {
           <View style={styles.memo}>
             <Image
               source={require('../../assets/images/FaceMemo.png')}
-              style={{height: 30, width: 30, backgroundColor: '#E5EBF0'}}
+              style={{ height: 30, width: 30, backgroundColor: '#E5EBF0' }}
             />
           </View>
         </TouchableOpacity>
@@ -166,7 +166,7 @@ const SetPin = () => {
         </View>
         <View style={{}}>
           <Switch
-            trackColor={{false: '#EAE9EE', true: '#EAE9EE'}}
+            trackColor={{ false: '#EAE9EE', true: '#EAE9EE' }}
             thumbColor={isEnabled ? '#3554D1' : '#f4f3f4'}
             ios_backgroundColor="#3e3e3e"
             onValueChange={toggleSwitch}
@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: 25,
-    paddingHorizontal: 26,
+    paddingHorizontal: 24,
   },
   facetext: {
     color: '#121F3E',
