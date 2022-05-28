@@ -57,7 +57,7 @@ export default function MoneyPayment() {
                 <TextInput
                   style={styles.input}
                   // value={value}
-                  keyboardType="number-pad"
+                  keyboardType="numbers-and-punctuation"
                 />
               </View>
               <View style={styles.oplati}>
