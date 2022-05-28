@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
+import React, {useState} from 'react';
 import {
   BackHandler,
   StyleSheet,
@@ -34,6 +34,7 @@ const creditCardMask = [
 
 const Register = () => {
   const [value, setValue] = React.useState('');
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
 
   let navigation = useNavigation();
   const Verification = () => {
@@ -60,29 +61,37 @@ const Register = () => {
       <View style={styles.text2}>
         <Text style={styles.text3}>Номер телефона</Text>
       </View>
-      <View style={styles.sectionInput}>
-        <Image
-          source={require('../../assets/images/FlagImg.png')}
-          style={{height: 24, width: 24, marginLeft: 18}}
-        />
-        <View style={styles.border} />
-        <Text style={{color: '#12154C'}}>+998</Text>
-        {/* <Mask /> */}
-        <MaskInput
-          value={creditCard}
-          keyboardType="number-pad"
-          mask={creditCardMask}
-          showObfuscatedValue
-          obfuscationCharacter="#"
-          style={{color: '#12154C', marginTop: 1, width: '100%'}}
-          onChangeText={(masked, unmasked, obfuscated) => {
-            setCreditCard(unmasked);
-            console.log(masked);
-            console.log(unmasked);
-            console.log(obfuscated);
-          }}
-        />
-      </View>
+      <TouchableOpacity
+        onPress={() => {
+          creditCard;
+        }}>
+        <View
+          style={[
+            styles.sectionInput,
+            {borderColor: creditCard ? '#3554D1' : '#EAEFF3'},
+          ]}>
+          <Image
+            source={require('../../assets/images/FlagImg.png')}
+            style={{height: 24, width: 24, marginLeft: 18}}
+          />
+          <View style={styles.border} />
+          <Text style={{color: '#12154C'}}>+998</Text>
+          <MaskInput
+            value={creditCard}
+            keyboardType="number-pad"
+            mask={creditCardMask}
+            showObfuscatedValue
+            obfuscationCharacter="#"
+            style={{color: '#12154C', width: '100%', padding: 12}}
+            onChangeText={(masked, unmasked, obfuscated) => {
+              setCreditCard(unmasked);
+              console.log(masked);
+              console.log(unmasked);
+              console.log(obfuscated);
+            }}
+          />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };

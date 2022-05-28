@@ -23,8 +23,9 @@ const Id = () => {
   const Scaner = () => {
     navigation.navigate('scaner');
   };
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState(null);
   const [number, onChangeNumber] = React.useState(null);
+  const [creditCard, setCreditCard] = React.useState(null);
 
   return (
     <View style={styles.container}>
@@ -40,8 +41,17 @@ const Id = () => {
             <Text style={styles.nomer}>Номер паспорта</Text>
           </View>
           <View style={styles.headinput}>
-            <View style={styles.littleinput}>
+            {/* <TouchableOpacity
+              onPress={() => {
+                value;
+              }}> */}
+            <View
+              style={[
+                styles.littleinput,
+                {borderColor: value ? '#3554D1' : '#EAEFF3'},
+              ]}>
               <MaskedTextInput
+                value={value}
                 mask="AA"
                 placeholder="AA"
                 placeholderTextColor={'grey'}
@@ -52,42 +62,41 @@ const Id = () => {
                 style={{textAlign: 'center', color: '#12154C'}}
               />
             </View>
-            {/* <View style={styles.section}> */}
-
-            <View style={styles.sectionInput}>
+            {/* </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                creditCard;
+              }}> */}
+            <View
+              style={[
+                styles.sectionInput,
+                {borderColor: creditCard ? '#3554D1' : '#EAEFF3'},
+              ]}>
               <TextInput
                 style={styles.input}
                 placeholder="Номер паспорта"
                 placeholderTextColor={'grey'}
                 keyboardType="number-pad"
-                // value={value}
+                value={creditCard}
               />
-              {/* <View style={styles.checkIcon}>
-              <CheckIcon />
-            </View> */}
             </View>
+            {/* </TouchableOpacity> */}
           </View>
           <View style={styles.nomer1}>
             <Text style={styles.nomer}>Год рождения</Text>
           </View>
-          <View style={styles.sectionInput1}>
-            {/* <MaskInput
-              value={value}
-              onChangeText={setValue}
-              keyboardType="number-pad"
-              style={{color: '#12154C', marginTop: 1, width: '100%'}}
-              placeholder="12/07/2002"
-              placeholderTextColor={'grey'}
-              mask={text => {
-                if (text.replace(/\D+/g, '').length <= 11) {
-                  return CPF_MASK;
-                } else {
-                  return CNPJ_MASK;
-                }
-              }}
-            /> */}
+          {/* <TouchableOpacity
+            onPress={() => {
+              number;
+            }}> */}
+          <View
+            style={[
+              styles.sectionInput1,
+              {borderColor: creditCard ? '#3554D1' : '#EAEFF3'},
+            ]}>
             <MaskedTextInput
               mask="99.99.9999"
+              value={number}
               placeholder="12.07.2002"
               placeholderTextColor={'grey'}
               keyboardType="number-pad"
@@ -97,10 +106,8 @@ const Id = () => {
               }}
               style={styles.input}
             />
-            {/* <View style={styles.checkIcon1}>
-            <CheckIcon />
-          </View> */}
           </View>
+          {/* </TouchableOpacity> */}
         </View>
       </View>
     </View>
@@ -113,8 +120,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    // paddingHorizontal: 24,
-    // paddingVertical: 51,
+
     flexDirection: 'column',
     justifyContent: 'space-between',
   },
@@ -147,7 +153,6 @@ const styles = StyleSheet.create({
     height: 109,
     width: '100%',
     backgroundColor: '#FFF',
-    // alignItems: 'center',
     paddingHorizontal: 24,
   },
   headbar1: {
@@ -158,9 +163,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 52,
   },
-  text: {
-    // marginTop: 52,
-  },
+  text: {},
   text1: {
     color: '#3554D1',
     fontSize: 24,
@@ -175,12 +178,10 @@ const styles = StyleSheet.create({
   },
   headinput: {
     flexDirection: 'row',
-    // justifyContent: 'space-between',
     marginTop: 11,
   },
   littleinput: {
     backgroundColor: '#ffff',
-    height: 50,
     width: 56,
     borderRadius: 10,
     borderWidth: 0.9,
@@ -189,13 +190,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   sectionInput: {
-    height: 50,
     width: '80%',
     backgroundColor: '#ffff',
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    // padding: 5,
     borderWidth: 1,
     borderColor: '#EAEFF3',
     marginLeft: 15,
@@ -205,7 +204,6 @@ const styles = StyleSheet.create({
   sectionInput1: {
     backgroundColor: '#ffff',
     borderRadius: 10,
-    height: 50,
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',

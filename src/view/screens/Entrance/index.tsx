@@ -52,7 +52,7 @@ const Entrance = () => {
           mask={creditCardMask}
           showObfuscatedValue
           obfuscationCharacter="#"
-          style={{color: '#12154C', marginTop: 1, width: '100%'}}
+          style={{color: '#12154C', width: '100%', padding: 12}}
           onChangeText={(masked, unmasked, obfuscated) => {
             setCreditCard(unmasked); // you can use the masked value as well
 
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    borderWidth: 0.5,
+    borderWidth: 1,
     borderColor: '#EAEFF3',
     marginTop: 11,
   },

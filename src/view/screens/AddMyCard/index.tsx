@@ -102,7 +102,7 @@ const AddMyCard = () => {
               onChangeText={setCreditCard}
               mask={Masks.CREDIT_CARD}
               keyboardType="number-pad"
-              style={{color: '#12154C', marginTop: 1, width: '90%'}}
+              style={{color: '#12154C', width: '90%'}}
               placeholder="0000 0000 0000 0000"
               placeholderTextColor={'grey'}
             />
@@ -116,7 +116,7 @@ const AddMyCard = () => {
               value={value}
               onChangeText={setValue}
               keyboardType="number-pad"
-              style={{color: '#12154C', marginTop: 1, width: '100%'}}
+              style={{color: '#12154C', width: '100%'}}
               placeholder="дата/год истечения"
               placeholderTextColor={'grey'}
               mask={text => {

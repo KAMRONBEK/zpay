@@ -2286,6 +2286,255 @@ const SimIcon7 = (props: SvgProps) => (
     </Defs>
   </Svg>
 );
+const SlujbaIcon = (props: SvgProps) => (
+  <Svg
+    width={30}
+    height={31}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}>
+    <Path
+      d="M15 5.5C4.984 5.5 2.5 21.673 2.5 21.673c0 2.88 1.337 5.402 4.138 6.07 2.398.573 5.416 1.104 8.362 1.104 2.946 0 5.964-.53 8.363-1.104 2.8-.669 4.137-3.191 4.137-6.07 0 0-2.484-16.173-12.5-16.173Z"
+      fill="url(#a)"
+    />
+    <Path
+      d="M15 4.93c4.317 0 8.75 1.75 8.75 11.083v3.626c0 3.333-5.359 7.958-8.75 7.958s-8.75-4.625-8.75-7.957v-3.627C6.25 6.68 10.682 4.93 15 4.93Z"
+      fill="url(#b)"
+    />
+    <Path
+      d="M15 1.972c-4.989 0-6.25 3.125-6.25 3.125-2.028.299-6.25 3.11-6.25 16.565 0 3.655 1.83 4.997 2.5 5.388C.15 12.792 11.263 14.443 9.61 6.505c4.763 10.584 19.765 2.967 15.843 20.211 1.16-.882 2.047-2.651 2.047-5.054 0-13.275-5.386-19.69-12.5-19.69Z"
+      fill="url(#c)"
+    />
+    <Path
+      d="M23.75 25.097H15v-1.25h8.75a1.877 1.877 0 0 0 1.875-1.875v-4.375h1.25v4.375a3.129 3.129 0 0 1-3.125 3.125Z"
+      fill="#727D86"
+    />
+    <Path
+      d="M16.875 24.472a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0Z"
+      fill="url(#d)"
+    />
+    <Path
+      d="M14.375 2.597h1.25c5.523 0 10 4.477 10 10v4.375h1.25v-4.375c0-6.213-5.037-11.25-11.25-11.25h-1.25a.625.625 0 0 0 0 1.25Z"
+      fill="#727D86"
+    />
+    <Path
+      d="m26.875 14.472.884.883c.234.235.366.553.366.884v3.34c0 .33-.132.649-.366.883l-.884.885v-6.875Z"
+      fill="#5C6369"
+    />
+    <Path
+      d="M26.875 21.347H25c-.69 0-1.25-.56-1.25-1.25v-4.375c0-.69.56-1.25 1.25-1.25h1.875v6.875Z"
+      fill="#727D86"
+    />
+    <Path d="M26.875 14.472h-1.25v6.875h1.25v-6.875Z" fill="url(#e)" />
+    <Defs>
+      <RadialGradient
+        id="a"
+        cx={0}
+        cy={0}
+        r={1}
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(14.76 17.567) scale(13.3363)">
+        <Stop offset={0.376} stopColor="#261103" />
+        <Stop offset={0.68} stopColor="#431D06" />
+        <Stop offset={1} stopColor="#662C09" />
+      </RadialGradient>
+      <RadialGradient
+        id="b"
+        cx={0}
+        cy={0}
+        r={1}
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="rotate(180 7.505 8.132) scale(10.125)">
+        <Stop stopColor="#FFCF54" />
+        <Stop offset={0.261} stopColor="#FDCB4D" />
+        <Stop offset={0.639} stopColor="#F7C13A" />
+        <Stop offset={1} stopColor="#F0B421" />
+      </RadialGradient>
+      <RadialGradient
+        id="c"
+        cx={0}
+        cy={0}
+        r={1}
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(8.158 2.427) scale(31.0981)">
+        <Stop stopColor="#C26715" />
+        <Stop offset={0.508} stopColor="#B85515" />
+        <Stop offset={1} stopColor="#AD3F16" />
+      </RadialGradient>
+      <LinearGradient
+        id="d"
+        x1={13.273}
+        y1={22.679}
+        x2={15.48}
+        y2={26.751}
+        gradientUnits="userSpaceOnUse">
+        <Stop stopColor="#3554D1" />
+        <Stop offset={1} stopColor="#1E3CA5" />
+      </LinearGradient>
+      <LinearGradient
+        id="e"
+        x1={25.674}
+        y1={14.623}
+        x2={28.586}
+        y2={15.6}
+        gradientUnits="userSpaceOnUse">
+        <Stop stopColor="#3554D1" />
+        <Stop offset={1} stopColor="#1E3CA5" />
+      </LinearGradient>
+    </Defs>
+  </Svg>
+);
+const NotificationIcon = (props: SvgProps) => (
+  <Svg
+    width={30}
+    height={31}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}>
+    <Path
+      d="M16.875 4.472h-3.75v-1.25a1.875 1.875 0 1 1 3.75 0v1.25Z"
+      fill="url(#a)"
+    />
+    <Path
+      d="M24.375 13.222a9.375 9.375 0 0 0-18.75 0v8.125h18.75v-8.125Z"
+      fill="#F5BE00"
+    />
+    <Path
+      d="M24.375 21.347H5.625l-2.422.968a1.118 1.118 0 0 0 .415 2.157h22.764a1.118 1.118 0 0 0 .415-2.157l-2.422-.968Z"
+      fill="url(#b)"
+    />
+    <Path d="M17.5 24.472a2.5 2.5 0 0 1-5 0h5Z" fill="url(#c)" />
+    <Defs>
+      <LinearGradient
+        id="a"
+        x1={15}
+        y1={1.342}
+        x2={15}
+        y2={4.475}
+        gradientUnits="userSpaceOnUse">
+        <Stop stopColor="#FEDE00" />
+        <Stop offset={1} stopColor="#FFD000" />
+      </LinearGradient>
+      <LinearGradient
+        id="b"
+        x1={15}
+        y1={21.342}
+        x2={15}
+        y2={24.475}
+        gradientUnits="userSpaceOnUse">
+        <Stop stopColor="#FEDE00" />
+        <Stop offset={1} stopColor="#FFD000" />
+      </LinearGradient>
+      <LinearGradient
+        id="c"
+        x1={15}
+        y1={26.921}
+        x2={15}
+        y2={24.384}
+        gradientUnits="userSpaceOnUse">
+        <Stop offset={0.486} stopColor="#FBC300" />
+        <Stop offset={1} stopColor="#DBAA00" />
+      </LinearGradient>
+    </Defs>
+  </Svg>
+);
+const QuestionIcon = (props: SvgProps) => (
+  <Svg
+    width={30}
+    height={31}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}>
+    <Path
+      d="M10 12.597h15c.69 0 1.25.56 1.25 1.25v8.75c0 .69-.56 1.25-1.25 1.25h-.625v3.8c0 .347-.453.476-.635.183l-2.49-3.983H10c-.69 0-1.25-.56-1.25-1.25v-8.75c0-.69.56-1.25 1.25-1.25Z"
+      fill="url(#a)"
+    />
+    <Path
+      d="M19.742 20.722h-.776a.31.31 0 0 1-.295-.217l-.287-.896h-1.778l-.284.896a.31.31 0 0 1-.296.217h-.766a.159.159 0 0 1-.15-.213l1.668-4.582a.312.312 0 0 1 .294-.205h.896c.133 0 .25.083.295.208l1.628 4.58a.159.159 0 0 1-.15.212Zm-1.616-1.977s-.605-1.956-.62-2.13h-.03c-.01.145-.63 2.13-.63 2.13h1.28Z"
+      fill="#fff"
+    />
+    <Path
+      opacity={0.05}
+      d="M20.625 15.722H8.75v-3.125h13.125v1.875c0 .69-.56 1.25-1.25 1.25Z"
+      fill="#000"
+    />
+    <Path
+      opacity={0.07}
+      d="M20.313 15.41H8.75v-2.813h12.813v1.562c0 .69-.56 1.25-1.25 1.25Z"
+      fill="#000"
+    />
+    <Path
+      d="M20 3.847H5c-.69 0-1.25.559-1.25 1.25v8.75c0 .69.56 1.25 1.25 1.25h.625v3.91c0 .314.411.432.577.166l2.548-4.076H20c.69 0 1.25-.56 1.25-1.25v-8.75c0-.691-.56-1.25-1.25-1.25Z"
+      fill="url(#b)"
+    />
+    <Path
+      d="M13.468 11.422c.714.815 1.532.716 1.86.631a.107.107 0 0 1 .132.104v.736a.143.143 0 0 1-.113.142c-.138.03-.38.07-.714.07-1.21 0-1.984-1.188-2.322-1.504-1.198 0-2.38-.95-2.38-2.637 0-1.943 1.296-2.783 2.64-2.783 1.963 0 2.505 1.562 2.505 2.677 0 1.733-1.068 2.391-1.608 2.564Zm-.938-4.223c-.719 0-1.355.554-1.355 1.704 0 1.186.637 1.688 1.326 1.688.724 0 1.33-.498 1.33-1.667 0-1.2-.581-1.725-1.3-1.725Z"
+      fill="#fff"
+    />
+    <Defs>
+      <LinearGradient
+        id="a"
+        x1={9.44}
+        y1={12.935}
+        x2={17.841}
+        y2={30.555}
+        gradientUnits="userSpaceOnUse">
+        <Stop stopColor="#3554D1" />
+        <Stop offset={1} stopColor="#1E3CA5" />
+      </LinearGradient>
+      <LinearGradient
+        id="b"
+        x1={7.611}
+        y1={2.44}
+        x2={16.671}
+        y2={17.181}
+        gradientUnits="userSpaceOnUse">
+        <Stop stopColor="#33BEF0" />
+        <Stop offset={1} stopColor="#22A5E2" />
+      </LinearGradient>
+    </Defs>
+  </Svg>
+);
+
+const ExitIcons = (props: SvgProps) => (
+  <Svg
+    width={30}
+    height={31}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}>
+    <Path
+      d="M23.125 2.597H6.875c-.69 0-1.25.559-1.25 1.25v22.5c0 .69.56 1.25 1.25 1.25h16.25c.69 0 1.25-.56 1.25-1.25v-22.5c0-.691-.56-1.25-1.25-1.25Z"
+      fill="url(#a)"
+    />
+    <Path
+      opacity={0.05}
+      d="m24.375 10.634-1.616-1.617c-.788-.787-2.134-.229-2.134.885v2.07h-7.5c-.69 0-1.25.56-1.25 1.25v3.75c0 .69.56 1.25 1.25 1.25h7.5v2.07c0 1.114 1.346 1.671 2.134.884l1.616-1.616v-8.926Z"
+      fill="#000"
+    />
+    <Path
+      opacity={0.07}
+      d="m24.375 11.259-1.627-1.627c-.553-.553-1.498-.161-1.498.62v2.345h-7.813a.938.938 0 0 0-.937.938v3.125c0 .517.42.937.938.937h7.812v2.344c0 .782.945 1.174 1.498.621l1.627-1.627V11.26Z"
+      fill="#000"
+    />
+    <Path
+      d="M21.875 10.603v2.619H13.75a.625.625 0 0 0-.625.625v2.5c0 .345.28.625.625.625h8.125v2.618c0 .45.544.675.862.357l4.188-4.188a.937.937 0 0 0 0-1.325l-4.188-4.188a.505.505 0 0 0-.862.357Z"
+      fill="#6B88FE"
+    />
+    <Defs>
+      <LinearGradient
+        id="a"
+        x1={6.364}
+        y1={3.146}
+        x2={23.036}
+        y2={26.217}
+        gradientUnits="userSpaceOnUse">
+        <Stop stopColor="#3554D1" />
+        <Stop offset={1} stopColor="#1E3CA5" />
+      </LinearGradient>
+    </Defs>
+  </Svg>
+);
 
 export {
   Back,
@@ -2360,4 +2609,8 @@ export {
   SimIcon5,
   SimIcon6,
   SimIcon7,
+  SlujbaIcon,
+  NotificationIcon,
+  QuestionIcon,
+  ExitIcons,
 };

@@ -103,7 +103,6 @@ const Bonuses3 = () => {
                 obfuscationCharacter="#"
                 style={{
                   color: '#12154C',
-                  marginTop: 1,
                   width: '100%',
                   padding: 12,
                 }}
